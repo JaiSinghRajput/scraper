@@ -1,0 +1,722 @@
+[
+    {
+        "vendor_name": "Meragi Photography",
+        "price_per_day": 60000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Indiranagar, , , Bangalore,",
+        "url": "https://www.wedmegood.com/profile/Meragi-Photography-651653",
+        "type": null
+    },
+    {
+        "vendor_name": "KnotsbyAMP",
+        "price_per_day": "On Request",
+        "work": null,
+        "bottom_fields": [],
+        "address": "South Mumbai, , , Mumbai,",
+        "url": "https://www.wedmegood.com/profile/Anupam-Maurya-Photography-36324",
+        "type": null
+    },
+    {
+        "vendor_name": "The Candid Hub",
+        "price_per_day": 85000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Bibwewadi, , , Pune,",
+        "url": "https://www.wedmegood.com/profile/The-Candid-Hub-829931",
+        "type": null
+    },
+    {
+        "vendor_name": "Sid Wedding Photos",
+        "price_per_day": 162000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Vasant Vihar, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Sidweddingphotos-31607",
+        "type": null
+    },
+    {
+        "vendor_name": "Studio Finesse",
+        "price_per_day": 120000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Hari Nagar, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Studio-Finesse-29718",
+        "type": null
+    },
+    {
+        "vendor_name": "Slice of Life Pictures",
+        "price_per_day": 95000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Slice-of-Life-Pictures-27050",
+        "type": null
+    },
+    {
+        "vendor_name": "Sandeep Gadhvi Photography",
+        "price_per_day": 120000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Ellisbridge, , , Ahmedabad,",
+        "url": "https://www.wedmegood.com/profile/Sandeep-Gadhvi-Photography-28085",
+        "type": null
+    },
+    {
+        "vendor_name": "Sharath Padaru",
+        "price_per_day": 120000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Jayanagar, , , Bangalore,",
+        "url": "https://www.wedmegood.com/profile/Sharath-Padaru-133011",
+        "type": null
+    },
+    {
+        "vendor_name": "70MM Films",
+        "price_per_day": 35000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Indira Nagar, , , Lucknow,",
+        "url": "https://www.wedmegood.com/profile/70MM-Films-781767",
+        "type": null
+    },
+    {
+        "vendor_name": "Silver Shimmer Weddings",
+        "price_per_day": 60000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Karkardooma, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Silver-Shimmer-Weddings-1203413",
+        "type": null
+    },
+    {
+        "vendor_name": "Papaji Photography",
+        "price_per_day": 75000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Ellis Bridge, , , Ahmedabad,",
+        "url": "https://www.wedmegood.com/profile/papaji-photography-3347847",
+        "type": null
+    },
+    {
+        "vendor_name": "Weddingraphy by M.O.M. Productions",
+        "price_per_day": 75000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Sector 24, , , Gurgaon,",
+        "url": "https://www.wedmegood.com/profile/Weddingraphy-by-MOM-Productions-179274",
+        "type": null
+    },
+    {
+        "vendor_name": "Vintage Films",
+        "price_per_day": 185000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Saket, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Vintage-Films-102757",
+        "type": null
+    },
+    {
+        "vendor_name": "Rohan Mishra Photography",
+        "price_per_day": 110000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Thoraipakkam, , , Chennai,",
+        "url": "https://www.wedmegood.com/profile/Rohan-Mishra-Photography-8225",
+        "type": null
+    },
+    {
+        "vendor_name": "Picsurely",
+        "price_per_day": 90000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Andheri West, , , Mumbai,",
+        "url": "https://www.wedmegood.com/profile/Picsurely-Weddings-42931",
+        "type": null
+    },
+    {
+        "vendor_name": "The Wedding Poetries",
+        "price_per_day": 80000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Malviya Nagar, , , Jaipur,",
+        "url": "https://www.wedmegood.com/profile/The-Wedding-Poetries-1009359",
+        "type": null
+    },
+    {
+        "vendor_name": "Shutter Time",
+        "price_per_day": 40000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Kalpana Square, , , Bhubaneswar,",
+        "url": "https://www.wedmegood.com/profile/Shutter-Time-108861",
+        "type": null
+    },
+    {
+        "vendor_name": "Wedding by life sketch",
+        "price_per_day": 150000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Sanganer, , , Jaipur,",
+        "url": "https://www.wedmegood.com/profile/Wedding-by-life-sketch-167894",
+        "type": null
+    },
+    {
+        "vendor_name": "Oaks Wedding",
+        "price_per_day": 160000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Palluruthy, , , Kochi,",
+        "url": "https://www.wedmegood.com/profile/Oaks-Wedding-240964",
+        "type": null
+    },
+    {
+        "vendor_name": "Weddings by Sameer",
+        "price_per_day": 450000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Near Lucknow Airport, , , Lucknow,",
+        "url": "https://www.wedmegood.com/profile/Weddings-by-Sameer-3219143",
+        "type": null
+    },
+    {
+        "vendor_name": "Wedding Riwaz",
+        "price_per_day": 70000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Dwarka Expressway, , , Gurgaon,",
+        "url": "https://www.wedmegood.com/profile/Wedding-Riwaz-190029",
+        "type": null
+    },
+    {
+        "vendor_name": "HK Wedding Photography",
+        "price_per_day": 45000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Katraj, , , Pune,",
+        "url": "https://www.wedmegood.com/profile/HK-Wedding-Photography-410900",
+        "type": null
+    },
+    {
+        "vendor_name": "Reve Weddings",
+        "price_per_day": 60000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Vijayanagar, , , Bangalore,",
+        "url": "https://www.wedmegood.com/profile/Reve-Weddings-4363390",
+        "type": null
+    },
+    {
+        "vendor_name": "Cam-Era Stories",
+        "price_per_day": 85000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Pitampura, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Cam-Era-Stories-109232",
+        "type": null
+    },
+    {
+        "vendor_name": "Manish Photography",
+        "price_per_day": 80000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Faridabad,",
+        "url": "https://www.wedmegood.com/profile/manish-photography-88236",
+        "type": null
+    },
+    {
+        "vendor_name": "Shyam Studios",
+        "price_per_day": 40000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Belagavi, , , Belgaum,",
+        "url": "https://www.wedmegood.com/profile/Shyam-Studios-636636",
+        "type": null
+    },
+    {
+        "vendor_name": "Our Wedding Chapter",
+        "price_per_day": 200000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "South City 2, , , Gurgaon,",
+        "url": "https://www.wedmegood.com/profile/Our-Wedding-Chapter-12896",
+        "type": null
+    },
+    {
+        "vendor_name": "The Wedding Wardens",
+        "price_per_day": 45000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Parel, , , Mumbai,",
+        "url": "https://www.wedmegood.com/profile/The-Wedding-Wardens-1275122",
+        "type": null
+    },
+    {
+        "vendor_name": "Kamaal Ansari Photography",
+        "price_per_day": 45000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Jabalpur,",
+        "url": "https://www.wedmegood.com/profile/Kamaal-Ansari-Photography-3660112",
+        "type": null
+    },
+    {
+        "vendor_name": "Lovers Films",
+        "price_per_day": 120000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Lovers-Films-67405",
+        "type": null
+    },
+    {
+        "vendor_name": "Rajneesh Srivastava Photography",
+        "price_per_day": 45000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Gomti Nagar, , , Lucknow,",
+        "url": "https://www.wedmegood.com/profile/Rajneesh-Srivastava-Photography-1012144",
+        "type": null
+    },
+    {
+        "vendor_name": "Dj Film Photography",
+        "price_per_day": 40000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Gomti Nagar, , , Lucknow,",
+        "url": "https://www.wedmegood.com/profile/Dj-Film-Photography-1096303",
+        "type": null
+    },
+    {
+        "vendor_name": "Salt & Pepper",
+        "price_per_day": 190000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Indiranagar, , , Bangalore,",
+        "url": "https://www.wedmegood.com/profile/Salt-and-Pepper-6557",
+        "type": null
+    },
+    {
+        "vendor_name": "Lenscaged Production",
+        "price_per_day": 250000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Malviya Nagar, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Lenscaged-Production-22215",
+        "type": null
+    },
+    {
+        "vendor_name": "Dhaarna Bhola Photography",
+        "price_per_day": 85000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "West Delhi, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Dhaarna-Bhola-Photography-649018",
+        "type": null
+    },
+    {
+        "vendor_name": "The Wedding Conteurs",
+        "price_per_day": 400000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/The-Wedding-Conteurs-125379",
+        "type": null
+    },
+    {
+        "vendor_name": "Think Big Flicks",
+        "price_per_day": 50000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Vasai Virar, , , Mumbai,",
+        "url": "https://www.wedmegood.com/profile/Think-Big-Flicks-691411",
+        "type": null
+    },
+    {
+        "vendor_name": "The As Photography",
+        "price_per_day": 50000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Raipur,",
+        "url": "https://www.wedmegood.com/profile/The-As-Photography-3562432",
+        "type": null
+    },
+    {
+        "vendor_name": "Matrix Studio",
+        "price_per_day": 45000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Gandhi Path, , , Jaipur,",
+        "url": "https://www.wedmegood.com/profile/Matrix-studio-18900",
+        "type": null
+    },
+    {
+        "vendor_name": "The White Box",
+        "price_per_day": "On Request",
+        "work": null,
+        "bottom_fields": [],
+        "address": "Vasant Vihar, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/The-White-Box-583092",
+        "type": null
+    },
+    {
+        "vendor_name": "Stories by Parag",
+        "price_per_day": 60000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Worli, , , Mumbai,",
+        "url": "https://www.wedmegood.com/profile/Stories-by-Parag-634848",
+        "type": null
+    },
+    {
+        "vendor_name": "MVB Productions",
+        "price_per_day": 80000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Santacruz, , , Mumbai,",
+        "url": "https://www.wedmegood.com/profile/MVB-Productions-816436",
+        "type": null
+    },
+    {
+        "vendor_name": "Najariya Films",
+        "price_per_day": 80000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Kurla, , , Mumbai,",
+        "url": "https://www.wedmegood.com/profile/Najariya-Films-410630",
+        "type": null
+    },
+    {
+        "vendor_name": "We Dont Say Cheese",
+        "price_per_day": 110000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Lajpat Nagar, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/We-Dont-Say-Cheese-86554",
+        "type": null
+    },
+    {
+        "vendor_name": "Shutter Shades",
+        "price_per_day": 75000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Indira Nagar, , , Lucknow,",
+        "url": "https://www.wedmegood.com/profile/Shutter-Shades-34314",
+        "type": null
+    },
+    {
+        "vendor_name": "Shashank Issar Photography",
+        "price_per_day": 230000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Pune,",
+        "url": "https://www.wedmegood.com/profile/Shashank-Issar-Photography-35357",
+        "type": null
+    },
+    {
+        "vendor_name": "Just Clickers",
+        "price_per_day": 85000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Model Town, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Just-Clickers-459230",
+        "type": null
+    },
+    {
+        "vendor_name": "Lavya Film Production",
+        "price_per_day": 95000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Sant Nagar, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Lavya-Film-Production-1097245",
+        "type": null
+    },
+    {
+        "vendor_name": "Radiant Pictures",
+        "price_per_day": 40000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/fotocruise-346236",
+        "type": null
+    },
+    {
+        "vendor_name": "Pixelens Photography",
+        "price_per_day": 40000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Asilmetta, , , Visakhapatnam (Vizag),",
+        "url": "https://www.wedmegood.com/profile/Pixelens-Photography-593374",
+        "type": null
+    },
+    {
+        "vendor_name": "Snaps & Shots Production",
+        "price_per_day": 190000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Sohna Road, , , Gurgaon,",
+        "url": "https://www.wedmegood.com/profile/Snaps-and-Shots-Production-722203",
+        "type": null
+    },
+    {
+        "vendor_name": "Tejas Shinde Photography",
+        "price_per_day": 35000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Nashik,",
+        "url": "https://www.wedmegood.com/profile/Tejas-Shinde-Photography-464005",
+        "type": null
+    },
+    {
+        "vendor_name": "Click & Create Studio",
+        "price_per_day": 50000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "West Delhi, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Click-and-Create-Studio-3401161",
+        "type": null
+    },
+    {
+        "vendor_name": "FlipOn Media",
+        "price_per_day": 52000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Lajpat Nagar, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/FlipOn-Media-372127",
+        "type": null
+    },
+    {
+        "vendor_name": "Heavenly Junction",
+        "price_per_day": 40000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "South 24 Parganas, , , Kolkata,",
+        "url": "https://www.wedmegood.com/profile/Heavenly-Junction-34310",
+        "type": null
+    },
+    {
+        "vendor_name": "Lifafe",
+        "price_per_day": 90000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Bandra West, , , Mumbai,",
+        "url": "https://www.wedmegood.com/profile/lifafe-25211423",
+        "type": null
+    },
+    {
+        "vendor_name": "Unscripted Co.",
+        "price_per_day": 182000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Unscripted-Co-3578313",
+        "type": null
+    },
+    {
+        "vendor_name": "24k Studio",
+        "price_per_day": 90000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Gomti Nagar, , , Lucknow,",
+        "url": "https://www.wedmegood.com/profile/24k-Studio-36068",
+        "type": null
+    },
+    {
+        "vendor_name": "CelebLuk Weddings",
+        "price_per_day": 65000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "LDA Colony, , , Lucknow,",
+        "url": "https://www.wedmegood.com/profile/CelebLuk-Weddings-242950",
+        "type": null
+    },
+    {
+        "vendor_name": "Emprise Productions Pvt Ltd",
+        "price_per_day": 75000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "New Delhi, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Emprise-Productions-Pvt-Ltd-189762",
+        "type": null
+    },
+    {
+        "vendor_name": "Abhisakshi Photography",
+        "price_per_day": 150000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Ghaziabad,",
+        "url": "https://www.wedmegood.com/profile/Abhisakshi-Photography-14484",
+        "type": null
+    },
+    {
+        "vendor_name": "Karan Shah Photography",
+        "price_per_day": 91000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Mumbai,",
+        "url": "https://www.wedmegood.com/profile/Karan-Shah-Photography-40355",
+        "type": null
+    },
+    {
+        "vendor_name": "Kadhaigal",
+        "price_per_day": 80000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Perungudi, , , Chennai,",
+        "url": "https://www.wedmegood.com/profile/Kadhaigal-687200",
+        "type": null
+    },
+    {
+        "vendor_name": "Akhil Bagga Photography",
+        "price_per_day": 150000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Vasant Kunj, , , Delhi NCR,",
+        "url": "https://www.wedmegood.com/profile/Akhil-Bagga-Photography-328964",
+        "type": null
+    },
+    {
+        "vendor_name": "House of Lightbucket",
+        "price_per_day": 90000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Hitech City, , , Hyderabad,",
+        "url": "https://www.wedmegood.com/profile/House-of-Light-Bucket-3571428",
+        "type": null
+    },
+    {
+        "vendor_name": "WeddingNama",
+        "price_per_day": "On Request",
+        "work": null,
+        "bottom_fields": [],
+        "address": "Andheri West, , , Mumbai,",
+        "url": "https://www.wedmegood.com/profile/WeddingNama-5750",
+        "type": null
+    },
+    {
+        "vendor_name": "Wedding Art",
+        "price_per_day": 120000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Western Suburbs, , , Mumbai,",
+        "url": "https://www.wedmegood.com/profile/Wedding-Art-190334",
+        "type": null
+    },
+    {
+        "vendor_name": "The Third Eye Photography",
+        "price_per_day": 190000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Indiranagar, , , Bangalore,",
+        "url": "https://www.wedmegood.com/profile/The-Third-Eye-Photography-36352",
+        "type": null
+    },
+    {
+        "vendor_name": "Niraj Patil Photography",
+        "price_per_day": 70000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Near Mumbai Airport, , , Mumbai,",
+        "url": "https://www.wedmegood.com/profile/Niraj-Patil-Photography-630424",
+        "type": null
+    },
+    {
+        "vendor_name": "Shutterdown - Lakshya Chawla",
+        "price_per_day": 325000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Old Gurgaon, , , Gurgaon,",
+        "url": "https://www.wedmegood.com/profile/Shutterdown-Lakshya-Chawla-1211",
+        "type": null
+    },
+    {
+        "vendor_name": "PK Suri Worldwide Studios",
+        "price_per_day": 220000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Western Suburbs, , , Mumbai,",
+        "url": "https://www.wedmegood.com/profile/PK-Suri-Photographer-62200",
+        "type": null
+    },
+    {
+        "vendor_name": "Lights On Creations",
+        "price_per_day": 70000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Ernakulam, , , Kochi,",
+        "url": "https://www.wedmegood.com/profile/Lights-On-Creations-448528",
+        "type": null
+    },
+    {
+        "vendor_name": "Shutter Magik",
+        "price_per_day": 140000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Mumbai,",
+        "url": "https://www.wedmegood.com/profile/Shutter-Magik-221955",
+        "type": null
+    },
+    {
+        "vendor_name": "Qpid Event Photography",
+        "price_per_day": 70000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "North 24 Parganas, , , Kolkata,",
+        "url": "https://www.wedmegood.com/profile/Qpid-Event-Photography-733016",
+        "type": null
+    },
+    {
+        "vendor_name": "Muddyearth",
+        "price_per_day": 50000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Jadavpur, , , Kolkata,",
+        "url": "https://www.wedmegood.com/profile/Muddyearth-168101",
+        "type": null
+    },
+    {
+        "vendor_name": "Charcoal & Vermillion",
+        "price_per_day": 100000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Kalikapur, , , Kolkata,",
+        "url": "https://www.wedmegood.com/profile/Charcoal-and-Vermillion-857870",
+        "type": null
+    },
+    {
+        "vendor_name": "Picture Me",
+        "price_per_day": 35000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Fatehgunj, , , Vadodara,",
+        "url": "https://www.wedmegood.com/profile/Picture-Me-111849",
+        "type": null
+    },
+    {
+        "vendor_name": "Studio RDP",
+        "price_per_day": 300000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Panjim, , , Goa,",
+        "url": "https://www.wedmegood.com/profile/Studio-RDP-6559",
+        "type": null
+    },
+    {
+        "vendor_name": "Karan Anand Photography",
+        "price_per_day": 150000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "South Delhi, , , Faridabad,",
+        "url": "https://www.wedmegood.com/profile/Karan-Anand-Photography-383765",
+        "type": null
+    },
+    {
+        "vendor_name": "Golden Aperture",
+        "price_per_day": 90000,
+        "work": "photo+video",
+        "bottom_fields": [],
+        "address": "Indira Nagar, , , Lucknow,",
+        "url": "https://www.wedmegood.com/profile/Golden-Aperture-51262",
+        "type": null
+    }
+]

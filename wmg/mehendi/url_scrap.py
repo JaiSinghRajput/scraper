@@ -11,7 +11,7 @@ END_PAGE = 5
 
 OUTPUT_JSON_FILE = "mehendi_artists.json"
 
-REQUEST_DELAY = 2
+REQUEST_DELAY = 5
 
 HEADERS = {
     "User-Agent": (
@@ -31,6 +31,8 @@ from bs4 import BeautifulSoup
 import json
 import re
 import time
+import random
+import os
 
 
 # =========================================================
@@ -225,6 +227,45 @@ def parse_card(card):
 
 all_results = []
 
+existing_urls = set()
+
+# ============================================
+# LOAD EXISTING JSON
+# ============================================
+
+if os.path.exists(OUTPUT_JSON_FILE):
+
+    try:
+
+        with open(
+            OUTPUT_JSON_FILE,
+            "r",
+            encoding="utf-8"
+        ) as f:
+
+            existing_data = json.load(f)
+
+            if isinstance(existing_data, list):
+
+                all_results = existing_data
+
+                for item in existing_data:
+
+                    url = item.get("url")
+
+                    if url:
+                        existing_urls.add(url)
+
+        print(
+            f"Loaded existing vendors: "
+            f"{len(existing_urls)}"
+        )
+
+    except Exception as e:
+
+        print("Could not load old JSON")
+        print(str(e))
+
 for page in range(
     START_PAGE,
     END_PAGE + 1
@@ -235,6 +276,12 @@ for page in range(
     print(f"\nScraping page {page}")
     print(url)
 
+    MAX_RETRIES = 999999
+
+response = None
+
+for attempt in range(MAX_RETRIES):
+
     try:
 
         response = requests.get(
@@ -243,14 +290,54 @@ for page in range(
             timeout=30
         )
 
+        # ====================================
+        # HANDLE 429
+        # ====================================
+
+        if response.status_code == 429:
+
+            wait_time = random.randint(120, 180)
+
+            print(
+                f"\n429 Rate Limit Hit "
+                f"on page {page}"
+            )
+
+            print(
+                f"Sleeping "
+                f"{wait_time} seconds..."
+            )
+
+            time.sleep(wait_time)
+
+            # Retry SAME page
+            continue
+
         response.raise_for_status()
 
-    except Exception as e:
+        print(
+            f"Page {page} loaded"
+        )
 
-        print("Request failed")
+        break
+
+    except requests.exceptions.RequestException as e:
+
+        print(
+            f"\nRequest failed "
+            f"on page {page}"
+        )
+
         print(str(e))
 
-        continue
+        wait_time = random.randint(30, 60)
+
+        print(
+            f"Retrying in "
+            f"{wait_time} seconds..."
+        )
+
+        time.sleep(wait_time)
 
     soup = BeautifulSoup(
         response.text,
@@ -271,14 +358,38 @@ for page in range(
 
             if item["vendor_name"]:
 
+                item_url = item.get("url")
+
+                # ====================================
+                # SKIP DUPLICATES
+                # ====================================
+
+                if item_url in existing_urls:
+
+                    print(
+                        f"Duplicate skipped: "
+                        f"{item['vendor_name']}"
+                    )
+
+                    continue
+
+                existing_urls.add(item_url)
+
                 all_results.append(item)
+
+                print(
+                    f"Added: "
+                    f"{item['vendor_name']}"
+                )
 
         except Exception as e:
 
             print("Card parse error")
             print(str(e))
 
-    time.sleep(REQUEST_DELAY)
+    sleep_time = random.randint(REQUEST_DELAY,REQUEST_DELAY + 3)
+    print(f"Sleeping {sleep_time}s...")
+    time.sleep(sleep_time)
 
 
 # =========================================================

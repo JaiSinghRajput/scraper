@@ -1,0 +1,12 @@
+[
+  {
+    "url": "https://www.wedmegood.com/wedding-venues/Celebration-Banquet-Dhillon-House-910032",
+    "error": "BrowserContext.new_page: Connection closed while reading from the driver",
+    "time": 1779707405
+  },
+  {
+    "url": "https://www.wedmegood.com/wedding-venues/Celebration-Banquet-Dhillon-House-910032",
+    "error": "No state object found",
+    "time": 1779707513
+  }
+]

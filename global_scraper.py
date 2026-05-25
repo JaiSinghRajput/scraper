@@ -39,21 +39,52 @@ STATE_CANDIDATES = [
 # ============================================================
 
 shutdown_requested = False
+playwright_instance = None
+browser_instance = None
 
 
 # ============================================================
 # SIGNAL HANDLING
 # ============================================================
-
 def handle_shutdown(signum, frame):
+
     global shutdown_requested
+    global browser_instance
+    global playwright_instance
+
     shutdown_requested = True
 
     print(
-        "\n⚠️ Shutdown requested."
-        " Finishing current URL safely..."
+        "\n⚠️ Shutdown requested..."
     )
 
+    try:
+
+        if browser_instance:
+
+            print(
+                "🧹 Closing browser..."
+            )
+
+            browser_instance.close()
+
+    except Exception:
+        pass
+
+    try:
+
+        if playwright_instance:
+
+            playwright_instance.stop()
+
+    except Exception:
+        pass
+
+    print(
+        "✅ Clean shutdown complete"
+    )
+
+    sys.exit(0)
 
 signal.signal(signal.SIGINT, handle_shutdown)
 signal.signal(signal.SIGTERM, handle_shutdown)
@@ -190,41 +221,77 @@ def launch_browser():
 
 def extract_state(page):
 
-    script = f"""
-    () => {{
+    html = page.content()
 
-        const candidates = {json.dumps(STATE_CANDIDATES)};
+    marker = "window.__INITIAL_STATE__="
 
-        for (const key of candidates) {{
+    start = html.find(marker)
 
-            try {{
-
-                if (window[key]) {{
-
-                    return {{
-                        key,
-                        data: JSON.stringify(window[key])
-                    }};
-                }}
-
-            }} catch (e) {{}}
-        }}
-
-        return null;
-    }}
-    """
-
-    result = page.evaluate(script)
-
-    if not result:
+    if start == -1:
         return None, None
 
-    return (
-        result["key"],
-        json.loads(result["data"])
-    )
+    start += len(marker)
 
+    # -----------------------------------------
+    # Find matching closing brace
+    # -----------------------------------------
 
+    brace_count = 0
+    in_string = False
+    escape = False
+
+    end = start
+
+    for i in range(start, len(html)):
+
+        char = html[i]
+
+        end = i
+
+        # handle escaped quotes
+        if escape:
+            escape = False
+            continue
+
+        if char == "\\":
+            escape = True
+            continue
+
+        # toggle string mode
+        if char == '"':
+            in_string = not in_string
+            continue
+
+        if in_string:
+            continue
+
+        if char == "{":
+            brace_count += 1
+
+        elif char == "}":
+            brace_count -= 1
+
+            if brace_count == 0:
+                break
+
+    raw_json = html[start:end + 1]
+
+    try:
+
+        data = json.loads(raw_json)
+
+        return (
+            "__INITIAL_STATE__",
+            data
+        )
+
+    except Exception as e:
+
+        print(
+            f"JSON parse failed: {e}"
+        )
+
+        return None, None
 # ============================================================
 # SCRAPE URL
 # ============================================================
@@ -246,7 +313,7 @@ def scrape_url(context, url):
 
             response = page.goto(
                 url,
-                wait_until="networkidle",
+                wait_until="domcontentloaded",
                 timeout=PAGE_TIMEOUT,
             )
 
@@ -297,7 +364,10 @@ def scrape_url(context, url):
         finally:
 
             if page:
-                page.close()
+                try:
+                    page.close()
+                except Exception:
+                    pass
 
         print(
             f"  ⚠️ Retry "

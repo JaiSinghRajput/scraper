@@ -16,8 +16,6 @@ from playwright.sync_api import (
     TimeoutError as PlaywrightTimeoutError,
 )
 
-from playwright_stealth import Stealth
-
 # ============================================================
 # CONFIG
 # ============================================================
@@ -25,17 +23,28 @@ from playwright_stealth import Stealth
 TOR_PROXY = "socks5://127.0.0.1:9050"
 
 TOR_CONTROL_PORT = 9051
+TOR_PASSWORD = "mypassword123"
 
 HEADLESS = False
-
-SAVE_EVERY = 1
-DELAY_SECONDS = 5
 
 MAX_RETRIES = 5
 PAGE_TIMEOUT = 120000
 
-OUTPUT_FILE = "venue_initial_states.json"
+OUTPUT_FILE = "scraped_data.json"
 FAILED_FILE = "failed_urls.json"
+
+DATA_DIR = Path("data")
+BACKUP_DIR = Path("backup")
+
+DATA_DIR.mkdir(
+    parents=True,
+    exist_ok=True,
+)
+
+BACKUP_DIR.mkdir(
+    parents=True,
+    exist_ok=True,
+)
 
 STATE_CANDIDATES = [
     "__INITIAL_STATE__",
@@ -47,50 +56,22 @@ STATE_CANDIDATES = [
 
 USER_AGENTS = [
     (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
+        "Mozilla/5.0 "
+        "(Windows NT 10.0; Win64; x64; rv:126.0) "
+        "Gecko/20100101 Firefox/126.0"
     ),
     (
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/123.0.0.0 Safari/537.36"
+        "Mozilla/5.0 "
+        "(X11; Linux x86_64; rv:126.0) "
+        "Gecko/20100101 Firefox/126.0"
     ),
 ]
 
 VIEWPORTS = [
     {"width": 1366, "height": 768},
-    {"width": 1920, "height": 1080},
+    {"width": 1440, "height": 900},
     {"width": 1536, "height": 864},
 ]
-
-# ============================================================
-# DEBUG DIRECTORIES
-# ============================================================
-
-DEBUG_DIR = Path("debug")
-
-HTML_DIR = DEBUG_DIR / "html"
-SCREENSHOT_DIR = DEBUG_DIR / "screenshots"
-SCRIPT_DIR = DEBUG_DIR / "scripts"
-NETWORK_DIR = DEBUG_DIR / "network"
-STATE_DIR = DEBUG_DIR / "states"
-CONSOLE_DIR = DEBUG_DIR / "console"
-FAILURE_DIR = DEBUG_DIR / "failures"
-
-for d in [
-    HTML_DIR,
-    SCREENSHOT_DIR,
-    SCRIPT_DIR,
-    NETWORK_DIR,
-    STATE_DIR,
-    CONSOLE_DIR,
-    FAILURE_DIR,
-]:
-    d.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
 
 # ============================================================
 # GLOBALS
@@ -98,7 +79,7 @@ for d in [
 
 shutdown_requested = False
 playwright_instance = None
-browser_instance = None
+browser_context = None
 
 # ============================================================
 # SIGNAL HANDLING
@@ -108,7 +89,7 @@ browser_instance = None
 def handle_shutdown(signum, frame):
 
     global shutdown_requested
-    global browser_instance
+    global browser_context
     global playwright_instance
 
     shutdown_requested = True
@@ -117,8 +98,8 @@ def handle_shutdown(signum, frame):
 
     try:
 
-        if browser_instance:
-            browser_instance.close()
+        if browser_context:
+            browser_context.close()
 
     except Exception:
         pass
@@ -192,8 +173,57 @@ def load_json_file(path):
         return json.loads(raw)
 
     except Exception:
-
         return []
+
+
+def backup_output_file(path):
+
+    p = Path(path)
+
+    if not p.exists():
+        return
+
+    ts = int(time.time())
+
+    backup_path = (
+        BACKUP_DIR
+        / f"{p.stem}_{ts}.json"
+    )
+
+    backup_path.write_text(
+        p.read_text(encoding="utf-8"),
+        encoding="utf-8",
+    )
+
+def reset_browser_profile():
+
+    profile_path = Path(
+        "./browser_profile"
+    )
+
+    try:
+
+        if profile_path.exists():
+
+            import shutil
+
+            shutil.rmtree(
+                profile_path
+            )
+
+            print(
+                "🧹 browser_profile reset"
+            )
+
+    except Exception as e:
+
+        print(
+            f"⚠️ Failed to reset "
+            f"browser_profile: {e}"
+        )
+# ============================================================
+# TOR
+# ============================================================
 
 
 def renew_tor_ip():
@@ -201,18 +231,18 @@ def renew_tor_ip():
     try:
 
         with Controller.from_port(
-            port=9051
+            port=TOR_CONTROL_PORT
         ) as controller:
 
             controller.authenticate(
-                password="mypassword123"
+                password=TOR_PASSWORD
             )
 
             controller.signal(
                 Signal.NEWNYM
             )
 
-        print("🔄 Requested new Tor IP")
+        print("🔄 New Tor IP requested")
 
         time.sleep(15)
 
@@ -222,8 +252,9 @@ def renew_tor_ip():
             f"⚠️ Tor rotation failed: {e}"
         )
 
+
 # ============================================================
-# INPUT URLS
+# URLS
 # ============================================================
 
 
@@ -259,7 +290,7 @@ def load_urls(input_file):
 
 
 # ============================================================
-# PLAYWRIGHT
+# BROWSER
 # ============================================================
 
 
@@ -267,82 +298,66 @@ def launch_browser():
 
     playwright = sync_playwright().start()
 
-    browser = playwright.chromium.launch(
+    context = playwright.firefox.launch_persistent_context(
+        user_data_dir="./browser_profile",
+
         headless=HEADLESS,
+
         proxy={
             "server": TOR_PROXY
         },
-        args=[
-            "--disable-blink-features=AutomationControlled",
-            "--disable-dev-shm-usage",
-            "--no-sandbox",
-        ],
-    )
 
-    return playwright, browser
-
-
-# ============================================================
-# CONTEXT
-# ============================================================
-
-
-def create_context(browser):
-
-    context = browser.new_context(
         viewport=random.choice(
             VIEWPORTS
         ),
+
         user_agent=random.choice(
             USER_AGENTS
         ),
+
         locale="en-US",
+
         timezone_id="Asia/Kolkata",
+
         java_script_enabled=True,
     )
 
-    return context
+    return playwright, context
 
 
 # ============================================================
-# DEBUG SAVE HELPERS
+# HUMAN BEHAVIOR
 # ============================================================
 
 
-def save_scripts(page, slug):
+def simulate_human(page):
 
-    scripts = page.locator("script")
+    try:
 
-    all_scripts = []
+        page.wait_for_timeout(
+            random.randint(3000, 5000)
+        )
 
-    count = scripts.count()
+        page.mouse.move(
+            random.randint(100, 500),
+            random.randint(100, 500),
+        )
 
-    for i in range(count):
+        page.wait_for_timeout(
+            random.randint(1000, 3000)
+        )
 
-        try:
+        page.mouse.wheel(
+            0,
+            random.randint(300, 1000)
+        )
 
-            txt = scripts.nth(i).inner_text()
+        page.wait_for_timeout(
+            random.randint(2000, 4000)
+        )
 
-            if txt.strip():
-
-                all_scripts.append({
-                    "index": i,
-                    "content": txt,
-                })
-
-        except Exception:
-            pass
-
-    (
-        SCRIPT_DIR / f"{slug}.json"
-    ).write_text(
-        json.dumps(
-            all_scripts,
-            indent=2,
-            ensure_ascii=False,
-        ),
-        encoding="utf-8",
-    )
+    except Exception:
+        pass
 
 
 # ============================================================
@@ -371,317 +386,200 @@ def extract_state(page):
 
     return found
 
+def find_vendor_profile(obj):
 
+    if isinstance(obj, dict):
+
+        if "vendorProfile" in obj:
+
+            return obj["vendorProfile"]
+
+        for value in obj.values():
+
+            result = find_vendor_profile(
+                value
+            )
+
+            if result is not None:
+
+                return result
+
+    elif isinstance(obj, list):
+
+        for item in obj:
+
+            result = find_vendor_profile(
+                item
+            )
+
+            if result is not None:
+
+                return result
+
+    return None
 # ============================================================
-# HUMAN BEHAVIOR
-# ============================================================
-
-
-def simulate_human(page):
-
-    try:
-
-        page.mouse.move(
-            random.randint(100, 700),
-            random.randint(100, 700),
-        )
-
-        page.wait_for_timeout(
-            random.randint(1000, 3000)
-        )
-
-        page.mouse.wheel(
-            0,
-            random.randint(300, 1200)
-        )
-
-        page.wait_for_timeout(
-            random.randint(1000, 3000)
-        )
-
-    except Exception:
-        pass
-
-
-# ============================================================
-# CURRENT IP CHECK
-# ============================================================
-
-
-def print_current_ip(context):
-
-    page = context.new_page()
-
-    try:
-
-        page.goto(
-            "https://api.ipify.org?format=json",
-            timeout=30000,
-        )
-
-        body = page.text_content("body")
-
-        print(
-            f"🌍 Current IP: {body}"
-        )
-
-    except Exception as e:
-
-        print(
-            f"⚠️ Could not fetch IP: {e}"
-        )
-
-    finally:
-
-        page.close()
-
-
-# ============================================================
-# SCRAPE URL
+# SCRAPE
 # ============================================================
 
 
-def scrape_url(browser, url):
-
-    last_error = None
+def scrape_url(playwright, context, url):
 
     slug = safe_filename(url)
+
+    last_error = None
 
     for attempt in range(
         1,
         MAX_RETRIES + 1
     ):
 
-        context = None
         page = None
-
-        network_logs = []
-        console_logs = []
 
         try:
 
-            # ============================================
-            # NEW TOR IP
-            # ============================================
-
             renew_tor_ip()
 
-            # ============================================
-            # NEW CONTEXT
-            # ============================================
-
-            context = create_context(
-                browser
-            )
-
-            print_current_ip(
-                context
-            )
-
             page = context.new_page()
 
-            # ============================================
-            # STEALTH
-            # ============================================
+            page.add_init_script("""
+Object.defineProperty(navigator, 'webdriver', {
+    get: () => undefined
+});
 
-            page = context.new_page()
-            stealth = Stealth()
-            stealth.apply_stealth_sync(page)
+window.chrome = {
+    runtime: {}
+};
 
-            # ============================================
-            # NETWORK LOGGING
-            # ============================================
+Object.defineProperty(navigator, 'plugins', {
+    get: () => [1, 2, 3, 4, 5]
+});
 
-            def handle_response(response):
+Object.defineProperty(navigator, 'languages', {
+    get: () => ['en-US', 'en']
+});
+""")
+
+            print(f"🌐 {url}")
+
+            response = page.goto(url,wait_until="domcontentloaded",timeout=PAGE_TIMEOUT,)
+            status_code = None
+            if response:
+                status_code = response.status
+
+                print(
+                    f"📡 Status: {status_code}"
+                )
+            # ====================================================
+            # RESET PROFILE ON BAD STATUS
+            # ====================================================
+
+            if status_code != 200:
 
                 try:
 
-                    ct = response.headers.get(
-                        "content-type",
-                        ""
-                    )
-
-                    if (
-                        "json" in ct
-                        or "/api/" in response.url
-                        or "graphql" in response.url
-                    ):
-
-                        try:
-                            body = response.text()
-
-                        except Exception:
-                            body = ""
-
-                        network_logs.append({
-                            "url": response.url,
-                            "status": response.status,
-                            "content_type": ct,
-                            "body": body[:50000],
-                        })
+                    context.close()
 
                 except Exception:
                     pass
 
-            page.on(
-                "response",
-                handle_response
-            )
+                reset_browser_profile()
 
-            # ============================================
-            # CONSOLE LOGGING
-            # ============================================
+                context = playwright.firefox.launch_persistent_context(
+                    user_data_dir="./browser_profile",
 
-            page.on(
-                "console",
-                lambda msg: console_logs.append({
-                    "type": msg.type,
-                    "text": msg.text,
-                })
-            )
+                    headless=HEADLESS,
 
-            page.on(
-                "pageerror",
-                lambda err: console_logs.append({
-                    "type": "pageerror",
-                    "text": str(err),
-                })
-            )
+                    proxy={
+                        "server": TOR_PROXY
+                    },
 
-            # ============================================
-            # OPEN PAGE
-            # ============================================
+                    viewport=random.choice(
+                        VIEWPORTS
+                    ),
 
-            print(
-                f"🌐 Opening: {url}"
-            )
+                    user_agent=random.choice(
+                        USER_AGENTS
+                    ),
 
-            response = page.goto(
-                url,
-                wait_until="networkidle",
-                timeout=PAGE_TIMEOUT,
-            )
+                    locale="en-US",
 
-            if response:
+                    timezone_id="Asia/Kolkata",
 
-                print(
-                    f"📡 Status: {response.status}"
+                    java_script_enabled=True,
+
+                    firefox_user_prefs={
+                        "media.peerconnection.enabled": False,
+                    },
                 )
 
-            # ============================================
-            # HUMAN SIMULATION
-            # ============================================
+                raise Exception(
+                    f"Bad status code: {status_code}"
+                )
 
             simulate_human(page)
 
             page.wait_for_timeout(
-                random.randint(5000, 9000)
+                random.randint(5000, 8000)
             )
-
-            # ============================================
-            # SAVE HTML
-            # ============================================
 
             html = page.content()
 
+            # ====================================================
+            # SAVE HTML
+            # ====================================================
+
             (
-                HTML_DIR / f"{slug}.html"
+                DATA_DIR / f"{slug}.html"
             ).write_text(
                 html,
                 encoding="utf-8",
             )
 
-            # ============================================
-            # SCREENSHOT
-            # ============================================
-
-            page.screenshot(
-                path=str(
-                    SCREENSHOT_DIR / f"{slug}.png"
-                ),
-                full_page=True,
-            )
-
-            # ============================================
-            # SAVE SCRIPTS
-            # ============================================
-
-            save_scripts(
-                page,
-                slug,
-            )
-
-            # ============================================
-            # SAVE NETWORK
-            # ============================================
-
-            (
-                NETWORK_DIR / f"{slug}.json"
-            ).write_text(
-                json.dumps(
-                    network_logs,
-                    indent=2,
-                    ensure_ascii=False,
-                ),
-                encoding="utf-8",
-            )
-
-            # ============================================
-            # SAVE CONSOLE
-            # ============================================
-
-            (
-                CONSOLE_DIR / f"{slug}.json"
-            ).write_text(
-                json.dumps(
-                    console_logs,
-                    indent=2,
-                    ensure_ascii=False,
-                ),
-                encoding="utf-8",
-            )
-
-            # ============================================
-            # EXTRACT STATE
-            # ============================================
-
             states = extract_state(page)
 
-            (
-                STATE_DIR / f"{slug}.json"
-            ).write_text(
-                json.dumps(
-                    states,
-                    indent=2,
-                    ensure_ascii=False,
-                ),
-                encoding="utf-8",
+            vendor_profile = None
+
+            for _, state_data in states.items():
+
+                vendor_profile = find_vendor_profile(
+                    state_data
+                )
+
+                if vendor_profile:
+
+                    break
+
+            html_lower = html.lower()
+
+            blocked_markers = [
+                "sorry, you have been blocked",
+                "attention required!",
+                "cf-error-code",
+                "cf-browser-verification",
+            ]
+
+            is_blocked = any(
+                marker in html_lower
+                for marker in blocked_markers
             )
 
-            # ============================================
-            # CLOUDFLARE DETECTION
-            # ============================================
-
-            if (
-                "cloudflare"
-                in html.lower()
-                or "attention required"
-                in html.lower()
-            ):
+            if is_blocked and not vendor_profile:
 
                 raise Exception(
                     "Cloudflare block detected"
                 )
 
-            print(
-                f"✅ Success | "
-                f"States found: "
-                f"{list(states.keys())}"
-            )
+            if not vendor_profile:
+
+                raise Exception(
+                    "vendorProfile not found"
+                )
+
+            print("✅ vendorProfile found")
 
             return {
                 "url": url,
-                "states": states,
+                "vendorProfile": vendor_profile,
                 "scraped_at": int(
                     time.time()
                 ),
@@ -705,36 +603,6 @@ def scrape_url(browser, url):
             except Exception:
                 pass
 
-            try:
-
-                if context:
-                    context.close()
-
-            except Exception:
-                pass
-
-        # ============================================
-        # FAILURE LOG
-        # ============================================
-
-        failure_dump = {
-            "url": url,
-            "error": last_error,
-            "attempt": attempt,
-            "time": int(time.time()),
-        }
-
-        (
-            FAILURE_DIR / f"{slug}.json"
-        ).write_text(
-            json.dumps(
-                failure_dump,
-                indent=2,
-                ensure_ascii=False,
-            ),
-            encoding="utf-8",
-        )
-
         print(
             f"⚠️ Retry "
             f"{attempt}/{MAX_RETRIES} "
@@ -742,7 +610,7 @@ def scrape_url(browser, url):
         )
 
         time.sleep(
-            random.randint(5, 15)
+            random.randint(8, 15)
         )
 
     raise Exception(last_error)
@@ -797,11 +665,15 @@ def run_scraper(
 
     results = list(existing_data)
 
-    print(
-        f"\n📦 Input URLs: {len(urls)}"
+    backup_output_file(
+        output_file
     )
 
-    playwright, browser = launch_browser()
+    print(
+        f"\n📦 Total URLs: {len(urls)}"
+    )
+
+    playwright, context = launch_browser()
 
     try:
 
@@ -828,9 +700,10 @@ def run_scraper(
             try:
 
                 result = scrape_url(
-                    browser,
-                    url,
-                )
+                            playwright,
+                            context,
+                            url,
+                        )
 
                 results.append(result)
 
@@ -861,7 +734,7 @@ def run_scraper(
                 )
 
             time.sleep(
-                random.randint(3, 10)
+                random.randint(5, 10)
             )
 
     finally:
@@ -875,7 +748,7 @@ def run_scraper(
             output_file,
         )
 
-        browser.close()
+        context.close()
 
         playwright.stop()
 
@@ -891,7 +764,7 @@ def parse_args():
 
     parser = argparse.ArgumentParser(
         description=(
-            "Advanced stealth scraper"
+            "Tor Firefox scraper"
         )
     )
 
@@ -905,7 +778,7 @@ def parse_args():
         "--output",
         "-o",
         default=OUTPUT_FILE,
-        help="Output file",
+        help="Output JSON file",
     )
 
     return parser.parse_args()

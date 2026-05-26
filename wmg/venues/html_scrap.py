@@ -2,8 +2,8 @@
 # CONFIG
 # =========================================================
 
-INPUT_HTML_FILE = "deta/wedding-venues.html"
-OUTPUT_JSON_FILE = "wedding_venues.json"
+INPUT_HTML_FILE = "deta/wedding-venues_jaipur.html"
+OUTPUT_JSON_FILE = "wedding_venues_jaipur.json"
 
 BASE_URL = "https://www.wedmegood.com"
 

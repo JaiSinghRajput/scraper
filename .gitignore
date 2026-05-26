@@ -7,3 +7,6 @@ wheels/
 *.egg-info
 # Virtual environments
 .venv
+data
+deta
+browser_profile

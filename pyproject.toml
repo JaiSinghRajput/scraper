@@ -8,5 +8,7 @@ dependencies = [
     "beautifulsoup4>=4.14.3",
     "bs4>=0.0.2",
     "playwright>=1.60.0",
+    "playwright-stealth>=2.0.3",
     "requests[socks]>=2.34.2",
+    "stem>=1.8.2",
 ]

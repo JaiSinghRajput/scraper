@@ -3,12 +3,20 @@ import json
 import time
 import signal
 import argparse
+import random
+import re
+
 from pathlib import Path
+
+from stem import Signal
+from stem.control import Controller
 
 from playwright.sync_api import (
     sync_playwright,
     TimeoutError as PlaywrightTimeoutError,
 )
+
+from playwright_stealth import Stealth
 
 # ============================================================
 # CONFIG
@@ -16,13 +24,15 @@ from playwright.sync_api import (
 
 TOR_PROXY = "socks5://127.0.0.1:9050"
 
-HEADLESS = True
+TOR_CONTROL_PORT = 9051
+
+HEADLESS = False
 
 SAVE_EVERY = 1
-DELAY_SECONDS = 2
+DELAY_SECONDS = 5
 
-MAX_RETRIES = 4
-PAGE_TIMEOUT = 90000
+MAX_RETRIES = 5
+PAGE_TIMEOUT = 120000
 
 OUTPUT_FILE = "venue_initial_states.json"
 FAILED_FILE = "failed_urls.json"
@@ -32,7 +42,55 @@ STATE_CANDIDATES = [
     "__NEXT_DATA__",
     "__NUXT__",
     "__APOLLO_STATE__",
+    "__PRELOADED_STATE__",
 ]
+
+USER_AGENTS = [
+    (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/124.0.0.0 Safari/537.36"
+    ),
+    (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/123.0.0.0 Safari/537.36"
+    ),
+]
+
+VIEWPORTS = [
+    {"width": 1366, "height": 768},
+    {"width": 1920, "height": 1080},
+    {"width": 1536, "height": 864},
+]
+
+# ============================================================
+# DEBUG DIRECTORIES
+# ============================================================
+
+DEBUG_DIR = Path("debug")
+
+HTML_DIR = DEBUG_DIR / "html"
+SCREENSHOT_DIR = DEBUG_DIR / "screenshots"
+SCRIPT_DIR = DEBUG_DIR / "scripts"
+NETWORK_DIR = DEBUG_DIR / "network"
+STATE_DIR = DEBUG_DIR / "states"
+CONSOLE_DIR = DEBUG_DIR / "console"
+FAILURE_DIR = DEBUG_DIR / "failures"
+
+for d in [
+    HTML_DIR,
+    SCREENSHOT_DIR,
+    SCRIPT_DIR,
+    NETWORK_DIR,
+    STATE_DIR,
+    CONSOLE_DIR,
+    FAILURE_DIR,
+]:
+    d.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
 # ============================================================
 # GLOBALS
@@ -42,10 +100,11 @@ shutdown_requested = False
 playwright_instance = None
 browser_instance = None
 
-
 # ============================================================
 # SIGNAL HANDLING
 # ============================================================
+
+
 def handle_shutdown(signum, frame):
 
     global shutdown_requested
@@ -54,18 +113,11 @@ def handle_shutdown(signum, frame):
 
     shutdown_requested = True
 
-    print(
-        "\n⚠️ Shutdown requested..."
-    )
+    print("\n⚠️ Shutdown requested...")
 
     try:
 
         if browser_instance:
-
-            print(
-                "🧹 Closing browser..."
-            )
-
             browser_instance.close()
 
     except Exception:
@@ -74,61 +126,33 @@ def handle_shutdown(signum, frame):
     try:
 
         if playwright_instance:
-
             playwright_instance.stop()
 
     except Exception:
         pass
 
-    print(
-        "✅ Clean shutdown complete"
-    )
+    print("✅ Clean shutdown complete")
 
     sys.exit(0)
+
 
 signal.signal(signal.SIGINT, handle_shutdown)
 signal.signal(signal.SIGTERM, handle_shutdown)
 
-
 # ============================================================
-# JSON HELPERS
+# HELPERS
 # ============================================================
 
-def load_json_file(path):
 
-    p = Path(path)
+def safe_filename(url):
 
-    if not p.exists():
-        return []
+    name = re.sub(
+        r"[^a-zA-Z0-9]",
+        "_",
+        url,
+    )
 
-    try:
-
-        raw = p.read_text(
-            encoding="utf-8"
-        ).strip()
-
-        if not raw:
-            return []
-
-        return json.loads(raw)
-
-    except Exception as e:
-
-        backup = p.with_suffix(
-            f".broken.{int(time.time())}.json"
-        )
-
-        print(
-            f"⚠️ Corrupted JSON detected: {path}"
-        )
-
-        print(
-            f"⚠️ Moving broken file -> {backup}"
-        )
-
-        p.rename(backup)
-
-        return []
+    return name[:180]
 
 
 def atomic_write_json(data, path):
@@ -149,9 +173,59 @@ def atomic_write_json(data, path):
     tmp.replace(p)
 
 
+def load_json_file(path):
+
+    p = Path(path)
+
+    if not p.exists():
+        return []
+
+    try:
+
+        raw = p.read_text(
+            encoding="utf-8"
+        ).strip()
+
+        if not raw:
+            return []
+
+        return json.loads(raw)
+
+    except Exception:
+
+        return []
+
+
+def renew_tor_ip():
+
+    try:
+
+        with Controller.from_port(
+            port=9051
+        ) as controller:
+
+            controller.authenticate(
+                password="mypassword123"
+            )
+
+            controller.signal(
+                Signal.NEWNYM
+            )
+
+        print("🔄 Requested new Tor IP")
+
+        time.sleep(15)
+
+    except Exception as e:
+
+        print(
+            f"⚠️ Tor rotation failed: {e}"
+        )
+
 # ============================================================
 # INPUT URLS
 # ============================================================
+
 
 def extract_urls(data):
 
@@ -176,6 +250,7 @@ def load_urls(input_file):
     urls = extract_urls(data)
 
     if not urls:
+
         raise Exception(
             "No URLs found in input JSON"
         )
@@ -184,8 +259,9 @@ def load_urls(input_file):
 
 
 # ============================================================
-# PLAYWRIGHT / TOR
+# PLAYWRIGHT
 # ============================================================
+
 
 def launch_browser():
 
@@ -196,158 +272,416 @@ def launch_browser():
         proxy={
             "server": TOR_PROXY
         },
+        args=[
+            "--disable-blink-features=AutomationControlled",
+            "--disable-dev-shm-usage",
+            "--no-sandbox",
+        ],
     )
+
+    return playwright, browser
+
+
+# ============================================================
+# CONTEXT
+# ============================================================
+
+
+def create_context(browser):
 
     context = browser.new_context(
-        viewport={
-            "width": 1400,
-            "height": 900
-        },
-        user_agent=(
-            "Mozilla/5.0 "
-            "(Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 "
-            "(KHTML, like Gecko) "
-            "Chrome/122.0.0.0 Safari/537.36"
+        viewport=random.choice(
+            VIEWPORTS
         ),
+        user_agent=random.choice(
+            USER_AGENTS
+        ),
+        locale="en-US",
+        timezone_id="Asia/Kolkata",
+        java_script_enabled=True,
     )
 
-    return playwright, browser, context
+    return context
+
+
+# ============================================================
+# DEBUG SAVE HELPERS
+# ============================================================
+
+
+def save_scripts(page, slug):
+
+    scripts = page.locator("script")
+
+    all_scripts = []
+
+    count = scripts.count()
+
+    for i in range(count):
+
+        try:
+
+            txt = scripts.nth(i).inner_text()
+
+            if txt.strip():
+
+                all_scripts.append({
+                    "index": i,
+                    "content": txt,
+                })
+
+        except Exception:
+            pass
+
+    (
+        SCRIPT_DIR / f"{slug}.json"
+    ).write_text(
+        json.dumps(
+            all_scripts,
+            indent=2,
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
 
 
 # ============================================================
 # STATE EXTRACTION
 # ============================================================
 
+
 def extract_state(page):
 
-    html = page.content()
+    found = {}
 
-    marker = "window.__INITIAL_STATE__="
+    for candidate in STATE_CANDIDATES:
 
-    start = html.find(marker)
+        try:
 
-    if start == -1:
-        return None, None
+            data = page.evaluate(
+                f"() => window.{candidate}"
+            )
 
-    start += len(marker)
+            if data:
 
-    # -----------------------------------------
-    # Find matching closing brace
-    # -----------------------------------------
+                found[candidate] = data
 
-    brace_count = 0
-    in_string = False
-    escape = False
+        except Exception:
+            pass
 
-    end = start
+    return found
 
-    for i in range(start, len(html)):
 
-        char = html[i]
+# ============================================================
+# HUMAN BEHAVIOR
+# ============================================================
 
-        end = i
 
-        # handle escaped quotes
-        if escape:
-            escape = False
-            continue
-
-        if char == "\\":
-            escape = True
-            continue
-
-        # toggle string mode
-        if char == '"':
-            in_string = not in_string
-            continue
-
-        if in_string:
-            continue
-
-        if char == "{":
-            brace_count += 1
-
-        elif char == "}":
-            brace_count -= 1
-
-            if brace_count == 0:
-                break
-
-    raw_json = html[start:end + 1]
+def simulate_human(page):
 
     try:
 
-        data = json.loads(raw_json)
+        page.mouse.move(
+            random.randint(100, 700),
+            random.randint(100, 700),
+        )
 
-        return (
-            "__INITIAL_STATE__",
-            data
+        page.wait_for_timeout(
+            random.randint(1000, 3000)
+        )
+
+        page.mouse.wheel(
+            0,
+            random.randint(300, 1200)
+        )
+
+        page.wait_for_timeout(
+            random.randint(1000, 3000)
+        )
+
+    except Exception:
+        pass
+
+
+# ============================================================
+# CURRENT IP CHECK
+# ============================================================
+
+
+def print_current_ip(context):
+
+    page = context.new_page()
+
+    try:
+
+        page.goto(
+            "https://api.ipify.org?format=json",
+            timeout=30000,
+        )
+
+        body = page.text_content("body")
+
+        print(
+            f"🌍 Current IP: {body}"
         )
 
     except Exception as e:
 
         print(
-            f"JSON parse failed: {e}"
+            f"⚠️ Could not fetch IP: {e}"
         )
 
-        return None, None
+    finally:
+
+        page.close()
+
+
 # ============================================================
 # SCRAPE URL
 # ============================================================
 
-def scrape_url(context, url):
+
+def scrape_url(browser, url):
 
     last_error = None
+
+    slug = safe_filename(url)
 
     for attempt in range(
         1,
         MAX_RETRIES + 1
     ):
 
+        context = None
         page = None
+
+        network_logs = []
+        console_logs = []
 
         try:
 
+            # ============================================
+            # NEW TOR IP
+            # ============================================
+
+            renew_tor_ip()
+
+            # ============================================
+            # NEW CONTEXT
+            # ============================================
+
+            context = create_context(
+                browser
+            )
+
+            print_current_ip(
+                context
+            )
+
             page = context.new_page()
+
+            # ============================================
+            # STEALTH
+            # ============================================
+
+            page = context.new_page()
+            stealth = Stealth()
+            stealth.apply_stealth_sync(page)
+
+            # ============================================
+            # NETWORK LOGGING
+            # ============================================
+
+            def handle_response(response):
+
+                try:
+
+                    ct = response.headers.get(
+                        "content-type",
+                        ""
+                    )
+
+                    if (
+                        "json" in ct
+                        or "/api/" in response.url
+                        or "graphql" in response.url
+                    ):
+
+                        try:
+                            body = response.text()
+
+                        except Exception:
+                            body = ""
+
+                        network_logs.append({
+                            "url": response.url,
+                            "status": response.status,
+                            "content_type": ct,
+                            "body": body[:50000],
+                        })
+
+                except Exception:
+                    pass
+
+            page.on(
+                "response",
+                handle_response
+            )
+
+            # ============================================
+            # CONSOLE LOGGING
+            # ============================================
+
+            page.on(
+                "console",
+                lambda msg: console_logs.append({
+                    "type": msg.type,
+                    "text": msg.text,
+                })
+            )
+
+            page.on(
+                "pageerror",
+                lambda err: console_logs.append({
+                    "type": "pageerror",
+                    "text": str(err),
+                })
+            )
+
+            # ============================================
+            # OPEN PAGE
+            # ============================================
+
+            print(
+                f"🌐 Opening: {url}"
+            )
 
             response = page.goto(
                 url,
-                wait_until="domcontentloaded",
+                wait_until="networkidle",
                 timeout=PAGE_TIMEOUT,
             )
 
             if response:
 
-                status = response.status
+                print(
+                    f"📡 Status: {response.status}"
+                )
 
-                if status == 404:
-                    raise Exception(
-                        "404 Not Found"
-                    )
+            # ============================================
+            # HUMAN SIMULATION
+            # ============================================
 
-                if status == 429:
-                    raise Exception(
-                        "429 Too Many Requests"
-                    )
+            simulate_human(page)
 
-            # Stabilization
-            page.wait_for_timeout(3000)
-
-            state_name, state_data = (
-                extract_state(page)
+            page.wait_for_timeout(
+                random.randint(5000, 9000)
             )
 
-            if state_data is None:
+            # ============================================
+            # SAVE HTML
+            # ============================================
+
+            html = page.content()
+
+            (
+                HTML_DIR / f"{slug}.html"
+            ).write_text(
+                html,
+                encoding="utf-8",
+            )
+
+            # ============================================
+            # SCREENSHOT
+            # ============================================
+
+            page.screenshot(
+                path=str(
+                    SCREENSHOT_DIR / f"{slug}.png"
+                ),
+                full_page=True,
+            )
+
+            # ============================================
+            # SAVE SCRIPTS
+            # ============================================
+
+            save_scripts(
+                page,
+                slug,
+            )
+
+            # ============================================
+            # SAVE NETWORK
+            # ============================================
+
+            (
+                NETWORK_DIR / f"{slug}.json"
+            ).write_text(
+                json.dumps(
+                    network_logs,
+                    indent=2,
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            # ============================================
+            # SAVE CONSOLE
+            # ============================================
+
+            (
+                CONSOLE_DIR / f"{slug}.json"
+            ).write_text(
+                json.dumps(
+                    console_logs,
+                    indent=2,
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            # ============================================
+            # EXTRACT STATE
+            # ============================================
+
+            states = extract_state(page)
+
+            (
+                STATE_DIR / f"{slug}.json"
+            ).write_text(
+                json.dumps(
+                    states,
+                    indent=2,
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            # ============================================
+            # CLOUDFLARE DETECTION
+            # ============================================
+
+            if (
+                "cloudflare"
+                in html.lower()
+                or "attention required"
+                in html.lower()
+            ):
 
                 raise Exception(
-                    "No state object found"
+                    "Cloudflare block detected"
                 )
+
+            print(
+                f"✅ Success | "
+                f"States found: "
+                f"{list(states.keys())}"
+            )
 
             return {
                 "url": url,
-                "state_type": state_name,
-                "initial_state": state_data,
+                "states": states,
                 "scraped_at": int(
                     time.time()
                 ),
@@ -363,20 +697,53 @@ def scrape_url(context, url):
 
         finally:
 
-            if page:
-                try:
+            try:
+
+                if page:
                     page.close()
-                except Exception:
-                    pass
+
+            except Exception:
+                pass
+
+            try:
+
+                if context:
+                    context.close()
+
+            except Exception:
+                pass
+
+        # ============================================
+        # FAILURE LOG
+        # ============================================
+
+        failure_dump = {
+            "url": url,
+            "error": last_error,
+            "attempt": attempt,
+            "time": int(time.time()),
+        }
+
+        (
+            FAILURE_DIR / f"{slug}.json"
+        ).write_text(
+            json.dumps(
+                failure_dump,
+                indent=2,
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
 
         print(
-            f"  ⚠️ Retry "
+            f"⚠️ Retry "
             f"{attempt}/{MAX_RETRIES} "
-            f"for {url} "
             f"-> {last_error}"
         )
 
-        time.sleep(5)
+        time.sleep(
+            random.randint(5, 15)
+        )
 
     raise Exception(last_error)
 
@@ -384,6 +751,7 @@ def scrape_url(context, url):
 # ============================================================
 # RESUME SUPPORT
 # ============================================================
+
 
 def load_existing_output(output_path):
 
@@ -406,12 +774,13 @@ def load_existing_output(output_path):
 
 
 # ============================================================
-# MAIN SCRAPER
+# MAIN
 # ============================================================
+
 
 def run_scraper(
     input_file,
-    output_file
+    output_file,
 ):
 
     urls = load_urls(input_file)
@@ -432,25 +801,13 @@ def run_scraper(
         f"\n📦 Input URLs: {len(urls)}"
     )
 
-    print(
-        f"✅ Already completed: "
-        f"{len(completed_urls)}"
-    )
-
-    print(
-        f"❌ Previous failures: "
-        f"{len(failed_urls)}\n"
-    )
-
-    playwright, browser, context = (
-        launch_browser()
-    )
+    playwright, browser = launch_browser()
 
     try:
 
         for idx, url in enumerate(
             urls,
-            start=1
+            start=1,
         ):
 
             if shutdown_requested:
@@ -459,55 +816,35 @@ def run_scraper(
             if url in completed_urls:
 
                 print(
-                    f"[{idx}/{len(urls)}] "
-                    f"⏭️ Skipping completed"
+                    f"[{idx}] ⏭️ Skipping"
                 )
 
                 continue
 
             print(
-                f"[{idx}/{len(urls)}] "
-                f"{url}"
+                f"\n[{idx}/{len(urls)}]"
             )
 
             try:
 
                 result = scrape_url(
-                    context,
-                    url
+                    browser,
+                    url,
                 )
 
                 results.append(result)
 
                 completed_urls.add(url)
 
-                print(
-                    f"  ✅ "
-                    f"{result['state_type']} "
-                    f"| "
-                    f"keys="
-                    f"{len(result['initial_state'])}"
+                atomic_write_json(
+                    results,
+                    output_file,
                 )
-
-                # ========================================
-                # CHECKPOINT SAVE
-                # ========================================
-
-                if (
-                    len(results)
-                    % SAVE_EVERY
-                    == 0
-                ):
-
-                    atomic_write_json(
-                        results,
-                        output_file
-                    )
 
             except Exception as e:
 
                 print(
-                    f"  ❌ FAILED: {e}"
+                    f"❌ FAILED: {e}"
                 )
 
                 failed_urls.append({
@@ -520,54 +857,55 @@ def run_scraper(
 
                 atomic_write_json(
                     failed_urls,
-                    FAILED_FILE
+                    FAILED_FILE,
                 )
 
-            time.sleep(DELAY_SECONDS)
+            time.sleep(
+                random.randint(3, 10)
+            )
 
     finally:
 
         print(
-            "\n💾 Saving final checkpoint..."
+            "\n💾 Saving..."
         )
 
         atomic_write_json(
             results,
-            output_file
+            output_file,
         )
 
         browser.close()
+
         playwright.stop()
 
-    print("\n✅ Done")
+    print("\n✅ DONE")
 
 
 # ============================================================
 # CLI
 # ============================================================
 
+
 def parse_args():
 
     parser = argparse.ArgumentParser(
         description=(
-            "Scrape window.__INITIAL_STATE__ "
-            "objects from venue URLs"
+            "Advanced stealth scraper"
         )
     )
 
     parser.add_argument(
         "--input",
-        help=(
-            "Input JSON file generated "
-            "from venue parser"
-        )
+        required=True,
+        help="Input JSON file",
     )
 
     parser.add_argument(
         "--output",
         "-o",
         default=OUTPUT_FILE,
-        help="Output JSON file"
+        help="Output file",
     )
 
     return parser.parse_args()

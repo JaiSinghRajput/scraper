@@ -16,14 +16,14 @@ import os
 # =========================================================
 
 BASE_LIST_URL = (
-    "https://www.wedmegood.com/vendors/jodhpur/wedding-venues"
+    "https://www.wedmegood.com/vendors/udaipur/wedding-venues"
 )
 
-START_PAGE = 1
-END_PAGE = 15
+START_PAGE = 2
+END_PAGE = 24
 
 OUTPUT_JSON_FILE = (
-    "wedding_venues_jodhpur_cards.json"
+    "wedding_venues_udaipur_cards.json"
 )
 
 REQUEST_DELAY = 5

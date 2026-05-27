@@ -93,10 +93,6 @@ def parse_card(card):
 
         "image_url": None,
 
-        "rating": None,
-
-        "reviews_count": None,
-
         "bridal_makeup_price": None,
 
         "pricing_label": None,
@@ -157,45 +153,6 @@ def parse_card(card):
     if image_tag:
 
         data["image_url"] = image_tag.get("src")
-
-    # =====================================================
-    # RATING
-    # =====================================================
-
-    rating_tag = card.select_one(
-        ".StarRatingNew"
-    )
-
-    if rating_tag:
-
-        data["rating"] = clean_text(
-            rating_tag.get_text()
-        ).replace("★", "").strip()
-
-    # =====================================================
-    # REVIEWS
-    # =====================================================
-
-    review_tag = card.select_one(
-        ".review-cnt"
-    )
-
-    if review_tag:
-
-        review_text = clean_text(
-            review_tag.get_text()
-        )
-
-        match = re.search(
-            r"\((\d+)",
-            review_text
-        )
-
-        if match:
-
-            data["reviews_count"] = int(
-                match.group(1)
-            )
 
     # =====================================================
     # PRICE LABEL

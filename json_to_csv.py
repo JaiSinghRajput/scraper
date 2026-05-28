@@ -1,15 +1,52 @@
 import json
 import csv
 import re
+import argparse
 
 # =========================================================
-# INPUT / OUTPUT FILES
+# ARGUMENTS
 # =========================================================
 
-DETAIL_JSON_FILE = "scraped_data.json"
-LISTING_JSON_FILE = "wedding_venues_jodhpur_cards.json"
+parser = argparse.ArgumentParser()
 
-OUTPUT_FILE = "final_jodhpur.csv"
+parser.add_argument(
+    "--detail_json",
+    required=True,
+    help="Detail JSON file"
+)
+
+parser.add_argument(
+    "--listing_json",
+    required=True,
+    help="Listing JSON file"
+)
+
+parser.add_argument(
+    "--output_csv",
+    required=True,
+    help="Output CSV file"
+)
+
+parser.add_argument(
+    "--vendor_state",
+    required=True,
+    help="Vendor state ID"
+)
+
+parser.add_argument(
+    "--vendor_city",
+    required=True,
+    help="Vendor city ID"
+)
+
+
+args = parser.parse_args()
+
+DETAIL_JSON_FILE = args.detail_json
+LISTING_JSON_FILE = args.listing_json
+OUTPUT_FILE = args.output_csv
+VENDOR_STATE = args.vendor_state
+VENDOR_CITY = args.vendor_city
 
 
 # =========================================================
@@ -75,6 +112,98 @@ def clean_rooms(room_text):
 
 
 # =========================================================
+# PHONE HELPERS
+# =========================================================
+
+used_phone_numbers = set()
+
+
+def extract_valid_phones(phone_data):
+
+    """
+    Extract all valid 10-digit Indian mobile numbers
+    """
+
+    candidates = []
+
+    # normalize input
+    if isinstance(phone_data, list):
+
+        raw_phones = phone_data
+
+    elif isinstance(phone_data, str):
+
+        raw_phones = [phone_data]
+
+    else:
+
+        raw_phones = []
+
+    for raw in raw_phones:
+
+        if not raw:
+            continue
+
+        # split multiple numbers
+        parts = str(raw).split(",")
+
+        for part in parts:
+
+            # keep digits only
+            cleaned = re.sub(r"\D", "", part)
+
+            # remove country code
+            if cleaned.startswith("91") and len(cleaned) > 10:
+
+                cleaned = cleaned[-10:]
+
+            # remove leading zero
+            if cleaned.startswith("0") and len(cleaned) > 10:
+
+                cleaned = cleaned[-10:]
+
+            # validate 10 digit number
+            if len(cleaned) == 10:
+
+                candidates.append(cleaned)
+
+    # remove duplicates preserving order
+    unique_candidates = []
+
+    for phone in candidates:
+
+        if phone not in unique_candidates:
+
+            unique_candidates.append(phone)
+
+    return unique_candidates
+
+
+def select_best_phone(phone_list):
+
+    """
+    Rules:
+    1. Prefer unused phone
+    2. If all duplicated -> use first valid
+    """
+
+    if not phone_list:
+        return ""
+
+    # prefer unique phone
+    for phone in phone_list:
+
+        if phone not in used_phone_numbers:
+
+            used_phone_numbers.add(phone)
+
+            return phone
+
+    # fallback duplicate
+    return phone_list[0]
+
+
+# =========================================================
 # LOAD DETAIL JSON
 # =========================================================
 
@@ -112,35 +241,21 @@ listing_lookup = {}
 
 for item in listing_vendors:
 
-    vendor_name = item.get("vendor_name", "").strip()
+    vendor_name = item.get(
+        "vendor_name",
+        ""
+    ).strip()
 
     if vendor_name:
+
         listing_lookup[vendor_name] = item
 
 
 # =========================================================
-# FIND MAX BANQUETS
+# FIXED EVENT SPACES
 # =========================================================
 
-max_banquets = 0
-
-for vendor in detail_vendors:
-
-    banquet_count = len(
-        safe_get(
-            vendor,
-            "vendorProfile",
-            "banquet",
-            default=[]
-        )
-    )
-
-    max_banquets = max(
-        max_banquets,
-        banquet_count
-    )
-
-print(f"Max banquet spaces found: {max_banquets}")
+MAX_EVENT_SPACES = 17
 
 
 # =========================================================
@@ -154,6 +269,7 @@ headers = [
     "vendor_state",
     "vendor_area",
     "vendor_city",
+    "vendor_city_name",
     "property_type",
     "venue_start_year",
     "vendor_address",
@@ -176,11 +292,12 @@ headers = [
     "alcohol_policy",
 ]
 
+
 # =========================================================
-# DYNAMIC EVENT SPACE HEADERS
+# EVENT SPACE HEADERS
 # =========================================================
 
-for i in range(1, max_banquets + 1):
+for i in range(1, MAX_EVENT_SPACES + 1):
 
     headers.extend([
 
@@ -212,7 +329,10 @@ for vendor in detail_vendors:
         default={}
     )
 
-    vendor_name = profile.get("name", "").strip()
+    vendor_name = profile.get(
+        "name",
+        ""
+    ).strip()
 
     # -----------------------------------------------------
     # MATCH LISTING DATA
@@ -224,14 +344,23 @@ for vendor in detail_vendors:
     )
 
     # -----------------------------------------------------
-    # DETAIL DATA
+    # ADDRESS
     # -----------------------------------------------------
 
-    address = safe_get(
-        vp,
-        "activeAddress",
-        default={}
+    address_list = profile.get(
+        "address",
+        []
     )
+
+    address = {}
+
+    if isinstance(address_list, list) and len(address_list) > 0:
+
+        address = address_list[0]
+
+    # -----------------------------------------------------
+    # FAQ / BANQUET
+    # -----------------------------------------------------
 
     faq = safe_get(
         vp,
@@ -265,8 +394,6 @@ for vendor in detail_vendors:
 
     # -----------------------------------------------------
     # PROPERTY TYPE
-    # PRIORITY:
-    # LISTING JSON -> DETAIL JSON
     # -----------------------------------------------------
 
     property_type = listing_vendor.get(
@@ -288,69 +415,39 @@ for vendor in detail_vendors:
             )
 
     # -----------------------------------------------------
-    # SMALL PARTY
+    # SMALL PARTY VENUE
     # -----------------------------------------------------
 
-    small_party = "No"
-
-    for b in banquet:
-
-        seating = b.get(
-            "fixed_capacity",
-            0
-        )
-
-        if seating and seating <= 150:
-
-            small_party = "Yes"
-
-            break
+    small_party = faq_map.get(
+        "small party venue",
+        ""
+    )
 
     # -----------------------------------------------------
     # CONTACT INFO
     # -----------------------------------------------------
 
-    phones = profile.get("phone", [])
+    phones = profile.get(
+        "phone",
+        []
+    )
 
-    contact_info = ""
+    valid_phones = extract_valid_phones(
+        phones
+    )
 
-    if isinstance(phones, list) and len(phones) > 0:
-
-        phone = str(phones[0])
-
-    elif isinstance(phones, str):
-
-        phone = phones
-
-    else:
-
-        phone = ""
-
-    # -----------------------------------
-    # CLEAN PHONE
-    # -----------------------------------
-
-    # remove spaces
-    phone = re.sub(r"\s+", "", phone)
-
-    # remove commas if any
-    phone = phone.split(",")[0]
-
-    # remove +91 only at beginning
-    phone = re.sub(r"^\+91", "", phone)
-
-    # remove single leading 0
-    if phone.startswith("0"):
-        phone = phone[1:]
-
-    contact_info = phone
+    contact_info = select_best_phone(
+        valid_phones
+    )
 
     # -----------------------------------------------------
-    # FALLBACK VALUES FROM LISTING JSON
+    # FALLBACK VALUES
     # -----------------------------------------------------
 
     vendor_area = (
+
         profile.get("locality_name")
+
         or safe_get(
             listing_vendor,
             "address",
@@ -359,8 +456,10 @@ for vendor in detail_vendors:
         )
     )
 
-    vendor_city = (
+    vendor_city_name = (
+
         profile.get("city")
+
         or safe_get(
             listing_vendor,
             "address",
@@ -370,7 +469,9 @@ for vendor in detail_vendors:
     )
 
     veg_price = (
+
         vp.get("veg_price")
+
         or safe_get(
             listing_vendor,
             "pricing",
@@ -380,7 +481,9 @@ for vendor in detail_vendors:
     )
 
     nonveg_price = (
+
         vp.get("nonveg_price")
+
         or safe_get(
             listing_vendor,
             "pricing",
@@ -390,7 +493,9 @@ for vendor in detail_vendors:
     )
 
     no_of_rooms = (
+
         faq_map.get("room count")
+
         or clean_rooms(
             listing_vendor.get("rooms", "")
         )
@@ -438,11 +543,15 @@ for vendor in detail_vendors:
             ""
         ),
 
-        "vendor_state": 83,
+        "vendor_state": VENDOR_STATE,
 
         "vendor_area": vendor_area,
 
-        "vendor_city": 2037,
+        "vendor_city": VENDOR_CITY,
+
+        "vendor_city_name": str(
+            vendor_city_name
+        ).strip(),
 
         "property_type": property_type,
 
@@ -460,38 +569,14 @@ for vendor in detail_vendors:
 
         "vendor_contact_info": contact_info,
 
-
         "vendor_google_map": build_google_map(
             address.get("latitude"),
             address.get("longitude"),
         ),
 
-        # EXTRA LISTING FIELDS
-
-        "vendor_rating": (
-            profile.get("vendor_rating")
-            or listing_vendor.get(
-                "rating",
-                ""
-            )
-        ),
-
-        "vendor_reviews": listing_vendor.get(
-            "reviews",
-            ""
-        ),
-
-        "vendor_tag": listing_vendor.get(
-            "type",
-            ""
-        ),
-
-        "vendor_url": listing_vendor.get(
-            "url",
-            ""
-        ),
-
-        "no_of_rooms": no_of_rooms,
+        "no_of_rooms": str(
+            no_of_rooms
+        ).replace("Rooms", "").strip(),
 
         "per_room_price": safe_get(
             vp,
@@ -529,8 +614,6 @@ for vendor in detail_vendors:
             ""
         ),
 
-        # STATIC POLICIES
-
         "parking_policy": parking_policy,
 
         "catering_policy": catering_policy,
@@ -543,13 +626,16 @@ for vendor in detail_vendors:
     }
 
     # -----------------------------------------------------
-    # DYNAMIC EVENT SPACES
+    # EVENT SPACES
     # -----------------------------------------------------
 
     for idx, space in enumerate(
         banquet,
         start=1
     ):
+
+        if idx > MAX_EVENT_SPACES:
+            break
 
         row[f"event_space_name_{idx}"] = space.get(
             "title",

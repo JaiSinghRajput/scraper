@@ -11,6 +11,8 @@ data
 deta
 browser_profile
 sample.json
-scraped_data copy.json
-scraped_data.json
-
+backup
+debug
+*testing*.json
+*sample*.json
+final_data_raw

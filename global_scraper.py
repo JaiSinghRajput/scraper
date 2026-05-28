@@ -5,6 +5,7 @@ import signal
 import argparse
 import random
 import re
+import subprocess
 
 from pathlib import Path
 
@@ -220,6 +221,49 @@ def reset_browser_profile():
         print(
             f"⚠️ Failed to reset "
             f"browser_profile: {e}"
+        )
+
+def restart_tor_service():
+
+    try:
+
+        print("🔄 Restarting Tor service...")
+
+        result = subprocess.run(
+            [
+                "sudo",
+                "systemctl",
+                "restart",
+                "tor"
+            ],
+            capture_output=True,
+            text=True,
+            timeout=60,
+        )
+
+        if result.returncode == 0:
+
+            print(
+                "✅ Tor service restarted"
+            )
+
+        else:
+
+            print(
+                f"⚠️ Tor restart failed: "
+                f"{result.stderr}"
+            )
+
+        print(
+            "⏳ Waiting for Tor bootstrap..."
+        )
+
+        time.sleep(15)
+
+    except Exception as e:
+
+        print(
+            f"⚠️ Failed to restart Tor: {e}"
         )
 # ============================================================
 # TOR
@@ -483,6 +527,7 @@ Object.defineProperty(navigator, 'languages', {
                     pass
 
                 reset_browser_profile()
+                restart_tor_service()
 
                 context = playwright.firefox.launch_persistent_context(
                     user_data_dir="./browser_profile",
@@ -564,7 +609,9 @@ Object.defineProperty(navigator, 'languages', {
             )
 
             if is_blocked and not vendor_profile:
-
+                restart_tor_service()
+                reset_browser_profile()
+                
                 raise Exception(
                     "Cloudflare block detected"
                 )

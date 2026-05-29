@@ -2,8 +2,8 @@
 # CONFIG
 # =========================================================
 
-INPUT_HTML_FILE = "mehendi.html"
-OUTPUT_JSON_FILE = "mehendi_artists.json"
+INPUT_HTML_FILE = "deta/mehendi-artist.html"
+OUTPUT_JSON_FILE = "mehendi_artists_1.json"
 
 BASE_URL = "https://www.wedmegood.com"
 

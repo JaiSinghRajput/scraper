@@ -3,36 +3,34 @@
 # =========================================================
 
 BASE_LIST_URL = (
-    "https://www.wedmegood.com/vendors/all/mehndi-artists/"
+    "https://www.wedmegood.com/vendors/all/mehendi-artists"
 )
 
 START_PAGE = 1
-END_PAGE = 5
+END_PAGE = 285
 
-OUTPUT_JSON_FILE = "mehendi_artists.json"
+OUTPUT_JSON_FILE = "mehendi_artists_all.json"
 
 REQUEST_DELAY = 5
 
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0 Safari/537.36"
-    )
-}
+BROWSER_PROFILE_DIR = "./browser_profile"
+
+HEADLESS = False
 
 
 # =========================================================
 # IMPORTS
 # =========================================================
 
-import requests
+from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
+
 import json
 import re
 import time
 import random
 import os
+import shutil
 
 
 # =========================================================
@@ -49,26 +47,67 @@ def clean_text(text):
     return text.strip()
 
 
+# =========================================================
+# RESET PROFILE
+# =========================================================
+
+def reset_browser_profile():
+
+    try:
+
+        if os.path.exists(BROWSER_PROFILE_DIR):
+
+            shutil.rmtree(
+                BROWSER_PROFILE_DIR,
+                ignore_errors=True
+            )
+
+        os.makedirs(
+            BROWSER_PROFILE_DIR,
+            exist_ok=True
+        )
+
+    except Exception as e:
+
+        print("Failed to reset profile")
+        print(str(e))
+
+
+# =========================================================
+# PARSE CARD
+# =========================================================
+
 def parse_card(card):
 
     BASE_URL = "https://www.wedmegood.com"
 
     data = {
+
         "vendor_name": None,
-        "address": {
-            "area": None,
-            "city": None
-        },
+
+        "url": None,
+
+        "image_url": None,
+
+        "area": None,
+
+        "city": None,
+
+        "rating": None,
+
+        "reviews_count": None,
+
         "starting_price": None,
+
         "pricing_label": None,
+
         "about_preview": None,
-        "bottom_fields": [],
-        "type": None,
-        "url": None
+
+        "type": None
     }
 
     # =====================================================
-    # Vendor Name
+    # VENDOR NAME
     # =====================================================
 
     vendor_tag = card.select_one(
@@ -82,7 +121,7 @@ def parse_card(card):
         )
 
     # =====================================================
-    # URL
+    # PROFILE URL
     # =====================================================
 
     profile_link = card.select_one(
@@ -104,30 +143,101 @@ def parse_card(card):
                 data["url"] = BASE_URL + href
 
     # =====================================================
-    # Address
+    # IMAGE URL
     # =====================================================
 
-    location_parts = card.select(
-        "p.vendor-detail span"
+    image_tag = card.select_one(
+        ".vendor-picture img.object-fit-cover"
     )
 
-    clean_locations = []
+    if image_tag:
 
-    for loc in location_parts:
-
-        txt = clean_text(loc.get_text())
-
-        if txt and txt != ",":
-            clean_locations.append(txt)
-
-    if len(clean_locations) >= 1:
-        data["address"]["area"] = clean_locations[0]
-
-    if len(clean_locations) >= 2:
-        data["address"]["city"] = clean_locations[-1]
+        data["image_url"] = image_tag.get("src")
 
     # =====================================================
-    # Pricing Label
+    # LOCATION
+    # =====================================================
+
+    location_tag = card.select_one(
+        ".info-icon.text-tertiary .vendor-detail"
+    )
+
+    if location_tag:
+
+        spans = location_tag.select("span")
+
+        locations = []
+
+        for span in spans:
+
+            txt = clean_text(
+                span.get_text()
+            )
+
+            if txt and txt != ",":
+
+                locations.append(txt)
+
+        if len(locations) >= 1:
+
+            data["area"] = locations[0]
+
+        if len(locations) >= 2:
+
+            data["city"] = locations[-1]
+
+    # =====================================================
+    # RATING
+    # =====================================================
+
+    rating_tag = card.select_one(
+        ".rating-new-5"
+    )
+
+    if rating_tag:
+
+        rating_text = clean_text(
+            rating_tag.get_text()
+        )
+
+        match = re.search(
+            r'(\d+(\.\d+)?)',
+            rating_text
+        )
+
+        if match:
+
+            data["rating"] = float(
+                match.group(1)
+            )
+
+    # =====================================================
+    # REVIEWS COUNT
+    # =====================================================
+
+    reviews_tag = card.select_one(
+        ".review-cnt"
+    )
+
+    if reviews_tag:
+
+        reviews_text = clean_text(
+            reviews_tag.get_text()
+        )
+
+        match = re.search(
+            r'(\d+)',
+            reviews_text
+        )
+
+        if match:
+
+            data["reviews_count"] = int(
+                match.group(1)
+            )
+
+    # =====================================================
+    # PRICE LABEL
     # =====================================================
 
     pricing_label = card.select_one(
@@ -141,11 +251,11 @@ def parse_card(card):
         )
 
     # =====================================================
-    # Starting Price
+    # STARTING PRICE
     # =====================================================
 
     price_tag = card.select_one(
-        ".vendor-price .text-bold"
+        ".vendor-price .vendor-detail.text-bold"
     )
 
     if price_tag:
@@ -154,58 +264,48 @@ def parse_card(card):
             price_tag.get_text()
         )
 
-        price_text = price_text.replace("₹", "").strip()
+        numeric_match = re.search(
+            r'₹?\s*([\d,]+)',
+            price_text
+        )
 
-        data["starting_price"] = price_text
+        if numeric_match:
+
+            data["starting_price"] = (
+                numeric_match.group(1)
+                .replace(",", "")
+            )
 
     # =====================================================
-    # About Preview
+    # ABOUT PREVIEW
     # =====================================================
 
     tooltip_blocks = card.select(
-        ".__react_component_tooltip"
+        "div.__react_component_tooltip"
     )
 
     for tip in tooltip_blocks:
 
-        text = clean_text(
-            tip.get_text(" ", strip=True)
+        txt = clean_text(
+            tip.get_text(
+                " ",
+                strip=True
+            )
         )
 
-        if text and "About vendor" in text:
+        if txt and "About vendor" in txt:
 
-            text = text.replace(
+            txt = txt.replace(
                 "About vendor",
                 ""
             ).strip()
 
-            data["about_preview"] = text
+            data["about_preview"] = txt
 
             break
 
     # =====================================================
-    # Bottom Fields
-    # =====================================================
-
-    chips = card.select(
-        'div[style*="background-color"] p'
-    )
-
-    bottom_fields = []
-
-    for chip in chips:
-
-        txt = clean_text(
-            chip.get_text()
-        )
-
-        if txt:
-            bottom_fields.append(txt)
-
-    data["bottom_fields"] = bottom_fields
-
-    # =====================================================
-    # Type
+    # TYPE
     # =====================================================
 
     html_lower = str(card).lower()
@@ -222,16 +322,12 @@ def parse_card(card):
 
 
 # =========================================================
-# SCRAPER
+# LOAD EXISTING DATA
 # =========================================================
 
 all_results = []
 
 existing_urls = set()
-
-# ============================================
-# LOAD EXISTING JSON
-# ============================================
 
 if os.path.exists(OUTPUT_JSON_FILE):
 
@@ -254,6 +350,7 @@ if os.path.exists(OUTPUT_JSON_FILE):
                     url = item.get("url")
 
                     if url:
+
                         existing_urls.add(url)
 
         print(
@@ -263,106 +360,91 @@ if os.path.exists(OUTPUT_JSON_FILE):
 
     except Exception as e:
 
-        print("Could not load old JSON")
+        print("Could not load existing JSON")
         print(str(e))
 
-for page in range(
-    START_PAGE,
-    END_PAGE + 1
-):
 
-    url = f"{BASE_LIST_URL}?page={page}"
+# =========================================================
+# SCRAPE PAGE
+# =========================================================
+def auto_scroll(page):
 
-    print(f"\nScraping page {page}")
+    previous_height = 0
+
+    while True:
+
+        current_height = page.evaluate(
+            "document.body.scrollHeight"
+        )
+
+        page.evaluate(
+            "window.scrollTo(0, document.body.scrollHeight)"
+        )
+
+        page.wait_for_timeout(2500)
+
+        new_height = page.evaluate(
+            "document.body.scrollHeight"
+        )
+
+        if new_height == current_height:
+            break
+
+        previous_height = current_height
+
+def scrape_page(context, page_number):
+
+    global all_results
+    global existing_urls
+
+    url = f"{BASE_LIST_URL}?page={page_number}"
+
+    print("\n===================================")
+    print(f"Scraping page {page_number}")
     print(url)
+    print("===================================")
 
-    MAX_RETRIES = 999999
-
-response = None
-
-for attempt in range(MAX_RETRIES):
+    page = context.new_page()
 
     try:
 
-        response = requests.get(
+        page.goto(
             url,
-            headers=HEADERS,
-            timeout=30
+            timeout=120000,
+            wait_until="domcontentloaded"
+        )
+        
+        page.wait_for_timeout(3000)
+        auto_scroll(page)
+
+        page.wait_for_timeout(10000)
+
+        html = page.content()
+
+        soup = BeautifulSoup(
+            html,
+            "html.parser"
         )
 
-        # ====================================
-        # HANDLE 429
-        # ====================================
-
-        if response.status_code == 429:
-
-            wait_time = random.randint(120, 180)
-
-            print(
-                f"\n429 Rate Limit Hit "
-                f"on page {page}"
-            )
-
-            print(
-                f"Sleeping "
-                f"{wait_time} seconds..."
-            )
-
-            time.sleep(wait_time)
-
-            # Retry SAME page
-            continue
-
-        response.raise_for_status()
+        cards = soup.find_all(
+            "div",
+            id=re.compile(r"^card\d+$")
+        )
 
         print(
-            f"Page {page} loaded"
+            f"Found cards: {len(cards)}"
         )
 
-        break
+        for card in cards:
 
-    except requests.exceptions.RequestException as e:
+            try:
 
-        print(
-            f"\nRequest failed "
-            f"on page {page}"
-        )
+                item = parse_card(card)
 
-        print(str(e))
-
-        wait_time = random.randint(30, 60)
-
-        print(
-            f"Retrying in "
-            f"{wait_time} seconds..."
-        )
-
-        time.sleep(wait_time)
-
-    soup = BeautifulSoup(
-        response.text,
-        "html.parser"
-    )
-
-    cards = soup.select(
-        'div[id^="card"]'
-    )
-
-    print(f"Found cards: {len(cards)}")
-
-    for card in cards:
-
-        try:
-
-            item = parse_card(card)
-
-            if item["vendor_name"]:
+                if not item["vendor_name"]:
+                    continue
 
                 item_url = item.get("url")
-
-                # ====================================
-                # SKIP DUPLICATES
-                # ====================================
 
                 if item_url in existing_urls:
 
@@ -382,33 +464,132 @@ for attempt in range(MAX_RETRIES):
                     f"{item['vendor_name']}"
                 )
 
-        except Exception as e:
+            except Exception as e:
 
-            print("Card parse error")
-            print(str(e))
+                print("Card parse error")
+                print(str(e))
 
-    sleep_time = random.randint(REQUEST_DELAY,REQUEST_DELAY + 3)
-    print(f"Sleeping {sleep_time}s...")
-    time.sleep(sleep_time)
+        # =================================================
+        # SAVE AFTER EVERY PAGE
+        # =================================================
+
+        with open(
+            OUTPUT_JSON_FILE,
+            "w",
+            encoding="utf-8"
+        ) as f:
+
+            json.dump(
+                all_results,
+                f,
+                indent=4,
+                ensure_ascii=False
+            )
+
+        print(
+            f"\nProgress Saved "
+            f"(Page {page_number})"
+        )
+
+        print(
+            f"Total Vendors: "
+            f"{len(all_results)}"
+        )
+
+    finally:
+
+        page.close()
 
 
 # =========================================================
-# SAVE
+# MAIN
 # =========================================================
 
-with open(
-    OUTPUT_JSON_FILE,
-    "w",
-    encoding="utf-8"
-) as f:
+with sync_playwright() as p:
 
-    json.dump(
-        all_results,
-        f,
-        indent=4,
-        ensure_ascii=False
-    )
+    context = None
+
+    try:
+
+        context = p.firefox.launch_persistent_context(
+
+            user_data_dir=BROWSER_PROFILE_DIR,
+
+            headless=HEADLESS,
+
+            viewport={
+                "width": 1400,
+                "height": 900
+            },
+
+            user_agent=(
+                "Mozilla/5.0 "
+                "(Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 "
+                "(KHTML, like Gecko) "
+                "Chrome/124.0 Safari/537.36"
+            ),
+
+            locale="en-US",
+
+            timezone_id="Asia/Kolkata"
+        )
+
+        current_page = START_PAGE
+
+        while current_page <= END_PAGE:
+
+            try:
+
+                scrape_page(
+                    context,
+                    current_page
+                )
+
+                current_page += 1
+
+                sleep_time = random.randint(
+                    REQUEST_DELAY,
+                    REQUEST_DELAY + 4
+                )
+
+                print(
+                    f"\nSleeping "
+                    f"{sleep_time}s..."
+                )
+
+                time.sleep(
+                    sleep_time
+                )
+
+            except Exception as e:
+
+                print("\nFAILED PAGE")
+                print(current_page)
+                print(str(e))
+
+                time.sleep(10)
+
+                continue
+
+    finally:
+
+        try:
+
+            if context:
+
+                context.close()
+
+        except:
+            pass
+
+
+# =========================================================
+# DONE
+# =========================================================
 
 print("\n===================================")
+print("SCRAPING COMPLETED")
 print(f"Saved {len(all_results)} vendors")
+print(f"Output: {OUTPUT_JSON_FILE}")
 print("===================================")

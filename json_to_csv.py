@@ -35,7 +35,7 @@ parser.add_argument(
 
 parser.add_argument(
     "--vendor_city",
-    required=True,
+    required=False,
     help="Vendor city ID"
 )
 

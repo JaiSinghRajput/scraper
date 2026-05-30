@@ -340,9 +340,58 @@ def load_urls(input_file):
 
 def launch_browser():
 
-    playwright = sync_playwright().start()
+    global browser_context
 
-    context = playwright.firefox.launch_persistent_context(
+    playwright = sync_playwright().start()
+    last_error = None
+
+    for attempt in range(
+        1,
+        MAX_RETRIES + 1
+    ):
+
+        try:
+
+            context = create_fresh_context(
+                playwright
+            )
+
+            browser_context = context
+
+            return playwright, context
+
+        except Exception as e:
+
+            last_error = str(e)
+
+            print(
+                f"⚠️ Browser launch failed "
+                f"{attempt}/{MAX_RETRIES} -> "
+                f"{last_error}"
+            )
+
+            try:
+
+                if browser_context:
+                    browser_context.close()
+
+            except Exception:
+                pass
+
+            reset_browser_profile()
+
+            time.sleep(
+                random.randint(3, 6)
+            )
+
+    playwright.stop()
+
+    raise Exception(last_error)
+
+
+def create_fresh_context(playwright):
+
+    return playwright.firefox.launch_persistent_context(
         user_data_dir="./browser_profile",
 
         headless=HEADLESS,
@@ -364,9 +413,11 @@ def launch_browser():
         timezone_id="Asia/Kolkata",
 
         java_script_enabled=True,
-    )
 
-    return playwright, context
+        firefox_user_prefs={
+            "media.peerconnection.enabled": False,
+        },
+    )
 
 
 # ============================================================
@@ -466,7 +517,7 @@ def find_vendor_profile(obj):
 # ============================================================
 
 
-def scrape_url(playwright, context, url):
+def scrape_url(playwright, context_ref, url):
 
     slug = safe_filename(url)
 
@@ -481,9 +532,48 @@ def scrape_url(playwright, context, url):
 
         try:
 
+            context = context_ref["context"]
+
+            try:
+
+                if context is None or context.is_closed():
+                    context_ref["context"] = create_fresh_context(
+                        playwright
+                    )
+
+                    context = context_ref["context"]
+
+            except Exception:
+
+                context_ref["context"] = create_fresh_context(
+                    playwright
+                )
+
+                context = context_ref["context"]
+
             renew_tor_ip()
 
-            page = context.new_page()
+            try:
+
+                page = context.new_page()
+
+            except Exception as e:
+
+                if "closed" in str(e).lower():
+
+                    try:
+
+                        context.close()
+
+                    except Exception:
+
+                        pass
+
+                    context_ref["context"] = create_fresh_context(
+                        playwright
+                    )
+
+                raise
 
             page.add_init_script("""
 Object.defineProperty(navigator, 'webdriver', {
@@ -529,32 +619,8 @@ Object.defineProperty(navigator, 'languages', {
                 reset_browser_profile()
                 restart_tor_service()
 
-                context = playwright.firefox.launch_persistent_context(
-                    user_data_dir="./browser_profile",
-
-                    headless=HEADLESS,
-
-                    proxy={
-                        "server": TOR_PROXY
-                    },
-
-                    viewport=random.choice(
-                        VIEWPORTS
-                    ),
-
-                    user_agent=random.choice(
-                        USER_AGENTS
-                    ),
-
-                    locale="en-US",
-
-                    timezone_id="Asia/Kolkata",
-
-                    java_script_enabled=True,
-
-                    firefox_user_prefs={
-                        "media.peerconnection.enabled": False,
-                    },
+                context_ref["context"] = create_fresh_context(
+                    playwright
                 )
 
                 raise Exception(
@@ -611,6 +677,17 @@ Object.defineProperty(navigator, 'languages', {
             if is_blocked and not vendor_profile:
                 restart_tor_service()
                 reset_browser_profile()
+
+                try:
+
+                    context.close()
+
+                except Exception:
+                    pass
+
+                context_ref["context"] = create_fresh_context(
+                    playwright
+                )
                 
                 raise Exception(
                     "Cloudflare block detected"
@@ -721,6 +798,9 @@ def run_scraper(
     )
 
     playwright, context = launch_browser()
+    context_ref = {
+        "context": context,
+    }
 
     try:
 
@@ -748,9 +828,11 @@ def run_scraper(
 
                 result = scrape_url(
                             playwright,
-                            context,
+                            context_ref,
                             url,
                         )
+
+                context = context_ref["context"]
 
                 results.append(result)
 
@@ -795,7 +877,7 @@ def run_scraper(
             output_file,
         )
 
-        context.close()
+        context_ref["context"].close()
 
         playwright.stop()
 

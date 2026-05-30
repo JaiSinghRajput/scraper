@@ -6,7 +6,7 @@ BASE_LIST_URL = (
     "https://www.wedmegood.com/vendors/all/mehendi-artists"
 )
 
-START_PAGE = 1
+START_PAGE = 2011
 END_PAGE = 285
 
 OUTPUT_JSON_FILE = "mehendi_artists_all.json"

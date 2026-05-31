@@ -2,7 +2,7 @@
 # CONFIG
 # =========================
 
-INPUT_HTML_FILE = "data/wedding-photographer.html"
+INPUT_HTML_FILE = "data/photo_grapher_page_1.html"
 OUTPUT_JSON_FILE = "1st_Page_photographers.json"
 
 # Prefix for profile URLs

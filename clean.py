@@ -2,8 +2,8 @@ import json
 import re
 
 # Input and output file paths
-input_file = "bridal_makeup_vendors_rajasthan.json"
-output_file = "bridal_makeup_vendors_rajasthan_data.json"
+input_file = "wedding_venues_delhi_ncr_1.json"
+output_file = "wedding_venues_delhi_ncr_2.json"
 
 # Load JSON data
 with open(input_file, "r", encoding="utf-8") as f:
@@ -14,9 +14,9 @@ pattern = re.compile(r"^\+\d+\s+more$")
 
 # Process all items
 for item in data:
-    if "features" in item and isinstance(item["features"], list):
-        item["features"] = [
-            feature for feature in item["features"]
+    if "bottom_fields" in item and isinstance(item["bottom_fields"], list):
+        item["bottom_fields"] = [
+            feature for feature in item["bottom_fields"]
             if not pattern.match(feature.strip())
         ]
 

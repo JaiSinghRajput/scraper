@@ -3,13 +3,13 @@
 # =========================================================
 
 BASE_LIST_URL = (
-    "https://www.wedmegood.com/vendors/rajasthan/bridal-makeup/"
+    "https://www.wedmegood.com/vendors/delhi-ncr/bridal-makeup/"
 )
 
 START_PAGE = 1
-END_PAGE = 5
+END_PAGE = 293
 
-OUTPUT_JSON_FILE = "bridal_makeup_vendors_rajasthan.json"
+OUTPUT_JSON_FILE = "bridal_makeup_vendors_delhi-ncr.json"
 
 REQUEST_DELAY = 5
 
@@ -34,6 +34,18 @@ import shutil
 # =========================================================
 # HELPERS
 # =========================================================
+
+
+def auto_scroll(page):
+    while True:
+        old_height = page.evaluate("document.body.scrollHeight")
+        page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+        page.wait_for_timeout(2500)
+        new_height = page.evaluate("document.body.scrollHeight")
+        if old_height == new_height:
+            break
+    page.evaluate("window.scrollTo(0, 0)")
+    page.wait_for_timeout(1000)
 
 def clean_text(text):
 
@@ -327,6 +339,8 @@ def scrape_page(context, page_number):
         time.sleep(
             random.uniform(3, 6)
         )
+        
+        auto_scroll(page)
 
         html = page.content()
 

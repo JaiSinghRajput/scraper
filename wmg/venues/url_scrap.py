@@ -3,13 +3,14 @@
 # =========================================================
 
 BASE_LIST_URL = (
-    "https://www.wedmegood.com/vendors/delhi-ncr/wedding-venues"
+    "https://www.wedmegood.com/vendors/telangana/wedding-venues/"
 )
 
-START_PAGE = 2
-END_PAGE = 189
+START_PAGE = 82
+END_PAGE = 103
 
-OUTPUT_JSON_FILE = "wedding_venues_delhi_ncr_cards.json"
+OUTPUT_JSON_FILE = "wedding_venues_telangana_cards.json"
+# TOR_PROXY = "socks5://127.0.0.1:9050"
 
 REQUEST_DELAY = 5
 BROWSER_PROFILE_DIR = "./browser_profile"
@@ -124,6 +125,9 @@ with sync_playwright() as p:
     context = p.firefox.launch_persistent_context(
         user_data_dir=BROWSER_PROFILE_DIR,
         headless=HEADLESS,
+        #  proxy={
+        #     "server": TOR_PROXY
+        # },
         viewport={"width": 1400, "height": 900},
         locale="en-US",
         timezone_id="Asia/Kolkata"

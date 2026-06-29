@@ -3,13 +3,13 @@
 # =========================================================
 
 BASE_LIST_URL = (
-    "https://www.wedmegood.com/vendors/all/bridal-wear"
+    "https://www.wedmegood.com/vendors/all/wedding-catering"
 )
 
-START_PAGE = 1
-END_PAGE = 84
+START_PAGE = 141
+END_PAGE = 181
 
-OUTPUT_JSON_FILE = "bridal_wear_vendors_all.json"
+OUTPUT_JSON_FILE = "wedding_catering_vendors_all.json"
 
 REQUEST_DELAY = 5
 
@@ -99,7 +99,7 @@ def parse_card(card):
 
         "reviews_count": None,
 
-        "bridal_wear_price": None,
+        "catering_price": None,
 
         "pricing_label": None,
 
@@ -248,7 +248,7 @@ def parse_card(card):
 
         if numeric_match:
 
-            data["bridal_wear_price"] = (
+            data["catering_price"] = (
                 numeric_match.group(1)
                 .replace(",", "")
             )
@@ -374,6 +374,31 @@ if os.path.exists(OUTPUT_JSON_FILE):
 # =========================================================
 # SCRAPE SINGLE PAGE
 # =========================================================
+def auto_scroll(page):
+
+    previous_height = 0
+
+    while True:
+
+        current_height = page.evaluate(
+            "document.body.scrollHeight"
+        )
+
+        page.evaluate(
+            "window.scrollTo(0, document.body.scrollHeight)"
+        )
+
+        page.wait_for_timeout(2500)
+
+        new_height = page.evaluate(
+            "document.body.scrollHeight"
+        )
+
+        if new_height == current_height:
+            break
+
+        previous_height = current_height
+
 
 def scrape_page(context, page_number):
 
@@ -394,13 +419,9 @@ def scrape_page(context, page_number):
             wait_until="domcontentloaded"
         )
 
-        # Wait for cards
-        page.wait_for_timeout(5000)
-
-        # Scroll to trigger lazy loading
-        page.mouse.wheel(0, 5000)
-
-        time.sleep(2)
+        page.wait_for_timeout(3000)
+        auto_scroll(page)
+        page.wait_for_timeout(10000)
 
         html = page.content()
 

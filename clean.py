@@ -2,8 +2,8 @@ import json
 import re
 
 # Input and output file paths
-input_file = "wedding_venues_delhi_ncr_1.json"
-output_file = "wedding_venues_delhi_ncr_2.json"
+input_file = "final_data_raw/wedding-venues/uttar_pradesh/wedding_venues_uttar-pradesh_cards.json"
+output_file = "final_data_raw/wedding-venues/uttar_pradesh/wedding_venues_uttar-pradesh_cards.json"
 
 # Load JSON data
 with open(input_file, "r", encoding="utf-8") as f:

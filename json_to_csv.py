@@ -78,21 +78,6 @@ def safe_get(obj, *keys, default=None):
 
     return obj if obj is not None else default
 
-
-def extract_year(text):
-
-    if not text:
-        return ""
-
-    match = re.search(
-        r"since\s+(\d{4})",
-        text,
-        re.IGNORECASE
-    )
-
-    return match.group(1) if match else ""
-
-
 def build_google_map(lat, lng):
 
     if not lat or not lng:
@@ -100,6 +85,141 @@ def build_google_map(lat, lng):
 
     return f"https://www.google.com/maps?q={lat},{lng}"
 
+def normalize(text):
+
+    if not text:
+        return ""
+
+    return re.sub(
+        r"[^a-z0-9 ]",
+        "",
+        str(text).lower()
+    ).strip()
+
+def clean_price(value):
+
+    if not value:
+        return ""
+
+    value = str(value)
+
+    match = re.search(
+        r"[\d,]+",
+        value
+    )
+
+    if not match:
+        return ""
+
+    return match.group(0).replace(",", "")
+    
+
+def extract_price_fields(vp, faq_map):
+
+    result = {
+        "per_room_price": "",
+        "venue_rental_price": "",
+        "starting_decor_price": "",
+        "veg_price": "",
+        "nonveg_price": "",
+        "destination_price": "",
+    }
+
+    # ----------------------------------
+    # pricing[]
+    # ----------------------------------
+
+    for item in vp.get("pricing", []):
+
+        question = normalize(
+            item.get("question", "")
+        )
+
+        price = clean_price(item.get("price", ""))
+
+        if "rental" in question:
+
+            result["venue_rental_price"] = price
+
+        elif "veg" in question:
+
+            result["veg_price"] = price
+
+        elif ("nonveg" in question or "non veg" in question):
+            result["nonveg_price"] = price
+
+    # ----------------------------------
+    # price_faq[]
+    # ----------------------------------
+
+    for item in vp.get("price_faq", []):
+
+        question = normalize(
+            item.get("question", "")
+        )
+
+        answer = clean_price(item.get("answer", ""))
+
+        if "decor" in question:
+
+            result["starting_decor_price"] = answer
+
+        elif any(
+            keyword in question
+            for keyword in [
+                "room price",
+                "room tariff",
+                "room rent",
+                "room cost",
+                "per room"
+            ]
+        ):
+
+            result["per_room_price"] = answer
+
+        elif "destination" in question:
+
+            result["destination_price"] = answer
+
+    # ----------------------------------
+    # fallback veg/nonveg from faq
+    # ----------------------------------
+
+    if not result["veg_price"]:
+        result["veg_price"] = clean_price(faq_map.get("veg price",""))
+
+    if not result["nonveg_price"]:result["nonveg_price"] = clean_price(faq_map.get("non veg price",""))
+    return result
+
+
+def extract_venue_start_year(profile, faq_map):
+
+    start_text = faq_map.get(
+        "start of venue",
+        ""
+    )
+
+    match = re.search(
+        r"(\d{4})",
+        str(start_text)
+    )
+
+    if match:
+
+        return match.group(1)
+
+    information = profile.get(
+        "information",
+        ""
+    )
+
+    match = re.search(r"(?:since|started in|established in)\s+(\d{4})",information,re.IGNORECASE)
+
+    if match:
+
+        return match.group(1)
+
+    return ""
 
 def clean_rooms(room_text):
 
@@ -114,8 +234,6 @@ def clean_rooms(room_text):
 # =========================================================
 # PHONE HELPERS
 # =========================================================
-
-used_phone_numbers = set()
 
 
 def extract_valid_phones(phone_data):
@@ -177,30 +295,6 @@ def extract_valid_phones(phone_data):
             unique_candidates.append(phone)
 
     return unique_candidates
-
-
-def select_best_phone(phone_list):
-
-    """
-    Rules:
-    1. Prefer unused phone
-    2. If all duplicated -> use first valid
-    """
-
-    if not phone_list:
-        return ""
-
-    # prefer unique phone
-    for phone in phone_list:
-
-        if phone not in used_phone_numbers:
-
-            used_phone_numbers.add(phone)
-
-            return phone
-
-    # fallback duplicate
-    return phone_list[0]
 
 
 # =========================================================
@@ -281,6 +375,7 @@ headers = [
     "veg_price_per_plate",
     "nonveg_price_per_plate",
     "destination_price",
+    "venue_rental_price",
     "destination_details",
     "small_party_venue",
     "space_available",
@@ -382,24 +477,37 @@ for vendor in detail_vendors:
 
     for item in faq:
 
-        question = item.get(
-            "question",
-            ""
-        ).lower()
+        question = normalize(item.get("question",""))
 
         faq_map[question] = item.get(
             "answer",
             ""
         )
+    price_fields = extract_price_fields(
+    vp,
+    faq_map
+)
 
     # -----------------------------------------------------
     # PROPERTY TYPE
     # -----------------------------------------------------
-
     property_type = listing_vendor.get(
-        "venue_type",
-        ""
+    "venue_type",
+    []
     )
+
+    if isinstance(
+        property_type,
+        list
+    ):
+
+        property_type = ", ".join(
+            property_type
+        )
+
+    elif property_type is None:
+
+        property_type = ""
 
     if not property_type:
 
@@ -408,11 +516,15 @@ for vendor in detail_vendors:
             []
         )
 
-        if isinstance(venue_types, list):
+        if isinstance(
+            venue_types,
+            list
+        ):
 
             property_type = ", ".join(
                 venue_types
             )
+        
 
     # -----------------------------------------------------
     # SMALL PARTY VENUE
@@ -436,10 +548,7 @@ for vendor in detail_vendors:
         phones
     )
 
-    contact_info = select_best_phone(
-        valid_phones
-    )
-
+    contact_info = ( valid_phones[0] if valid_phones else "")
     # -----------------------------------------------------
     # FALLBACK VALUES
     # -----------------------------------------------------
@@ -470,45 +579,75 @@ for vendor in detail_vendors:
 
     veg_price = (
 
-        vp.get("veg_price")
+    price_fields["veg_price"]
 
-        or safe_get(
-            listing_vendor,
-            "pricing",
-            "veg_per_plate",
-            default=""
-        )
+    or vp.get("veg_price")
+
+    or safe_get(
+        listing_vendor,
+        "pricing",
+        "veg_per_plate",
+        default=""
     )
+)
 
     nonveg_price = (
 
-        vp.get("nonveg_price")
+    price_fields["nonveg_price"]
 
-        or safe_get(
-            listing_vendor,
-            "pricing",
-            "non_veg_per_plate",
+    or vp.get("nonveg_price")
+
+    or safe_get(
+        listing_vendor,
+        "pricing",
+        "non_veg_per_plate",
+        default=""
+    )
+)
+
+    no_of_rooms = (
+
+    clean_rooms(
+        safe_get(
+            profile,
+            "vendor_highlights",
+            "room_count",
             default=""
         )
     )
 
-    no_of_rooms = (
-
-        faq_map.get("room count")
-
-        or clean_rooms(
-            listing_vendor.get("rooms", "")
+    or clean_rooms(
+        faq_map.get(
+            "how many rooms are available in your accomodation?",
+            ""
         )
     )
+
+    or clean_rooms(
+        listing_vendor.get(
+            "rooms",
+            ""
+        )
+    )
+)
 
     # -----------------------------------------------------
     # POLICIES
     # -----------------------------------------------------
 
-    parking_policy = faq_map.get(
-        "parking",
-        ""
-    )
+    parking_policy = faq_map.get("parking","")
+
+    if not parking_policy:
+
+        info = profile.get(
+            "information",
+            ""
+        ).lower()
+
+        if "parking" in info:
+            parking_policy = (
+                "There is sufficient parking available"
+            )
 
     catering_policy = faq_map.get(
         "catering policy",
@@ -533,6 +672,17 @@ for vendor in detail_vendors:
     # -----------------------------------------------------
     # ROW
     # -----------------------------------------------------
+    veg_price_clean = str(veg_price).replace(",", "").strip()
+    rental_price_clean = str(
+        price_fields["venue_rental_price"]
+    ).replace(",", "").strip()
+
+    if (
+        veg_price_clean
+        and rental_price_clean
+        and veg_price_clean == rental_price_clean
+    ):
+        veg_price = ""
 
     row = {
 
@@ -555,12 +705,11 @@ for vendor in detail_vendors:
 
         "property_type": property_type,
 
-        "venue_start_year": extract_year(
-            profile.get(
-                "information",
-                ""
-            )
-        ),
+        "venue_start_year":
+    extract_venue_start_year(
+        profile,
+        faq_map
+    ),
 
         "vendor_address": address.get(
             "display_address",
@@ -578,34 +727,18 @@ for vendor in detail_vendors:
             no_of_rooms
         ).replace("Rooms", "").strip(),
 
-        "per_room_price": safe_get(
-            vp,
-            "price_faq",
-            0,
-            "answer",
-            default=""
-        ),
+        "per_room_price": price_fields["per_room_price"],
 
-        "starting_decor_price": safe_get(
-            vp,
-            "price_faq",
-            1,
-            "answer",
-            default=""
-        ),
+        "starting_decor_price": price_fields["starting_decor_price"],
 
         "veg_price_per_plate": veg_price,
 
         "nonveg_price_per_plate": nonveg_price,
+        "venue_rental_price": price_fields["venue_rental_price"],
+        
+        "destination_price": price_fields["destination_price"] or vp.get("destination_price",""),
 
-        "destination_price": vp.get(
-            "destination_price",
-            ""
-        ),
-
-        "destination_details":
-            f"{vp.get('destination_price_incl_text', '')} "
-            f"{vp.get('destination_price_unit', '')}",
+        "destination_details": " ".join(filter(None,[vp.get("destination_price_incl_text",""),vp.get("destination_price_unit","")])),
 
         "small_party_venue": small_party,
 
@@ -628,7 +761,17 @@ for vendor in detail_vendors:
     # -----------------------------------------------------
     # EVENT SPACES
     # -----------------------------------------------------
-
+    banquet = sorted(
+    banquet,
+    key=lambda x: (
+        x.get(
+            "floating_capacity",
+            0
+        ) or 0
+    ),
+    reverse=True
+    )
+    
     for idx, space in enumerate(
         banquet,
         start=1

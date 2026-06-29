@@ -38,6 +38,18 @@ import os
 # =========================================================
 # HELPERS
 # =========================================================
+def auto_scroll(page):
+    while True:
+        old_height = page.evaluate("document.body.scrollHeight")
+        page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+        page.wait_for_timeout(2500)
+        new_height = page.evaluate("document.body.scrollHeight")
+        if old_height == new_height:
+            break
+    page.evaluate("window.scrollTo(0, 0)")
+    page.wait_for_timeout(1000)
+
+
 
 def clean_text(text):
 

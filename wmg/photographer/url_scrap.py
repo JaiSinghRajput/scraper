@@ -3,13 +3,13 @@
 # =========================================================
 
 BASE_LIST_URL = (
-    "https://www.wedmegood.com/vendors/all/wedding-photographers/"
+    "https://www.wedmegood.com/vendors/all/djs"
 )
 
-START_PAGE = 102
-END_PAGE = 1536
+START_PAGE = 1
+END_PAGE = 100
 
-OUTPUT_JSON_FILE = "photographers_all.json"
+OUTPUT_JSON_FILE = "weddingDJ_all.json"
 
 REQUEST_DELAY = 5
 

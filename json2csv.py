@@ -197,47 +197,51 @@ def main():
         # --------------------
         # Match profile.city
         # --------------------
-
         city_name = normalize_name(
-        profile.get("city", ""),
-        CITY_ALIASES,
-    )
+            profile.get("city", ""),
+            CITY_ALIASES,
+        )
 
-    if city_name:
-        city_obj = city_map.get(city_name)
+        if city_name:
+            city_obj = city_map.get(city_name)
 
         # --------------------
         # Fallback to address
         # --------------------
-
         if not city_obj:
-
             address = ""
 
-            addresses = profile.get(
-                "addresses",
-                [],
-            )
+            addresses = profile.get("addresses", [])
 
             if addresses:
+                address = addresses[0].get(
+                    "display_address",
+                    "",
+                ).lower()
 
-                address = (
-                    addresses[0]
-                    .get(
-                        "display_address",
-                        "",
-                    )
-                    .lower()
-                )
-
-            for (
-                lookup_city,
-                lookup_obj,
-            ) in city_map.items():
-
+            for lookup_city, lookup_obj in city_map.items():
                 if lookup_city in address:
                     city_obj = lookup_obj
                     break
+
+        # --------------------
+        # Fill IDs if found
+        # --------------------
+        if city_obj:
+            flattened["vendor_city"] = city_obj["id"]
+
+            state_obj = state_map.get(
+                normalize_name(
+                    city_obj["state_name"],
+                    STATE_ALIASES,
+                )
+            )
+
+            if state_obj:
+                flattened["vendor_state"] = state_obj["id"]
+
+        # Always append the record
+        rows.append(flattened)
 
         # --------------------
         # Fill IDs
@@ -263,7 +267,7 @@ def main():
                     "vendor_state"
                 ] = state_obj["id"]
 
-        rows.append(flattened)
+    rows.append(flattened)
 
     df = pd.DataFrame(rows)
 

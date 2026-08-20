@@ -3,13 +3,13 @@
 # =========================================================
 
 BASE_LIST_URL = (
-    "https://www.wedmegood.com/vendors/telangana/wedding-venues/"
+    "https://www.wedmegood.com/vendors/pondicherry/wedding-venues"
 )
 
-START_PAGE = 82
-END_PAGE = 103
+START_PAGE = 1
+END_PAGE = 3
 
-OUTPUT_JSON_FILE = "wedding_venues_telangana_cards.json"
+OUTPUT_JSON_FILE = "wedding_venues_pondicherry_cards.json"
 # TOR_PROXY = "socks5://127.0.0.1:9050"
 
 REQUEST_DELAY = 5

@@ -3,13 +3,13 @@
 # =========================================================
 
 BASE_LIST_URL = (
-    "https://www.wedmegood.com/vendors/all/djs"
+    "https://www.wedmegood.com/vendors/all/wedding-jewellery"
 )
 
 START_PAGE = 1
-END_PAGE = 100
+END_PAGE = 129
 
-OUTPUT_JSON_FILE = "weddingDJ_all.json"
+OUTPUT_JSON_FILE = "wedding-jewellery_all.json"
 
 REQUEST_DELAY = 5
 

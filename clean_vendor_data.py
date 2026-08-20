@@ -56,6 +56,24 @@ import os
 # ── Regexes ──────────────────────────────────────────────────────────────────
 URL_RE       = re.compile(r'https?://\S+')
 YOUTUBE_RE   = re.compile(r'https?://(www\.)?(youtube\.com|youtu\.be)\S*', re.I)
+
+# Bare-domain URL without a scheme, e.g. "events.com/services", "site.in/page".
+# Requires: word.tld/path  — the trailing "/something" is what makes this a
+# real link rather than a brand name like "L.A.Girl" or a sentence-ending
+# abbreviation like "etc.But". A lookbehind blocks matches that are already
+# part of a scheme (http://, https://) so we never double-flag real URLs.
+BARE_URL_RE = re.compile(
+    r'(?<![\w/:.])[a-zA-Z0-9][a-zA-Z0-9\-]*\.(?:com|in|net|org|co|io|info|biz|me|us|gov|edu)'
+    r'/[^\s,"\'\\]+',
+    re.I
+)
+
+def contains_bare_url(text: str) -> bool:
+    """True if text contains a schemeless URL like 'events.com/services'."""
+    if not isinstance(text, str):
+        return False
+    return bool(BARE_URL_RE.search(text))
+
 # Year with optional internal comma: 2,014 or 2014
 HAS_ALNUM_RE = re.compile(r'[a-zA-Z0-9]')
 # Stray non-printable / unusual Unicode that aren't standard punctuation or
@@ -95,6 +113,18 @@ def is_wanted_char(c: str) -> bool:
 def clean_text_symbols(text: str) -> str:
     """Remove stray symbol/emoji characters from a string."""
     return ''.join(c for c in text if is_wanted_char(c)).strip()
+
+
+def strip_gt_symbols(text: str) -> str:
+    """
+    Remove stray '>' characters used as separators in malformed answers,
+    e.g. "data1>data2>data3" → "data1 data2 data3".
+    Collapses any resulting double spaces.
+    """
+    if not isinstance(text, str):
+        return text
+    cleaned = text.replace('>', ' ')
+    return re.sub(r'  +', ' ', cleaned).strip()
 
 
 # ── Price helpers ─────────────────────────────────────────────────────────────
@@ -345,37 +375,60 @@ def clean_record(record: dict) -> dict:
 
     # ── 2. Extract since_working_year from FAQ ───────────────────────────────
     #
-    #  Two FAQ questions can carry this information:
-    #    a) "Practicing Makeup Since"  → direct calendar year  (e.g. "2014")
-    #    b) "Experience"               → duration string       (e.g. "9+ years")
-    #                                    converted via CURRENT_YEAR - N
+    #  SINCE_YEAR_FAQ_QUESTIONS maps FAQ question strings → extraction strategy:
+    #    "exact"      → answer contains a literal calendar year (e.g. "2014")
+    #    "experience" → answer is a duration (e.g. "9+ years"), converted via
+    #                   CURRENT_YEAR - N
     #
-    #  Priority: if both are present, "Practicing Makeup Since" wins because
-    #  it is an exact year; Experience is only a fallback.
+    #  To add a new question variant, just add a line to the dict.
+    #  Priority order (highest first): exact > experience.
+    #  All matched entries are REMOVED from the faq array.
     # ────────────────────────────────────────────────────────────────────────
+    SINCE_YEAR_FAQ_QUESTIONS = {
+        # question (case-insensitive strip match) : extraction strategy
+        'practicing makeup since' : 'exact',
+        'year of operations'      : 'exact',
+        'experience'              : 'experience',
+    }
+
     faq_list = vp.get('faq', [])
-    since_year_exact      = None   # from "Practicing Makeup Since"
-    since_year_experience = None   # from "Experience"
+    since_year_exact      = None
+    since_year_experience = None
     cleaned_faq = []
 
     for entry in faq_list:
         q = entry.get('question', '') or ''
         a = entry.get('answer',   '') or ''
 
-        # ── a) Practicing Makeup Since ──
-        if q == 'Practicing Makeup Since':
-            since_year_exact = extract_year_from_since(a)
+        strategy = SINCE_YEAR_FAQ_QUESTIONS.get(q.strip().lower())
+        if strategy == 'exact':
+            since_year_exact = since_year_exact or extract_year_from_since(a)
             continue  # remove from faq array
-
-        # ── b) Experience ──
-        if q.strip().lower() == 'experience':
-            since_year_experience = extract_year_from_experience(a)
+        if strategy == 'experience':
+            since_year_experience = since_year_experience or extract_year_from_experience(a)
             continue  # remove from faq array
 
         # Fix corrupt "Advance Amount" percentages (e.g. "5,0%" → "50%")
         if q == 'Advance Amount' and isinstance(a, str):
             a = clean_advance_faq(a)
             entry['answer'] = a  # may be None if unrecoverable
+
+        # Drop this entire Q/A pair if the answer contains a bare (schemeless)
+        # URL like "events.com/services" — not valid display text
+        # and not a real clickable link either.
+        if (isinstance(a, str) and contains_bare_url(a)) or \
+           (isinstance(q, str) and contains_bare_url(q)):
+            continue  # skip — do not add to cleaned_faq
+
+        # Drop Q/A where answer is nil/NIL/Nil only (no real value)
+        if isinstance(a, str) and re.match(r'^\s*nil\s*$', a, re.I):
+            continue
+
+        # Strip stray '>' separator symbols, e.g. "data1>data2" → "data1 data2"
+        if isinstance(a, str):
+            a = strip_gt_symbols(a)
+        if isinstance(q, str):
+            q = strip_gt_symbols(q)
 
         # Clean answer: strip non-YouTube URLs
         if isinstance(a, str):
@@ -447,6 +500,11 @@ def clean_record(record: dict) -> dict:
     cleaned_policy = []
     for pol in policy:
         dv = pol.get('displayValue', '')
+        # Drop entries with bare (schemeless) URLs, e.g. "events.com/services"
+        if isinstance(dv, str) and contains_bare_url(dv):
+            continue
+        if isinstance(dv, str):
+            dv = strip_gt_symbols(dv)
         # Fix "5000 % Advance" → "50% Advance", drop unrealistic weeks
         dv = clean_policy_displayvalue(dv)
         pol['displayValue'] = nullify_junk(dv) if isinstance(dv, str) else dv

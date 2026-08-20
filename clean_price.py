@@ -40,7 +40,7 @@ def format_pricing(vendors):
 
 if __name__ == "__main__":
     # Read list of vendor objects
-    with open("step_1_planners_cleaned.json", "r", encoding="utf-8") as f:
+    with open("step_1_c.json", "r", encoding="utf-8") as f:
         vendors = json.load(f)
 
     # Format pricing

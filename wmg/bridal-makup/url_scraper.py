@@ -3,13 +3,13 @@
 # =========================================================
 
 BASE_LIST_URL = (
-    "https://www.wedmegood.com/vendors/delhi-ncr/bridal-makeup/"
+    "https://www.wedmegood.com/vendors/madhya-pradesh/bridal-makeup"
 )
 
 START_PAGE = 1
-END_PAGE = 293
+END_PAGE = 84
 
-OUTPUT_JSON_FILE = "bridal_makeup_vendors_delhi-ncr.json"
+OUTPUT_JSON_FILE = "bridal_makeup_vendors_madhya_pradesh.json"
 
 REQUEST_DELAY = 5
 
@@ -332,12 +332,7 @@ def scrape_page(context, page_number):
         page.goto(
             url,
             timeout=120000,
-            wait_until="networkidle"
-        )
-
-        # Random delay
-        time.sleep(
-            random.uniform(3, 6)
+            wait_until="domcontentloaded"
         )
         
         auto_scroll(page)
@@ -501,7 +496,7 @@ with sync_playwright() as p:
                 "fresh Firefox profile..."
             )
 
-            time.sleep(10)
+            time.sleep(5)
 
             continue
 

@@ -4,10 +4,10 @@ import re
 from rapidfuzz import process, fuzz
 
 # Files
-INPUT_CSV = "punjab.csv"
-CITY_JSON = "punjab.json"
-OUTPUT_CSV = "output_punjab.csv"
-UNMATCHED_CSV = "unmatched_cities_punjab.csv"
+INPUT_CSV = "pondicherry.csv"
+CITY_JSON = "pondicherry.json"
+OUTPUT_CSV = "output_pondicherry.csv"
+UNMATCHED_CSV = "unmatched_cities_pondicherry.csv"
 
 FUZZY_THRESHOLD = 85
 

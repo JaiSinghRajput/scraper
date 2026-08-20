@@ -1,0 +1,220 @@
+[
+    {
+      "id": 200,
+      "state": "Andaman and Nicobar Islands",
+      "slug": "andaman-and-nicobar-islands",
+      "image": "https://assets.dreamweddinghub.com/image/state/andaman-and-nicobar-islands.webp"
+    },
+    {
+      "id": 201,
+      "state": "Dadra and Nagar Haveli and Daman and Diu",
+      "slug": "dadra-and-nagar-haveli",
+      "image": "https://assets.dreamweddinghub.com/image/state/dadra-and-nagar-haveli.webp"
+    },
+    {
+      "id": 202,
+      "state": "Lakshadweep",
+      "slug": "lakshadweep",
+      "image": "https://assets.dreamweddinghub.com/image/state/lakshadweep.webp"
+    },
+    {
+      "id": 203,
+      "state": "Ladakh",
+      "slug": "ladakh",
+      "image": "https://assets.dreamweddinghub.com/image/state/ladakh.webp"
+    },
+    {
+      "id": 204,
+      "state": "Chandigarh",
+      "slug": "chandigarh",
+      "image": "https://assets.dreamweddinghub.com/image/state/chandigarh.webp"
+    },
+    {
+      "id": 83,
+      "state": "Rajasthan",
+      "slug": "rajasthan",
+      "image": "https://assets.dreamweddinghub.com/image/state/rajasthan.webp"
+    },
+    {
+      "id": 87,
+      "state": "Madhya Pradesh",
+      "slug": "madhya-pradesh",
+      "image": "https://assets.dreamweddinghub.com/image/state/madhya-pradesh.webp"
+    },
+    {
+      "id": 89,
+      "state": "Bihar",
+      "slug": "bihar",
+      "image": "https://assets.dreamweddinghub.com/image/state/bihar.webp"
+    },
+    {
+      "id": 91,
+      "state": "Chhattisgarh",
+      "slug": "chhattisgarh",
+      "image": "https://assets.dreamweddinghub.com/image/state/chhattisgarh.webp"
+    },
+    {
+      "id": 93,
+      "state": "Maharashtra",
+      "slug": "maharashtra",
+      "image": "https://assets.dreamweddinghub.com/image/state/maharashtra.webp"
+    },
+    {
+      "id": 95,
+      "state": "Uttar Pradesh",
+      "slug": "uttar-pradesh",
+      "image": "https://assets.dreamweddinghub.com/image/state/uttar-pradesh.webp"
+    },
+    {
+      "id": 97,
+      "state": "Andhra Pradesh",
+      "slug": "andhra-pradesh",
+      "image": "https://assets.dreamweddinghub.com/image/state/andhra-pradesh.webp"
+    },
+    {
+      "id": 99,
+      "state": "Himachal Pradesh",
+      "slug": "himachal-pradesh",
+      "image": "https://assets.dreamweddinghub.com/image/state/himachal-pradesh.webp"
+    },
+    {
+      "id": 101,
+      "state": "Arunachal Pradesh",
+      "slug": "arunachal-pradesh",
+      "image": "https://assets.dreamweddinghub.com/image/state/arunachal-pradesh.webp"
+    },
+    {
+      "id": 102,
+      "state": "Assam",
+      "slug": "assam",
+      "image": "https://assets.dreamweddinghub.com/image/state/assam.webp"
+    },
+    {
+      "id": 103,
+      "state": "Goa  ",
+      "slug": "goa",
+      "image": "https://assets.dreamweddinghub.com/image/state/goa.webp"
+    },
+    {
+      "id": 104,
+      "state": "Gujarat",
+      "slug": "gujarat",
+      "image": "https://assets.dreamweddinghub.com/image/state/gujarat.webp"
+    },
+    {
+      "id": 105,
+      "state": "Haryana",
+      "slug": "haryana",
+      "image": "https://assets.dreamweddinghub.com/image/state/haryana.webp"
+    },
+    {
+      "id": 106,
+      "state": "Jammu and Kashmir",
+      "slug": "jammu-and-kashmir",
+      "image": "https://assets.dreamweddinghub.com/image/state/jammu-and-kashmir.webp"
+    },
+    {
+      "id": 107,
+      "state": "Jharkhand",
+      "slug": "jharkhand",
+      "image": "https://assets.dreamweddinghub.com/image/state/jharkhand.webp"
+    },
+    {
+      "id": 108,
+      "state": "Karnataka",
+      "slug": "karnataka",
+      "image": "https://assets.dreamweddinghub.com/image/state/karnataka.webp"
+    },
+    {
+      "id": 109,
+      "state": "Kerala",
+      "slug": "kerala",
+      "image": "https://assets.dreamweddinghub.com/image/state/kerala.webp"
+    },
+    {
+      "id": 111,
+      "state": "Meghalaya",
+      "slug": "meghalaya",
+      "image": "https://assets.dreamweddinghub.com/image/state/meghalaya.webp"
+    },
+    {
+      "id": 112,
+      "state": "Mizoram",
+      "slug": "mizoram",
+      "image": "https://assets.dreamweddinghub.com/image/state/mizoram.webp"
+    },
+    {
+      "id": 113,
+      "state": "Nagaland",
+      "slug": "nagaland",
+      "image": "https://assets.dreamweddinghub.com/image/state/nagaland.webp"
+    },
+    {
+      "id": 114,
+      "state": "Delhi-NCR",
+      "slug": "delhi-ncr",
+      "image": "https://assets.dreamweddinghub.com/image/state/delhi-ncr.webp"
+    },
+    {
+      "id": 115,
+      "state": "Odisha",
+      "slug": "odisha",
+      "image": "https://assets.dreamweddinghub.com/image/state/odisha.webp"
+    },
+    {
+      "id": 116,
+      "state": "Pondicherry",
+      "slug": "pondicherry",
+      "image": "https://assets.dreamweddinghub.com/image/state/pondicherry.webp"
+    },
+    {
+      "id": 117,
+      "state": "Punjab",
+      "slug": "punjab",
+      "image": "https://assets.dreamweddinghub.com/image/state/punjab.webp"
+    },
+    {
+      "id": 118,
+      "state": "Sikkim",
+      "slug": "sikkim",
+      "image": "https://assets.dreamweddinghub.com/image/state/sikkim.webp"
+    },
+    {
+      "id": 119,
+      "state": "Tamil Nadu",
+      "slug": "tamil-nadu",
+      "image": "https://assets.dreamweddinghub.com/image/state/tamil-nadu.webp"
+    },
+    {
+      "id": 120,
+      "state": "Telangana",
+      "slug": "telangana",
+      "image": "https://assets.dreamweddinghub.com/image/state/telangana.webp"
+    },
+    {
+      "id": 121,
+      "state": "Tripura",
+      "slug": "tripura",
+      "image": "https://assets.dreamweddinghub.com/image/state/tripura.webp"
+    },
+    {
+      "id": 122,
+      "state": "Uttarakhand",
+      "slug": "uttarakhand",
+      "image": "https://assets.dreamweddinghub.com/image/state/uttarakhand.webp"
+    },
+    {
+      "id": 123,
+      "state": "West Bengal",
+      "slug": "west-bengal",
+      "image": "https://assets.dreamweddinghub.com/image/state/west-bengal.webp"
+    },
+    {
+      "id": 205,
+      "state": "Manipur",
+      "slug": "manipur",
+      "image": "https://assets.dreamweddinghub.com/image/state/manipur.webp"
+    }
+  ]
+
+                                                                                                                                                                                

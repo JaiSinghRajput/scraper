@@ -1,0 +1,4898 @@
+[
+    {
+      "id": 3157,
+      "name": "Aalo",
+      "slug": "aalo",
+      "image": "",
+      "state_name": "Arunachal Pradesh",
+      "state_slug": "arunachal-pradesh"
+    },
+    {
+      "id": 3106,
+      "name": "Adilabad",
+      "slug": "adilabad",
+      "image": "",
+      "state_name": "Telangana",
+      "state_slug": "telangana"
+    },
+    {
+      "id": 3295,
+      "name": "Adoni",
+      "slug": "adoni",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 2088,
+      "name": "Agartala",
+      "slug": "agartala",
+      "image": "",
+      "state_name": "Tripura",
+      "state_slug": "tripura"
+    },
+    {
+      "id": 3009,
+      "name": "Agatti",
+      "slug": "agatti",
+      "image": "",
+      "state_name": "Lakshadweep",
+      "state_slug": "lakshadweep"
+    },
+    {
+      "id": 2129,
+      "name": "Agra",
+      "slug": "agra",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1711525285-licensed-image.jpeg",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3208,
+      "name": "Ahmadnagar",
+      "slug": "ahmadnagar",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 206,
+      "name": "Ahmedabad",
+      "slug": "ahmedabad",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 2077,
+      "name": "Aizawl",
+      "slug": "aizawl",
+      "image": "",
+      "state_name": "Mizoram",
+      "state_slug": "mizoram"
+    },
+    {
+      "id": 2017,
+      "name": "Ajmer",
+      "slug": "ajmer",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1722428375-Ajmer.jpg",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3206,
+      "name": "Akola",
+      "slug": "akola",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3037,
+      "name": "Alappuzha (Alleppey)",
+      "slug": "alappuzha-alleppey",
+      "image": "",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 3251,
+      "name": "Alibag",
+      "slug": "alibag",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3183,
+      "name": "Aligarh",
+      "slug": "aligarh",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3128,
+      "name": "Almora",
+      "slug": "almora",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 85,
+      "name": "Alwar",
+      "slug": "alwar",
+      "image": "https://assets.dreamweddinghub.com/image/city/alwar.webp",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 98,
+      "name": "Amaravati",
+      "slug": "amaravati",
+      "image": "https://assets.dreamweddinghub.com/image/1697086292-AMARAVATI.avif",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 224,
+      "name": "Ambala",
+      "slug": "ambala",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 3211,
+      "name": "Ambernath",
+      "slug": "ambernath",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 3338,
+      "name": "Ambikapur",
+      "slug": "ambikapur-928",
+      "image": "https://assets.dreamweddinghub.com/image/city/ambikapur-928.webp",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 3014,
+      "name": "Amini",
+      "slug": "amini",
+      "image": "",
+      "state_name": "Lakshadweep",
+      "state_slug": "lakshadweep"
+    },
+    {
+      "id": 3202,
+      "name": "Amravati",
+      "slug": "amravati",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 187,
+      "name": "Amritsar",
+      "slug": "amritsar",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 3288,
+      "name": "Amroha",
+      "slug": "amroha",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 216,
+      "name": "Anand",
+      "slug": "anand",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 138,
+      "name": "Anantapur",
+      "slug": "anantapur",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3315,
+      "name": "Anantapuram",
+      "slug": "anantapuram-275",
+      "image": "https://assets.dreamweddinghub.com/image/city/anantapuram-275.webp",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3143,
+      "name": "Anantnag",
+      "slug": "anantnag",
+      "image": "",
+      "state_name": "Jammu and Kashmir",
+      "state_slug": "jammu-and-kashmir"
+    },
+    {
+      "id": 3004,
+      "name": "Andaman and Nicobar",
+      "slug": "andaman-and-nicobar",
+      "image": "",
+      "state_name": "Andaman and Nicobar Islands",
+      "state_slug": "andaman-and-nicobar-islands"
+    },
+    {
+      "id": 2095,
+      "name": "Anjuna",
+      "slug": "anjuna",
+      "image": "",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 3345,
+      "name": "Arambol",
+      "slug": "arambol-103",
+      "image": "https://assets.dreamweddinghub.com/image/city/arambol-103.webp",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 161,
+      "name": "Araria",
+      "slug": "araria",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3259,
+      "name": "Arrah",
+      "slug": "arrah",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3215,
+      "name": "Asansol",
+      "slug": "asansol",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 3042,
+      "name": "Aurangabad",
+      "slug": "aurangabad",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 166,
+      "name": "Aurangabad - Bihar",
+      "slug": "aurangabad-bihar",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3280,
+      "name": "Avadi",
+      "slug": "avadi",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 283,
+      "name": "Bagalkot",
+      "slug": "bagalkot",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3129,
+      "name": "Bageshwar",
+      "slug": "bageshwar",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 3291,
+      "name": "Bahraich",
+      "slug": "bahraich",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3328,
+      "name": "Baksa",
+      "slug": "baksa-955",
+      "image": "https://assets.dreamweddinghub.com/image/city/baksa-955.webp",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 3091,
+      "name": "Balasore",
+      "slug": "balasore",
+      "image": "",
+      "state_name": "Odisha",
+      "state_slug": "odisha"
+    },
+    {
+      "id": 2020,
+      "name": "Balotra",
+      "slug": "balotra",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 262,
+      "name": "Bangalore",
+      "slug": "bangalore",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1760356271-licensed-image.jpeg",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3010,
+      "name": "Bangaram",
+      "slug": "bangaram",
+      "image": "",
+      "state_name": "Lakshadweep",
+      "state_slug": "lakshadweep"
+    },
+    {
+      "id": 3333,
+      "name": "Banka",
+      "slug": "banka-424",
+      "image": "https://assets.dreamweddinghub.com/image/city/banka-424.webp",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 2018,
+      "name": "Banswara",
+      "slug": "banswara",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 2021,
+      "name": "Baran",
+      "slug": "baran",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 2093,
+      "name": "Bardez",
+      "slug": "bardez",
+      "image": "",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 3120,
+      "name": "Bareilly",
+      "slug": "bareilly",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 127,
+      "name": "Barmer",
+      "slug": "barmer",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3165,
+      "name": "Barpeta",
+      "slug": "barpeta",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1727244759-licensed-image.jpeg",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 197,
+      "name": "Bathinda",
+      "slug": "bathinda",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 2126,
+      "name": "Beawar",
+      "slug": "beawar",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1705998881-jpeg-optimizer_Untitled-design-68.jpg",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 162,
+      "name": "Begusarai",
+      "slug": "begusarai",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3178,
+      "name": "Behror",
+      "slug": "behror",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1750061172-Neemrana-Fort-Near-Behror.jpg",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3242,
+      "name": "Bekal",
+      "slug": "bekal",
+      "image": "",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 3033,
+      "name": "Belagavi (Belgaum)",
+      "slug": "belagavi-belgaum",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 264,
+      "name": "Bellary",
+      "slug": "bellary",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3240,
+      "name": "Benaulim",
+      "slug": "benaulim",
+      "image": "",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 3086,
+      "name": "Berhampur",
+      "slug": "berhampur",
+      "image": "",
+      "state_name": "Odisha",
+      "state_slug": "odisha"
+    },
+    {
+      "id": 3308,
+      "name": "Bettiah",
+      "slug": "bettiah",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 177,
+      "name": "Bhagalpur",
+      "slug": "bhagalpur",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 2022,
+      "name": "Bharatpur",
+      "slug": "bharatpur",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1760356423-licensed-image (1).jpeg",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3249,
+      "name": "bhatpara",
+      "slug": "bhatpara",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 207,
+      "name": "Bhavnagar",
+      "slug": "bhavnagar",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 2120,
+      "name": "Bhilai",
+      "slug": "bhilai",
+      "image": "",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 126,
+      "name": "Bhilwara",
+      "slug": "bhilwara",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3298,
+      "name": "Bhimavaram",
+      "slug": "bhimavaram",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3312,
+      "name": "Bhimtal",
+      "slug": "bhimtal",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1760522340-licensed-image_11zon (1).webp",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 3294,
+      "name": "Bhind",
+      "slug": "bhind",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 2023,
+      "name": "Bhiwadi",
+      "slug": "bhiwadi",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3201,
+      "name": "Bhiwandi",
+      "slug": "bhiwandi",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 232,
+      "name": "Bhiwani",
+      "slug": "bhiwani",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 172,
+      "name": "Bhojpur",
+      "slug": "bhojpur",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 88,
+      "name": "Bhopal",
+      "slug": "bhopal",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1696827251-Bhopal.jpg",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 2082,
+      "name": "Bhubaneshwar",
+      "slug": "bhubaneshwar",
+      "image": "",
+      "state_name": "Odisha",
+      "state_slug": "odisha"
+    },
+    {
+      "id": 3213,
+      "name": "Bhusawal",
+      "slug": "bhusawal",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3346,
+      "name": "Bicholim",
+      "slug": "bicholim-752",
+      "image": "https://assets.dreamweddinghub.com/image/city/bicholim-752.webp",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 3226,
+      "name": "Bidar",
+      "slug": "bidar",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3329,
+      "name": "Bihar Sharif",
+      "slug": "bihar-sharif-985",
+      "image": "https://assets.dreamweddinghub.com/image/city/bihar-sharif-985.webp",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 265,
+      "name": "Bijapur",
+      "slug": "bijapur",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 124,
+      "name": "Bikaner",
+      "slug": "bikaner",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1754307041-1754027412-bikaner_11zon.webp",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 201,
+      "name": "Bilaspur",
+      "slug": "bilaspur",
+      "image": "",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 248,
+      "name": "Bilaspur - Himachal Pradesh",
+      "slug": "bilaspur-himachal-pradesh",
+      "image": "",
+      "state_name": "Himachal Pradesh",
+      "state_slug": "himachal-pradesh"
+    },
+    {
+      "id": 3132,
+      "name": "Birbhum",
+      "slug": "birbhum",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 3049,
+      "name": "Bishnupur",
+      "slug": "bishnupur",
+      "image": "",
+      "state_name": "Manipur",
+      "state_slug": "manipur"
+    },
+    {
+      "id": 3018,
+      "name": "Bodh Gaya",
+      "slug": "bodh-gaya",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 255,
+      "name": "Bokaro",
+      "slug": "bokaro",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 3154,
+      "name": "Bomdila",
+      "slug": "bomdila",
+      "image": "",
+      "state_name": "Arunachal Pradesh",
+      "state_slug": "arunachal-pradesh"
+    },
+    {
+      "id": 2090,
+      "name": "Brindavanam",
+      "slug": "brindavanam",
+      "image": "",
+      "state_name": "Pondicherry",
+      "state_slug": "pondicherry"
+    },
+    {
+      "id": 3193,
+      "name": "Budaun",
+      "slug": "budaun",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3191,
+      "name": "Bulandshahr",
+      "slug": "bulandshahr",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 2024,
+      "name": "Bundi",
+      "slug": "bundi",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3237,
+      "name": "burhanpur",
+      "slug": "burhanpur",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 178,
+      "name": "Buxar",
+      "slug": "buxar",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 154,
+      "name": "Cachar",
+      "slug": "cachar",
+      "image": "",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 2097,
+      "name": "Calangute",
+      "slug": "calangute",
+      "image": "",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 3347,
+      "name": "Canacona",
+      "slug": "canacona-627",
+      "image": "https://assets.dreamweddinghub.com/image/city/canacona-627.webp",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 3241,
+      "name": "Candolim",
+      "slug": "candolim",
+      "image": "",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 2062,
+      "name": "Central Delhi",
+      "slug": "central-delhi",
+      "image": "",
+      "state_name": "Delhi-NCR",
+      "state_slug": "delhi-ncr"
+    },
+    {
+      "id": 267,
+      "name": "Chamarajanagar",
+      "slug": "chamarajanagar",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 242,
+      "name": "Chamba",
+      "slug": "chamba",
+      "image": "",
+      "state_name": "Himachal Pradesh",
+      "state_slug": "himachal-pradesh"
+    },
+    {
+      "id": 3127,
+      "name": "Chamoli",
+      "slug": "chamoli",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 3066,
+      "name": "Champhai",
+      "slug": "champhai",
+      "image": "",
+      "state_name": "Mizoram",
+      "state_slug": "mizoram"
+    },
+    {
+      "id": 3050,
+      "name": "Chandel",
+      "slug": "chandel",
+      "image": "",
+      "state_name": "Manipur",
+      "state_slug": "manipur"
+    },
+    {
+      "id": 3147,
+      "name": "Chandigarh",
+      "slug": "chandigarh",
+      "image": "",
+      "state_name": "Chandigarh",
+      "state_slug": "chandigarh"
+    },
+    {
+      "id": 3209,
+      "name": "Chandrapur",
+      "slug": "chandrapur",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3159,
+      "name": "Changlang",
+      "slug": "changlang",
+      "image": "",
+      "state_name": "Arunachal Pradesh",
+      "state_slug": "arunachal-pradesh"
+    },
+    {
+      "id": 3261,
+      "name": "Chapra",
+      "slug": "chapra",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3031,
+      "name": "Chatra",
+      "slug": "chatra",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 3217,
+      "name": "Chembur",
+      "slug": "chembur",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 2109,
+      "name": "Chennai",
+      "slug": "chennai",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 3016,
+      "name": "Chetlat",
+      "slug": "chetlat",
+      "image": "",
+      "state_name": "Lakshadweep",
+      "state_slug": "lakshadweep"
+    },
+    {
+      "id": 3174,
+      "name": "Chhatarpur",
+      "slug": "chhatarpur",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 276,
+      "name": "Chikkaballapura",
+      "slug": "chikkaballapura",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 282,
+      "name": "Chikkamagaluru",
+      "slug": "chikkamagaluru",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3032,
+      "name": "Chikmagalur",
+      "slug": "chikmagalur",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3318,
+      "name": "Chilakaluripet",
+      "slug": "chilakaluripet-678",
+      "image": "https://assets.dreamweddinghub.com/image/city/chilakaluripet-678.webp",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3325,
+      "name": "Chirang",
+      "slug": "chirang-720",
+      "image": "https://assets.dreamweddinghub.com/image/city/chirang-720.webp",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 3339,
+      "name": "Chirmiri",
+      "slug": "chirmiri-789",
+      "image": "https://assets.dreamweddinghub.com/image/city/chirmiri-789.webp",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 274,
+      "name": "Chitradurga",
+      "slug": "chitradurga",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 132,
+      "name": "Chittoor",
+      "slug": "chittoor",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 125,
+      "name": "Chittorgarh",
+      "slug": "Chittorgarh",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1753430248-Chittaurgarh.webp",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3319,
+      "name": "Chopelling",
+      "slug": "chopelling-869",
+      "image": "https://assets.dreamweddinghub.com/image/city/chopelling-869.webp",
+      "state_name": "Arunachal Pradesh",
+      "state_slug": "arunachal-pradesh"
+    },
+    {
+      "id": 2121,
+      "name": "Churachandpur",
+      "slug": "churachandpur",
+      "image": "",
+      "state_name": "Manipur",
+      "state_slug": "manipur"
+    },
+    {
+      "id": 2025,
+      "name": "Churu",
+      "slug": "churu",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 2108,
+      "name": "Coimbatore",
+      "slug": "coimbatore",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1760356531-unnamed (2).webp",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 3083,
+      "name": "Cuttack",
+      "slug": "cuttack",
+      "image": "",
+      "state_name": "Odisha",
+      "state_slug": "odisha"
+    },
+    {
+      "id": 217,
+      "name": "Dahod",
+      "slug": "dahod",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 275,
+      "name": "Dakshina Kannada",
+      "slug": "dakshina-kannada",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3005,
+      "name": "Daman",
+      "slug": "daman",
+      "image": "",
+      "state_name": "Dadra and Nagar Haveli and Daman and Diu",
+      "state_slug": "dadra-and-nagar-haveli"
+    },
+    {
+      "id": 3023,
+      "name": "Dantewada",
+      "slug": "dantewada",
+      "image": "",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 167,
+      "name": "Darbhanga",
+      "slug": "darbhanga",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 152,
+      "name": "Darjeeling",
+      "slug": "darjeeling",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 3327,
+      "name": "Darrang",
+      "slug": "darrang-546",
+      "image": "https://assets.dreamweddinghub.com/image/city/darrang-546.webp",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 2026,
+      "name": "Dausa",
+      "slug": "dausa",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 266,
+      "name": "Davanagere",
+      "slug": "davanagere",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 2075,
+      "name": "Dehradun",
+      "slug": "dehradun",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 2073,
+      "name": "Delhi",
+      "slug": "delhi",
+      "image": "",
+      "state_name": "Delhi-NCR",
+      "state_slug": "delhi-ncr"
+    },
+    {
+      "id": 252,
+      "name": "Deoghar",
+      "slug": "deoghar",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 221,
+      "name": "Devbhumi Dwarka",
+      "slug": "devbhumi-dwarka",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 3235,
+      "name": "Dewas",
+      "slug": "dewas",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 3110,
+      "name": "Dhalai",
+      "slug": "dhalai",
+      "image": "",
+      "state_name": "Tripura",
+      "state_slug": "tripura"
+    },
+    {
+      "id": 198,
+      "name": "Dhamtari",
+      "slug": "dhamtari",
+      "image": "",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 251,
+      "name": "Dhanbad",
+      "slug": "dhanbad",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 3171,
+      "name": "Dhar",
+      "slug": "dhar",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 3026,
+      "name": "Dharamshala",
+      "slug": "dharamshala",
+      "image": "",
+      "state_name": "Himachal Pradesh",
+      "state_slug": "himachal-pradesh"
+    },
+    {
+      "id": 3098,
+      "name": "Dharmapuri",
+      "slug": "dharmapuri",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 3301,
+      "name": "Dharmavaram",
+      "slug": "dharmavaram",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 272,
+      "name": "Dharwad",
+      "slug": "dharwad",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3089,
+      "name": "Dhenkanal",
+      "slug": "dhenkanal",
+      "image": "",
+      "state_name": "Odisha",
+      "state_slug": "odisha"
+    },
+    {
+      "id": 3320,
+      "name": "Dhuburi",
+      "slug": "dhuburi-439",
+      "image": "https://assets.dreamweddinghub.com/image/city/dhuburi-439.webp",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 3207,
+      "name": "Dhule",
+      "slug": "dhule",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 156,
+      "name": "Dibrugarh",
+      "slug": "dibrugarh",
+      "image": "",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 3326,
+      "name": "Dima Hasao",
+      "slug": "dima-hasao-229",
+      "image": "https://assets.dreamweddinghub.com/image/city/dima-hasao-229.webp",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 2080,
+      "name": "Dimapur",
+      "slug": "dimapur",
+      "image": "",
+      "state_name": "Nagaland",
+      "state_slug": "nagaland"
+    },
+    {
+      "id": 3283,
+      "name": "Dindigul",
+      "slug": "dindigul",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 3158,
+      "name": "Dirang",
+      "slug": "dirang",
+      "image": "",
+      "state_name": "Arunachal Pradesh",
+      "state_slug": "arunachal-pradesh"
+    },
+    {
+      "id": 144,
+      "name": "Dispur",
+      "slug": "dispur",
+      "image": "",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 3196,
+      "name": "Dombivli",
+      "slug": "dombivli",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3029,
+      "name": "Dumka",
+      "slug": "dumka",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 128,
+      "name": "Dungarpur",
+      "slug": "dungarpur",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 199,
+      "name": "Durg",
+      "slug": "durg",
+      "image": "",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 3243,
+      "name": "Durgapur",
+      "slug": "durgapur",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 168,
+      "name": "East Champaran",
+      "slug": "east-champaran",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 2063,
+      "name": "East Delhi",
+      "slug": "east-delhi",
+      "image": "",
+      "state_name": "Delhi-NCR",
+      "state_slug": "delhi-ncr"
+    },
+    {
+      "id": 3058,
+      "name": "East Garo Hills",
+      "slug": "east-garo-hills",
+      "image": "",
+      "state_name": "Meghalaya",
+      "state_slug": "meghalaya"
+    },
+    {
+      "id": 134,
+      "name": "East Godavari",
+      "slug": "east-godavari",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3055,
+      "name": "East Khasi Hills",
+      "slug": "east-khasi-hills",
+      "image": "",
+      "state_name": "Meghalaya",
+      "state_slug": "meghalaya"
+    },
+    {
+      "id": 3253,
+      "name": "Eluru",
+      "slug": "eluru",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3279,
+      "name": "Erode",
+      "slug": "erode",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 3190,
+      "name": "Etawah",
+      "slug": "etawah",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 2130,
+      "name": "Faridabad",
+      "slug": "faridabad",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 3270,
+      "name": "Faridkot",
+      "slug": "faridkot",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 3189,
+      "name": "Farrukhabad",
+      "slug": "farrukhabad",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 238,
+      "name": "Fatehabad",
+      "slug": "fatehabad",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 3092,
+      "name": "Fatehgarh Sahib",
+      "slug": "fatehgarh-sahib",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 3289,
+      "name": "Fatehpur",
+      "slug": "fatehpur",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3185,
+      "name": "Firozabad",
+      "slug": "firozabad",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 280,
+      "name": "Gadag",
+      "slug": "gadag",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3142,
+      "name": "Ganderbal",
+      "slug": "ganderbal",
+      "image": "",
+      "state_name": "Jammu and Kashmir",
+      "state_slug": "jammu-and-kashmir"
+    },
+    {
+      "id": 3274,
+      "name": "Gandhidham",
+      "slug": "gandhidham",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 205,
+      "name": "Gandhinagar",
+      "slug": "gandhinagar",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 2031,
+      "name": "Gangapur City",
+      "slug": "gangapur-city",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 2083,
+      "name": "Gangtok",
+      "slug": "gangtok",
+      "image": "",
+      "state_name": "Sikkim",
+      "state_slug": "sikkim"
+    },
+    {
+      "id": 258,
+      "name": "Garhwa",
+      "slug": "garhwa",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 165,
+      "name": "Gaya",
+      "slug": "gaya",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1753429745-gaya.webp",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3181,
+      "name": "Ghaziabad",
+      "slug": "ghaziabad",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 220,
+      "name": "Gir Somnath",
+      "slug": "gir-somnath",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 3028,
+      "name": "Giridih",
+      "slug": "giridih",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 3324,
+      "name": "Goalpara",
+      "slug": "goalpara-453",
+      "image": "https://assets.dreamweddinghub.com/image/city/goalpara-453.webp",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 256,
+      "name": "Godda",
+      "slug": "godda",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 3323,
+      "name": "Golaghat",
+      "slug": "golaghat-205",
+      "image": "https://assets.dreamweddinghub.com/image/city/golaghat-205.webp",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 3115,
+      "name": "Gomati",
+      "slug": "gomati",
+      "image": "",
+      "state_name": "Tripura",
+      "state_slug": "tripura"
+    },
+    {
+      "id": 163,
+      "name": "Gopalganj",
+      "slug": "gopalganj",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1753429892-Gopalganj.webp",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3118,
+      "name": "Gorakhpur",
+      "slug": "gorakhpur",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3348,
+      "name": "Greater Noida",
+      "slug": "greater-noida-482",
+      "image": "https://assets.dreamweddinghub.com/image/city/greater-noida-482.webp",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3302,
+      "name": "Gudivada",
+      "slug": "gudivada",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3224,
+      "name": "Gulbarga",
+      "slug": "gulbarga",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 259,
+      "name": "Gumla",
+      "slug": "gumla",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 3300,
+      "name": "Guntakal",
+      "slug": "guntakal",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 137,
+      "name": "Guntur",
+      "slug": "guntur",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 196,
+      "name": "Gurdaspur",
+      "slug": "gurdaspur",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 2116,
+      "name": "Gurugram",
+      "slug": "gurugram",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 145,
+      "name": "Guwahati",
+      "slug": "guwahati",
+      "image": "",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 3167,
+      "name": "Gwalior",
+      "slug": "gwalior",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 3306,
+      "name": "Hajipur",
+      "slug": "hajipur",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3264,
+      "name": "Haldwani",
+      "slug": "haldwani",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 245,
+      "name": "Hamirpur",
+      "slug": "hamirpur",
+      "image": "",
+      "state_name": "Himachal Pradesh",
+      "state_slug": "himachal-pradesh"
+    },
+    {
+      "id": 2032,
+      "name": "Hanumangarh",
+      "slug": "hanumangarh",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3285,
+      "name": "Hapur",
+      "slug": "hapur",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3123,
+      "name": "Haridwar",
+      "slug": "haridwar",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 277,
+      "name": "Hassan",
+      "slug": "hassan",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3194,
+      "name": "Hathras",
+      "slug": "hathras",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 260,
+      "name": "Hazaribagh",
+      "slug": "hazaribagh",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 2127,
+      "name": "hindaun",
+      "slug": "hindaun",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1706007803-hindaun.jpg",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3297,
+      "name": "Hindupur",
+      "slug": "hindupur",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 229,
+      "name": "Hisar",
+      "slug": "hisar",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 3072,
+      "name": "Hnahthial",
+      "slug": "hnahthial",
+      "image": "",
+      "state_name": "Mizoram",
+      "state_slug": "mizoram"
+    },
+    {
+      "id": 149,
+      "name": "Hooghly",
+      "slug": "hooghly",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 3227,
+      "name": "Hosapete",
+      "slug": "hosapete",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3173,
+      "name": "Hoshangabad",
+      "slug": "hoshangabad",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 188,
+      "name": "Hoshiarpur",
+      "slug": "hoshiarpur",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 3277,
+      "name": "Hospet",
+      "slug": "hospet",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3265,
+      "name": "Hosur",
+      "slug": "hosur",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 153,
+      "name": "Howrah",
+      "slug": "howrah",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 281,
+      "name": "Hubballi",
+      "slug": "hubballi",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3223,
+      "name": "Hubli",
+      "slug": "hubli",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 2087,
+      "name": "Hyderabad",
+      "slug": "hyderabad",
+      "image": "",
+      "state_name": "Telangana",
+      "state_slug": "telangana"
+    },
+    {
+      "id": 3038,
+      "name": "Idukki",
+      "slug": "idukki",
+      "image": "",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 3216,
+      "name": "Igatpuri",
+      "slug": "igatpuri",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3047,
+      "name": "imphal",
+      "slug": "imphal",
+      "image": "",
+      "state_name": "Manipur",
+      "state_slug": "manipur"
+    },
+    {
+      "id": 2119,
+      "name": "Indore",
+      "slug": "indore",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 135,
+      "name": "Itanagar",
+      "slug": "itanagar",
+      "image": "",
+      "state_name": "Arunachal Pradesh",
+      "state_slug": "arunachal-pradesh"
+    },
+    {
+      "id": 2128,
+      "name": "Jaam Nagar",
+      "slug": "jaam-nagar",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1711105398-Ranmal-Lake-Thumbnail.jpg",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 3169,
+      "name": "jabalpur",
+      "slug": "jabalpur",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 3088,
+      "name": "Jagatsinghpur",
+      "slug": "jagatsinghpur",
+      "image": "",
+      "state_name": "Odisha",
+      "state_slug": "odisha"
+    },
+    {
+      "id": 3021,
+      "name": "Jagdalpur",
+      "slug": "jagdalpur",
+      "image": "",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 3057,
+      "name": "Jaintia Hills",
+      "slug": "jaintia-hills",
+      "image": "",
+      "state_name": "Meghalaya",
+      "state_slug": "meghalaya"
+    },
+    {
+      "id": 86,
+      "name": "Jaipur",
+      "slug": "jaipur",
+      "image": "https://assets.dreamweddinghub.com/image/city/jaipur.webp",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 2033,
+      "name": "Jaisalmer",
+      "slug": "jaisalmer",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1726463280-1722497861-Jaisalmer.webp",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 191,
+      "name": "Jalandhar",
+      "slug": "jalandhar",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 3205,
+      "name": "Jalgaon",
+      "slug": "jalgaon",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 2034,
+      "name": "Jalore",
+      "slug": "jalore",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3311,
+      "name": "Jamalpur",
+      "slug": "jamalpur",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3137,
+      "name": "Jammu",
+      "slug": "jammu",
+      "image": "",
+      "state_name": "Jammu and Kashmir",
+      "state_slug": "jammu-and-kashmir"
+    },
+    {
+      "id": 249,
+      "name": "Jammu City",
+      "slug": "jammu-city",
+      "image": "",
+      "state_name": "Jammu and Kashmir",
+      "state_slug": "jammu-and-kashmir"
+    },
+    {
+      "id": 3232,
+      "name": "Jamnagar",
+      "slug": "jamnagar",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 253,
+      "name": "Jamshedpur",
+      "slug": "jamshedpur",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 261,
+      "name": "Jamtara",
+      "slug": "jamtara",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 169,
+      "name": "Jamui",
+      "slug": "jamui",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3024,
+      "name": "Janjgir–Champa",
+      "slug": "janjgir-champa",
+      "image": "",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 3292,
+      "name": "Jaunpur",
+      "slug": "jaunpur",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3334,
+      "name": "Jehanabad",
+      "slug": "jehanabad-602",
+      "image": "https://assets.dreamweddinghub.com/image/city/jehanabad-602.webp",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 231,
+      "name": "Jhajjar",
+      "slug": "jhajjar",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 2035,
+      "name": "Jhalawar",
+      "slug": "jhalawar",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3186,
+      "name": "Jhansi",
+      "slug": "jhansi",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 2036,
+      "name": "Jhunjhunu",
+      "slug": "jhunjhunu",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3180,
+      "name": "jind",
+      "slug": "jind",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1751008537-download.webp",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 3176,
+      "name": "Jiribam",
+      "slug": "jiribam",
+      "image": "",
+      "state_name": "Manipur",
+      "state_slug": "manipur"
+    },
+    {
+      "id": 2037,
+      "name": "Jodhpur",
+      "slug": "jodhpur",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1754306971-1753512176-Untitled design_11zon.webp",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 150,
+      "name": "Jorhat",
+      "slug": "jorhat",
+      "image": "",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 209,
+      "name": "Junagadh",
+      "slug": "junagadh",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 219,
+      "name": "Kachchh",
+      "slug": "kachchh",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 3149,
+      "name": "Kadapa",
+      "slug": "kadapa",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3317,
+      "name": "Kadiri",
+      "slug": "kadiri-816",
+      "image": "https://assets.dreamweddinghub.com/image/city/kadiri-816.webp",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3011,
+      "name": "Kadmat",
+      "slug": "kadmat",
+      "image": "",
+      "state_name": "Lakshadweep",
+      "state_slug": "lakshadweep"
+    },
+    {
+      "id": 3330,
+      "name": "Kaimur ",
+      "slug": "kaimur-370",
+      "image": "https://assets.dreamweddinghub.com/image/city/kaimur-370.webp",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 2122,
+      "name": "Kaithal",
+      "slug": "kaithal",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 3054,
+      "name": "Kakching",
+      "slug": "kakching",
+      "image": "",
+      "state_name": "Manipur",
+      "state_slug": "manipur"
+    },
+    {
+      "id": 3252,
+      "name": "Kakinada",
+      "slug": "kakinada",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3267,
+      "name": "Kalimpong",
+      "slug": "kalimpong",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 3013,
+      "name": "Kalpeni",
+      "slug": "Kalpeni",
+      "image": "",
+      "state_name": "Lakshadweep",
+      "state_slug": "lakshadweep"
+    },
+    {
+      "id": 3321,
+      "name": "Kamrup",
+      "slug": "kamrup-823",
+      "image": "https://assets.dreamweddinghub.com/image/city/kamrup-823.webp",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 240,
+      "name": "Kangra",
+      "slug": "kangra",
+      "image": "",
+      "state_name": "Himachal Pradesh",
+      "state_slug": "himachal-pradesh"
+    },
+    {
+      "id": 3146,
+      "name": "Kanker",
+      "slug": "kanker",
+      "image": "",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 3041,
+      "name": "Kannur",
+      "slug": "kannur",
+      "image": "",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 2104,
+      "name": "Kanpur",
+      "slug": "kanpur",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3095,
+      "name": "Kanyakumari",
+      "slug": "kanyakumari",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 185,
+      "name": "Kapurthala",
+      "slug": "kapurthala",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 3284,
+      "name": "Karaikudi",
+      "slug": "karaikudi",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 2038,
+      "name": "Karauli",
+      "slug": "karauli",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3322,
+      "name": "Karbi Anglong",
+      "slug": "karbi-anglong-702",
+      "image": "https://assets.dreamweddinghub.com/image/city/karbi-anglong-702.webp",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 3007,
+      "name": "Kargil",
+      "slug": "kargil",
+      "image": "",
+      "state_name": "Ladakh",
+      "state_slug": "ladakh"
+    },
+    {
+      "id": 3134,
+      "name": "Karikal",
+      "slug": "karikal",
+      "image": "",
+      "state_name": "Pondicherry",
+      "state_slug": "pondicherry"
+    },
+    {
+      "id": 3101,
+      "name": "Karimnagar",
+      "slug": "karimnagar",
+      "image": "",
+      "state_name": "Telangana",
+      "state_slug": "telangana"
+    },
+    {
+      "id": 228,
+      "name": "Karnal",
+      "slug": "karnal",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 2091,
+      "name": "Karuvadikuppam",
+      "slug": "karuvadikuppam",
+      "image": "",
+      "state_name": "Pondicherry",
+      "state_slug": "pondicherry"
+    },
+    {
+      "id": 3268,
+      "name": "Kasauli",
+      "slug": "kasauli",
+      "image": "",
+      "state_name": "Himachal Pradesh",
+      "state_slug": "himachal-pradesh"
+    },
+    {
+      "id": 173,
+      "name": "Katihar",
+      "slug": "katihar",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3008,
+      "name": "Kavaratti",
+      "slug": "kavaratti",
+      "image": "",
+      "state_name": "Lakshadweep",
+      "state_slug": "lakshadweep"
+    },
+    {
+      "id": 2107,
+      "name": "Kayamkulam",
+      "slug": "kayamkulam",
+      "image": "",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 3163,
+      "name": "Kaziranga",
+      "slug": "kaziranga",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1727244672-2024-06-02.jpg",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 3087,
+      "name": "Kendujhar",
+      "slug": "kendujhar",
+      "image": "",
+      "state_name": "Odisha",
+      "state_slug": "odisha"
+    },
+    {
+      "id": 3263,
+      "name": "Kevadia",
+      "slug": "kevadia",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 175,
+      "name": "Khagaria",
+      "slug": "khagaria",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 2039,
+      "name": "Khairthal",
+      "slug": "khairthal",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3103,
+      "name": "Khammam",
+      "slug": "khammam",
+      "image": "",
+      "state_name": "Telangana",
+      "state_slug": "telangana"
+    },
+    {
+      "id": 3238,
+      "name": "khandwa",
+      "slug": "khandwa",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 3272,
+      "name": "Khanna",
+      "slug": "khanna",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 3336,
+      "name": "Kharar",
+      "slug": "kharar-976",
+      "image": "https://assets.dreamweddinghub.com/image/city/kharar-976.webp",
+      "state_name": "Chandigarh",
+      "state_slug": "chandigarh"
+    },
+    {
+      "id": 2112,
+      "name": "Kharsia",
+      "slug": "kharsia",
+      "image": "",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 214,
+      "name": "Kheda",
+      "slug": "kheda",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 3082,
+      "name": "Khordha",
+      "slug": "khordha",
+      "image": "",
+      "state_name": "Odisha",
+      "state_slug": "odisha"
+    },
+    {
+      "id": 3113,
+      "name": "Khowai",
+      "slug": "khowai",
+      "image": "",
+      "state_name": "Tripura",
+      "state_slug": "tripura"
+    },
+    {
+      "id": 3015,
+      "name": "Kiltan",
+      "slug": "kiltan",
+      "image": "",
+      "state_name": "Lakshadweep",
+      "state_slug": "lakshadweep"
+    },
+    {
+      "id": 3081,
+      "name": "Kiphire",
+      "slug": "kiphire",
+      "image": "",
+      "state_name": "Nagaland",
+      "state_slug": "nagaland"
+    },
+    {
+      "id": 3310,
+      "name": "Kishanganj",
+      "slug": "kishanganj",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 2101,
+      "name": "Kochi",
+      "slug": "kochi",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1721295771-Kochi.png",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 263,
+      "name": "Kodagu",
+      "slug": "kodagu",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 257,
+      "name": "Kodarma",
+      "slug": "kodarma",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 2081,
+      "name": "Kohima",
+      "slug": "kohima",
+      "image": "",
+      "state_name": "Nagaland",
+      "state_slug": "nagaland"
+    },
+    {
+      "id": 3034,
+      "name": "Kolar",
+      "slug": "kolar",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3068,
+      "name": "Kolasib",
+      "slug": "kolasib",
+      "image": "",
+      "state_name": "Mizoram",
+      "state_slug": "mizoram"
+    },
+    {
+      "id": 2114,
+      "name": "Kolhapur",
+      "slug": "kolhapur",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 2089,
+      "name": "Kolkata",
+      "slug": "kolkata",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 203,
+      "name": "Korba",
+      "slug": "korba",
+      "image": "",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 2040,
+      "name": "Kota",
+      "slug": "kota",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1760356128-unnamed.jpg",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 2041,
+      "name": "Kotputli",
+      "slug": "kotputli",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 2099,
+      "name": "Kottayam",
+      "slug": "kottayam",
+      "image": "",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 3035,
+      "name": "Kozhikode",
+      "slug": "kozhikode",
+      "image": "",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 3145,
+      "name": "Kulgam",
+      "slug": "kulgam",
+      "image": "",
+      "state_name": "Jammu and Kashmir",
+      "state_slug": "jammu-and-kashmir"
+    },
+    {
+      "id": 241,
+      "name": "Kullu",
+      "slug": "kullu",
+      "image": "",
+      "state_name": "Himachal Pradesh",
+      "state_slug": "himachal-pradesh"
+    },
+    {
+      "id": 2060,
+      "name": "Kumbhalgarh",
+      "slug": "kumbhalgarh",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1699275666-kumbhalgarh.webp",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 133,
+      "name": "Kurnool",
+      "slug": "kurnool",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 233,
+      "name": "Kurukshetra",
+      "slug": "kurukshetra",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 3025,
+      "name": "Kutch",
+      "slug": "kutch",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 3027,
+      "name": "Lahaul and Spiti",
+      "slug": "lahaul-and-spiti",
+      "image": "",
+      "state_name": "Himachal Pradesh",
+      "state_slug": "himachal-pradesh"
+    },
+    {
+      "id": 181,
+      "name": "Lakhisarai",
+      "slug": "lakhisarai",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 2110,
+      "name": "Latur",
+      "slug": "latur",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3071,
+      "name": "Lawngtlai",
+      "slug": "lawngtlai",
+      "image": "",
+      "state_name": "Mizoram",
+      "state_slug": "mizoram"
+    },
+    {
+      "id": 3006,
+      "name": "Leh",
+      "slug": "leh",
+      "image": "",
+      "state_name": "Ladakh",
+      "state_slug": "ladakh"
+    },
+    {
+      "id": 3218,
+      "name": "Lonavala",
+      "slug": "lonavala",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3080,
+      "name": "Longleng",
+      "slug": "longleng",
+      "image": "",
+      "state_name": "Nagaland",
+      "state_slug": "nagaland"
+    },
+    {
+      "id": 96,
+      "name": "Lucknow",
+      "slug": "lucknow",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1697086238-LUCKNOW.jpg",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 183,
+      "name": "Ludhiana",
+      "slug": "ludhiana",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 3065,
+      "name": "Lunglei",
+      "slug": "lunglei",
+      "image": "",
+      "state_name": "Mizoram",
+      "state_slug": "mizoram"
+    },
+    {
+      "id": 3257,
+      "name": "Machilipatnam",
+      "slug": "machilipatnam",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3299,
+      "name": "Madanapalle",
+      "slug": "madanapalle",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3332,
+      "name": "Madhepura",
+      "slug": "madhepura-237",
+      "image": "https://assets.dreamweddinghub.com/image/city/madhepura-237.webp",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3331,
+      "name": "Madhubani",
+      "slug": "madhubani-532",
+      "image": "https://assets.dreamweddinghub.com/image/city/madhubani-532.webp",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 2086,
+      "name": "Madurai",
+      "slug": "madurai",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 3269,
+      "name": "Mahabalipuram",
+      "slug": "mahabalipuram",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 3340,
+      "name": "Mahasamund",
+      "slug": "mahasamund-323",
+      "image": "https://assets.dreamweddinghub.com/image/city/mahasamund-323.webp",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 3104,
+      "name": "Mahbubnagar",
+      "slug": "mahbubnagar",
+      "image": "",
+      "state_name": "Telangana",
+      "state_slug": "telangana"
+    },
+    {
+      "id": 3135,
+      "name": "Mahe",
+      "slug": "mahe",
+      "image": "",
+      "state_name": "Pondicherry",
+      "state_slug": "pondicherry"
+    },
+    {
+      "id": 234,
+      "name": "Mahendragarh",
+      "slug": "mahendragarh",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 3245,
+      "name": "Maheshtala",
+      "slug": "maheshtala",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 3036,
+      "name": "Malappuram",
+      "slug": "malappuram",
+      "image": "",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 3069,
+      "name": "Mamit",
+      "slug": "mamit",
+      "image": "",
+      "state_name": "Mizoram",
+      "state_slug": "mizoram"
+    },
+    {
+      "id": 3002,
+      "name": "Manali",
+      "slug": "manali",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1723115577-licensed-image.jpeg",
+      "state_name": "Himachal Pradesh",
+      "state_slug": "himachal-pradesh"
+    },
+    {
+      "id": 247,
+      "name": "Mandi",
+      "slug": "mandi",
+      "image": "",
+      "state_name": "Himachal Pradesh",
+      "state_slug": "himachal-pradesh"
+    },
+    {
+      "id": 273,
+      "name": "Mandya",
+      "slug": "mandya",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3225,
+      "name": "Mangaluru",
+      "slug": "mangaluru",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 189,
+      "name": "Mansa",
+      "slug": "mansa",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 3342,
+      "name": "Mapusa",
+      "slug": "mapusa-581",
+      "image": "https://assets.dreamweddinghub.com/image/city/mapusa-581.webp",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 2094,
+      "name": "Margao",
+      "slug": "margao",
+      "image": "",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 3121,
+      "name": "Mathura",
+      "slug": "mathura",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3090,
+      "name": "Mayurbhanj",
+      "slug": "mayurbhanj",
+      "image": "",
+      "state_name": "Odisha",
+      "state_slug": "odisha"
+    },
+    {
+      "id": 3107,
+      "name": "Medak",
+      "slug": "medak",
+      "image": "",
+      "state_name": "Telangana",
+      "state_slug": "telangana"
+    },
+    {
+      "id": 3119,
+      "name": "Meerut",
+      "slug": "meerut",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3234,
+      "name": "Mehsana",
+      "slug": "mehsana",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 237,
+      "name": "Mewat",
+      "slug": "mewat",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 3012,
+      "name": "Minicoy",
+      "slug": "minicoy",
+      "image": "",
+      "state_name": "Lakshadweep",
+      "state_slug": "lakshadweep"
+    },
+    {
+      "id": 3200,
+      "name": "Mira-Bhayandar",
+      "slug": "mira-bhayandar",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3230,
+      "name": "Miryalaguda",
+      "slug": "miryalaguda",
+      "image": "",
+      "state_name": "Telangana",
+      "state_slug": "telangana"
+    },
+    {
+      "id": 3286,
+      "name": "Mirzapur",
+      "slug": "mirzapur",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3093,
+      "name": "Moga",
+      "slug": "moga",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 3003,
+      "name": "Mohali",
+      "slug": "mohali",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1725346993-maxresdefault-2.jpg",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 3075,
+      "name": "Mokokchung",
+      "slug": "mokokchung",
+      "image": "",
+      "state_name": "Nagaland",
+      "state_slug": "nagaland"
+    },
+    {
+      "id": 3079,
+      "name": "Mon",
+      "slug": "mon",
+      "image": "",
+      "state_name": "Nagaland",
+      "state_slug": "nagaland"
+    },
+    {
+      "id": 3182,
+      "name": "Moradabad",
+      "slug": "moradabad",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3222,
+      "name": "Morbi",
+      "slug": "morbi",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 3239,
+      "name": "morena",
+      "slug": "morena",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 3309,
+      "name": "Motihari",
+      "slug": "motihari",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 186,
+      "name": "Muktsar",
+      "slug": "muktsar",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 94,
+      "name": "Mumbai",
+      "slug": "mumbai",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1697086082-MUMBAI.pics.jpg",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3260,
+      "name": "Munger",
+      "slug": "munger",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3130,
+      "name": "Murshidabad",
+      "slug": "murshidabad",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 3000,
+      "name": "mussoorie",
+      "slug": "mussoorie",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 3187,
+      "name": "Muzaffarnagar",
+      "slug": "muzaffarnagar",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 171,
+      "name": "Muzaffarpur",
+      "slug": "muzaffarpur",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 269,
+      "name": "Mysore",
+      "slug": "mysore",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 270,
+      "name": "Mysuru",
+      "slug": "mysuru",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 148,
+      "name": "Nadia",
+      "slug": "nadia",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 3233,
+      "name": "Nadiad",
+      "slug": "nadiad",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 147,
+      "name": "Nagaon",
+      "slug": "nagaon",
+      "image": "",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 129,
+      "name": "Nagaur",
+      "slug": "nagaur",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1753430199-Untitled design (5).webp",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 2111,
+      "name": "Nagpur",
+      "slug": "nagpur",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 2118,
+      "name": "Nainital",
+      "slug": "nainital",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 160,
+      "name": "Nalanda",
+      "slug": "nalanda",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3105,
+      "name": "Nalgonda",
+      "slug": "nalgonda",
+      "image": "",
+      "state_name": "Telangana",
+      "state_slug": "telangana"
+    },
+    {
+      "id": 3097,
+      "name": "Namakkal",
+      "slug": "namakkal",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 3203,
+      "name": "Nanded",
+      "slug": "nanded",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3256,
+      "name": "Nandyala",
+      "slug": "nandyala",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3303,
+      "name": "Narasaraopet",
+      "slug": "narasaraopet",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 218,
+      "name": "Narmada",
+      "slug": "narmada",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 3179,
+      "name": "Narnaul",
+      "slug": "narnaul",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1750502368-licensed-image.jpg",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 2113,
+      "name": "Nashik",
+      "slug": "nashik",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3199,
+      "name": "Navi-Mumbai",
+      "slug": "navi-mumbai",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 222,
+      "name": "Navsari",
+      "slug": "navsari",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 3335,
+      "name": "Nawada",
+      "slug": "nawada-207",
+      "image": "https://assets.dreamweddinghub.com/image/city/nawada-207.webp",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 2123,
+      "name": "Nawanshahr",
+      "slug": "nawanshahr",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 2016,
+      "name": "Neemrana",
+      "slug": "neemrana",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1760356366-unnamed (1).webp",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3150,
+      "name": "Nellore",
+      "slug": "nellore",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 2064,
+      "name": "New Delhi",
+      "slug": "new-delhi",
+      "image": "",
+      "state_name": "Delhi-NCR",
+      "state_slug": "delhi-ncr"
+    },
+    {
+      "id": 3102,
+      "name": "Nizamabad",
+      "slug": "nizamabad",
+      "image": "",
+      "state_name": "Telangana",
+      "state_slug": "telangana"
+    },
+    {
+      "id": 2092,
+      "name": "Noida",
+      "slug": "noida",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 151,
+      "name": "North 24 Parganas",
+      "slug": "north-24-parganas",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 2065,
+      "name": "North Delhi",
+      "slug": "north-delhi",
+      "image": "",
+      "state_name": "Delhi-NCR",
+      "state_slug": "delhi-ncr"
+    },
+    {
+      "id": 2066,
+      "name": "North East Delhi",
+      "slug": "north-east-delhi",
+      "image": "",
+      "state_name": "Delhi-NCR",
+      "state_slug": "delhi-ncr"
+    },
+    {
+      "id": 3062,
+      "name": "North Garo Hills",
+      "slug": "north-garo-hills",
+      "image": "",
+      "state_name": "Meghalaya",
+      "state_slug": "meghalaya"
+    },
+    {
+      "id": 3111,
+      "name": "North Tripura",
+      "slug": "north-tripura",
+      "image": "",
+      "state_name": "Tripura",
+      "state_slug": "tripura"
+    },
+    {
+      "id": 2067,
+      "name": "North West Delhi",
+      "slug": "north-west-delhi",
+      "image": "",
+      "state_name": "Delhi-NCR",
+      "state_slug": "delhi-ncr"
+    },
+    {
+      "id": 3344,
+      "name": "Old Goa",
+      "slug": "old-goa-634",
+      "image": "https://assets.dreamweddinghub.com/image/city/old-goa-634.webp",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 3255,
+      "name": "Ongole",
+      "slug": "ongole",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3248,
+      "name": "Padinjarathara",
+      "slug": "padinjarathara",
+      "image": "",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 3030,
+      "name": "Palamu",
+      "slug": "palamu",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 3219,
+      "name": "Palghar",
+      "slug": "palghar",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 2059,
+      "name": "Pali",
+      "slug": "pali",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 230,
+      "name": "Palwal",
+      "slug": "palwal",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 204,
+      "name": "Panaji",
+      "slug": "panaji",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1755950655-1754906412-Untitled design (1).webp",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 3273,
+      "name": "Panchkula",
+      "slug": "panchkula",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 208,
+      "name": "Panchmahal",
+      "slug": "panchmahal",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 3250,
+      "name": "Panihati",
+      "slug": "panihati",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 223,
+      "name": "Panipat",
+      "slug": "panipat",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 3214,
+      "name": "Panvel",
+      "slug": "panvel",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3210,
+      "name": "Parbhani",
+      "slug": "parbhani",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 155,
+      "name": "Paschim Bardhaman",
+      "slug": "paschim-bardhaman",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 3155,
+      "name": "Pasighat",
+      "slug": "pasighat",
+      "image": "",
+      "state_name": "Arunachal Pradesh",
+      "state_slug": "arunachal-pradesh"
+    },
+    {
+      "id": 3040,
+      "name": "Pathanamthitta",
+      "slug": "pathanamthitta",
+      "image": "",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 3271,
+      "name": "Pathankot",
+      "slug": "pathankot",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 195,
+      "name": "Patiala",
+      "slug": "patiala",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 90,
+      "name": "Patna",
+      "slug": "patna",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1697085876-PATNA.webp",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3124,
+      "name": "Pauri Garhwal",
+      "slug": "pauri-garhwal",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 2106,
+      "name": "Phagwara",
+      "slug": "phagwara",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 2043,
+      "name": "Phalodi",
+      "slug": "phalodi",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3078,
+      "name": "Phek",
+      "slug": "phek",
+      "image": "",
+      "state_name": "Nagaland",
+      "state_slug": "nagaland"
+    },
+    {
+      "id": 3192,
+      "name": "Pilibhit",
+      "slug": "pilibhit",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3195,
+      "name": "Pimpri-Chinchwad",
+      "slug": "pimpri-chinchwad",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3343,
+      "name": "Ponda",
+      "slug": "ponda-950",
+      "image": "https://assets.dreamweddinghub.com/image/city/ponda-950.webp",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 3141,
+      "name": "Poonch",
+      "slug": "poonch",
+      "image": "",
+      "state_name": "Jammu and Kashmir",
+      "state_slug": "jammu-and-kashmir"
+    },
+    {
+      "id": 139,
+      "name": "Prakasam",
+      "slug": "prakasam",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 2044,
+      "name": "Pratapgarh",
+      "slug": "pratapgarh",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 2103,
+      "name": "Prayagraj",
+      "slug": "prayagraj",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3296,
+      "name": "Proddatur",
+      "slug": "proddatur",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 2102,
+      "name": "Puducherry",
+      "slug": "puducherry",
+      "image": "",
+      "state_name": "Pondicherry",
+      "state_slug": "pondicherry"
+    },
+    {
+      "id": 3144,
+      "name": "Pulwama",
+      "slug": "pulwama",
+      "image": "",
+      "state_name": "Jammu and Kashmir",
+      "state_slug": "jammu-and-kashmir"
+    },
+    {
+      "id": 2074,
+      "name": "Pune",
+      "slug": "pune",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3175,
+      "name": "Purba Bardhaman",
+      "slug": "purba-bardhaman",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 3084,
+      "name": "Puri",
+      "slug": "puri",
+      "image": "",
+      "state_name": "Odisha",
+      "state_slug": "odisha"
+    },
+    {
+      "id": 164,
+      "name": "Purnia",
+      "slug": "purnia",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1753429811-Purnia.webp",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 146,
+      "name": "Purulia",
+      "slug": "purulia",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 2058,
+      "name": "Pushkar",
+      "slug": "pushkar",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1754307214-1753430349-Pushkar_11zon.webp",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3290,
+      "name": "Raebareli",
+      "slug": "raebareli",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 285,
+      "name": "Raichur",
+      "slug": "raichur",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3045,
+      "name": "Raigad",
+      "slug": "raigad",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 200,
+      "name": "Raigarh",
+      "slug": "raigarh",
+      "image": "",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 92,
+      "name": "Raipur",
+      "slug": "raipur",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1697085958-RAIPUR.jpg",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 3151,
+      "name": "Rajahmundry",
+      "slug": "rajahmundry",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3314,
+      "name": "Rajamahendravaram",
+      "slug": "rajamahendravaram-264",
+      "image": "https://assets.dreamweddinghub.com/image/city/rajamahendravaram-264.webp",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3020,
+      "name": "Rajgir",
+      "slug": "rajgir",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 212,
+      "name": "Rajkot",
+      "slug": "rajkot",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 3022,
+      "name": "Rajnandgaon",
+      "slug": "rajnandgaon",
+      "image": "",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 3140,
+      "name": "Rajouri",
+      "slug": "rajouri",
+      "image": "",
+      "state_name": "Jammu and Kashmir",
+      "state_slug": "jammu-and-kashmir"
+    },
+    {
+      "id": 3246,
+      "name": "Rajpur Sonarpur",
+      "slug": "rajpur-sonarpur",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 2045,
+      "name": "Rajsamand",
+      "slug": "rajsamand",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3228,
+      "name": "Ramagundam",
+      "slug": "ramagundam",
+      "image": "",
+      "state_name": "Telangana",
+      "state_slug": "telangana"
+    },
+    {
+      "id": 279,
+      "name": "Ramanagara",
+      "slug": "ramanagara",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 254,
+      "name": "Ramgarh",
+      "slug": "ramgarh",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 3266,
+      "name": "Ramnagar",
+      "slug": "ramnagar",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 3001,
+      "name": "Ranakpur",
+      "slug": "ranakpur",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1721202790-Ranakpur.png",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 250,
+      "name": "Ranchi",
+      "slug": "ranchi",
+      "image": "",
+      "state_name": "Jharkhand",
+      "state_slug": "jharkhand"
+    },
+    {
+      "id": 3099,
+      "name": "Ranga-Reddy",
+      "slug": "ranga-reddy",
+      "image": "",
+      "state_name": "Telangana",
+      "state_slug": "telangana"
+    },
+    {
+      "id": 2057,
+      "name": "Ranthambore",
+      "slug": "ranthambore",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1721133477-Ranthambore.png",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3177,
+      "name": "Ratlam",
+      "slug": "ratlam",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1749201521-licensed-image.jpeg",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 3172,
+      "name": "Rewa",
+      "slug": "rewa",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 2117,
+      "name": "Rewari",
+      "slug": "rewari",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 3061,
+      "name": "Ri Bhoi",
+      "slug": "ri-bhoi",
+      "image": "",
+      "state_name": "Meghalaya",
+      "state_slug": "meghalaya"
+    },
+    {
+      "id": 2079,
+      "name": "Rishikesh",
+      "slug": "rishikesh",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 227,
+      "name": "Rohtak",
+      "slug": "rohtak",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 170,
+      "name": "Rohtas",
+      "slug": "rohtas",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3156,
+      "name": "Roing",
+      "slug": "roing",
+      "image": "",
+      "state_name": "Arunachal Pradesh",
+      "state_slug": "arunachal-pradesh"
+    },
+    {
+      "id": 2115,
+      "name": "Rourkela",
+      "slug": "rourkela",
+      "image": "",
+      "state_name": "Odisha",
+      "state_slug": "odisha"
+    },
+    {
+      "id": 3122,
+      "name": "Rudraprayag",
+      "slug": "rudraprayag",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 192,
+      "name": "Rupnagar",
+      "slug": "rupnagar",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 210,
+      "name": "Sabarkantha",
+      "slug": "sabarkantha",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 3170,
+      "name": "Sagar",
+      "slug": "sagar",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 3184,
+      "name": "Saharanpur",
+      "slug": "saharanpur",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3262,
+      "name": "Saharsa",
+      "slug": "saharsa",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 184,
+      "name": "Sahibzada Ajit Singh Nagar",
+      "slug": "sahibzada-ajit-singh-nagar",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 3070,
+      "name": "Saiha",
+      "slug": "saiha",
+      "image": "",
+      "state_name": "Mizoram",
+      "state_slug": "mizoram"
+    },
+    {
+      "id": 3073,
+      "name": "Saitual",
+      "slug": "saitual",
+      "image": "",
+      "state_name": "Mizoram",
+      "state_slug": "mizoram"
+    },
+    {
+      "id": 2085,
+      "name": "Salem",
+      "slug": "salem",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 174,
+      "name": "Samastipur",
+      "slug": "samastipur",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3085,
+      "name": "Sambalpur",
+      "slug": "sambalpur",
+      "image": "",
+      "state_name": "Odisha",
+      "state_slug": "odisha"
+    },
+    {
+      "id": 3287,
+      "name": "Sambhal",
+      "slug": "sambhal",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 193,
+      "name": "Sangrur",
+      "slug": "sangrur",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 179,
+      "name": "Saran",
+      "slug": "saran",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3305,
+      "name": "Sasaram",
+      "slug": "sasaram",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 3220,
+      "name": "Satara",
+      "slug": "satara",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3236,
+      "name": "satna",
+      "slug": "satna",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 2047,
+      "name": "Sawai madhopur",
+      "slug": "sawai-madhopur",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3229,
+      "name": "Secunderabad",
+      "slug": "secunderabad",
+      "image": "",
+      "state_name": "Telangana",
+      "state_slug": "telangana"
+    },
+    {
+      "id": 3052,
+      "name": "Senapati",
+      "slug": "senapati",
+      "image": "",
+      "state_name": "Manipur",
+      "state_slug": "manipur"
+    },
+    {
+      "id": 3114,
+      "name": "Sepahijala",
+      "slug": "sepahijala",
+      "image": "",
+      "state_name": "Tripura",
+      "state_slug": "tripura"
+    },
+    {
+      "id": 3067,
+      "name": "Serchhip",
+      "slug": "serchhip",
+      "image": "",
+      "state_name": "Mizoram",
+      "state_slug": "mizoram"
+    },
+    {
+      "id": 2068,
+      "name": "Shahdara",
+      "slug": "shahdara",
+      "image": "",
+      "state_name": "Delhi-NCR",
+      "state_slug": "delhi-ncr"
+    },
+    {
+      "id": 190,
+      "name": "Shahid Bhagat Singh Nagar",
+      "slug": "shahid-bhagat-singh-nagar",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 3188,
+      "name": "Shahjahanpur",
+      "slug": "shahjahanpur",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 2048,
+      "name": "Shahpura",
+      "slug": "shahpura",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 2078,
+      "name": "Shillong",
+      "slug": "shillong",
+      "image": "",
+      "state_name": "Meghalaya",
+      "state_slug": "meghalaya"
+    },
+    {
+      "id": 100,
+      "name": "Shimla",
+      "slug": "shimla",
+      "image": "https://assets.dreamweddinghub.com/image/1697086342-SHIMLA.avif",
+      "state_name": "Himachal Pradesh",
+      "state_slug": "himachal-pradesh"
+    },
+    {
+      "id": 278,
+      "name": "Shivamogga",
+      "slug": "shivamogga",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 2049,
+      "name": "Shri Ganga Nagar",
+      "slug": "shri-ganga-nagar",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 2050,
+      "name": "Sikar",
+      "slug": "sikar",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3164,
+      "name": "Silchar",
+      "slug": "silchar",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1727244727-2022-07-06.jpg",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 3244,
+      "name": "Siliguri",
+      "slug": "siliguri",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 3293,
+      "name": "Singrauli",
+      "slug": "singrauli",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 2096,
+      "name": "Siolim",
+      "slug": "siolim",
+      "image": "",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 243,
+      "name": "Sirmaur",
+      "slug": "sirmaur",
+      "image": "",
+      "state_name": "Himachal Pradesh",
+      "state_slug": "himachal-pradesh"
+    },
+    {
+      "id": 2051,
+      "name": "sirohi",
+      "slug": "sirohi",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 235,
+      "name": "Sirsa",
+      "slug": "sirsa",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 3162,
+      "name": "Sivasagar",
+      "slug": "sivasagar",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1727244601-2016-05-14.webp",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 3307,
+      "name": "Siwan",
+      "slug": "siwan",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 239,
+      "name": "Solan",
+      "slug": "solan",
+      "image": "",
+      "state_name": "Himachal Pradesh",
+      "state_slug": "himachal-pradesh"
+    },
+    {
+      "id": 3044,
+      "name": "Solapur",
+      "slug": "solapur",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 226,
+      "name": "Sonipat",
+      "slug": "sonipat",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 158,
+      "name": "Sonitpur",
+      "slug": "sonitpur",
+      "image": "",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 3131,
+      "name": "South 24 Parganas",
+      "slug": "south-24-parganas",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 2069,
+      "name": "South Delhi",
+      "slug": "south-delhi",
+      "image": "",
+      "state_name": "Delhi-NCR",
+      "state_slug": "delhi-ncr"
+    },
+    {
+      "id": 3247,
+      "name": "South Dumdum",
+      "slug": "south-dumdum",
+      "image": "",
+      "state_name": "West Bengal",
+      "state_slug": "west-bengal"
+    },
+    {
+      "id": 2070,
+      "name": "South East Delhi",
+      "slug": "south-east-delhi",
+      "image": "",
+      "state_name": "Delhi-NCR",
+      "state_slug": "delhi-ncr"
+    },
+    {
+      "id": 3060,
+      "name": "South Garo Hills",
+      "slug": "south-garo-hills",
+      "image": "",
+      "state_name": "Meghalaya",
+      "state_slug": "meghalaya"
+    },
+    {
+      "id": 3109,
+      "name": "South Tripura",
+      "slug": "south-tripura",
+      "image": "",
+      "state_name": "Tripura",
+      "state_slug": "tripura"
+    },
+    {
+      "id": 2071,
+      "name": "South West Delhi",
+      "slug": "south-west-delhi",
+      "image": "",
+      "state_name": "Delhi-NCR",
+      "state_slug": "delhi-ncr"
+    },
+    {
+      "id": 3064,
+      "name": "South West Garo Hills",
+      "slug": "south-west-garo-hills",
+      "image": "",
+      "state_name": "Meghalaya",
+      "state_slug": "meghalaya"
+    },
+    {
+      "id": 3063,
+      "name": "South West Khasi Hills",
+      "slug": "south-west-khasi-hills",
+      "image": "",
+      "state_name": "Meghalaya",
+      "state_slug": "meghalaya"
+    },
+    {
+      "id": 136,
+      "name": "Sri Potti Sriramulu Nellore",
+      "slug": "sri-potti-sriramulu-nellore",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 140,
+      "name": "Srikakulam",
+      "slug": "srikakulam",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3138,
+      "name": "Srinagar",
+      "slug": "srinagar",
+      "image": "",
+      "state_name": "Jammu and Kashmir",
+      "state_slug": "jammu-and-kashmir"
+    },
+    {
+      "id": 3017,
+      "name": "Suheli Par",
+      "slug": "suheli-par",
+      "image": "",
+      "state_name": "Lakshadweep",
+      "state_slug": "lakshadweep"
+    },
+    {
+      "id": 180,
+      "name": "Supaul",
+      "slug": "supaul",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 2098,
+      "name": "Surat",
+      "slug": "surat",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 215,
+      "name": "Surendranagar",
+      "slug": "surendranagar",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 202,
+      "name": "Surguja",
+      "slug": "surguja",
+      "image": "",
+      "state_name": "Chhattisgarh",
+      "state_slug": "chhattisgarh"
+    },
+    {
+      "id": 3231,
+      "name": "Suryapet",
+      "slug": "suryapet",
+      "image": "",
+      "state_name": "Telangana",
+      "state_slug": "telangana"
+    },
+    {
+      "id": 3316,
+      "name": "Tadepalligudem",
+      "slug": "tadepalligudem-834",
+      "image": "https://assets.dreamweddinghub.com/image/city/tadepalligudem-834.webp",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3304,
+      "name": "Tadipatri",
+      "slug": "tadipatri",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3051,
+      "name": "Tamenglong",
+      "slug": "tamenglong",
+      "image": "",
+      "state_name": "Manipur",
+      "state_slug": "manipur"
+    },
+    {
+      "id": 194,
+      "name": "Tarn Taran",
+      "slug": "tarn-taran",
+      "image": "",
+      "state_name": "Punjab",
+      "state_slug": "punjab"
+    },
+    {
+      "id": 3152,
+      "name": "Tawang",
+      "slug": "tawang",
+      "image": "",
+      "state_name": "Arunachal Pradesh",
+      "state_slug": "arunachal-pradesh"
+    },
+    {
+      "id": 3125,
+      "name": "Tehri Garhwal",
+      "slug": "tehri-garhwal",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 3258,
+      "name": "Tenali",
+      "slug": "tenali",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3161,
+      "name": "Tezpur",
+      "slug": "tezpur",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1727244533-2021-04-20_11zon.webp",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 3160,
+      "name": "Tezu",
+      "slug": "tezu",
+      "image": "",
+      "state_name": "Arunachal Pradesh",
+      "state_slug": "arunachal-pradesh"
+    },
+    {
+      "id": 2105,
+      "name": "Thalassery",
+      "slug": "thalassery",
+      "image": "",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 3043,
+      "name": "Thane",
+      "slug": "thane",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3282,
+      "name": "Thanjavur",
+      "slug": "thanjavur",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 286,
+      "name": "Thiruvananthapuram",
+      "slug": "thiruvananthapuram",
+      "image": "",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 3281,
+      "name": "Thoothukudi",
+      "slug": "thoothukudi",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 3048,
+      "name": "Thoubal",
+      "slug": "thoubal",
+      "image": "",
+      "state_name": "Manipur",
+      "state_slug": "manipur"
+    },
+    {
+      "id": 2100,
+      "name": "Thrissur",
+      "slug": "thrissur",
+      "image": "",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 3166,
+      "name": "Tinsukia",
+      "slug": "tinsukia",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1727245899-2020-01-12.jpg",
+      "state_name": "Assam",
+      "state_slug": "assam"
+    },
+    {
+      "id": 2084,
+      "name": "Tiruchirappalli",
+      "slug": "tiruchirappalli",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 3094,
+      "name": "Tirunelveli",
+      "slug": "tirunelveli",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 3148,
+      "name": "Tirupati",
+      "slug": "tirupati",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3278,
+      "name": "Tiruppur",
+      "slug": "tiruppur",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 2053,
+      "name": "Tonk",
+      "slug": "tonk",
+      "image": "",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 3076,
+      "name": "Tuensang",
+      "slug": "tuensang",
+      "image": "",
+      "state_name": "Nagaland",
+      "state_slug": "nagaland"
+    },
+    {
+      "id": 268,
+      "name": "Tumkur",
+      "slug": "tumkur",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 2054,
+      "name": "Udaipur",
+      "slug": "udaipur",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1754307419-1753513113-Untitled design (2)_11zon.webp",
+      "state_name": "Rajasthan",
+      "state_slug": "rajasthan"
+    },
+    {
+      "id": 159,
+      "name": "Udham Singh Nagar",
+      "slug": "udham-singh-nagar",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 3139,
+      "name": "Udhampur",
+      "slug": "udhampur",
+      "image": "",
+      "state_name": "Jammu and Kashmir",
+      "state_slug": "jammu-and-kashmir"
+    },
+    {
+      "id": 271,
+      "name": "Udupi",
+      "slug": "udupi",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3168,
+      "name": "ujjain",
+      "slug": "ujjain",
+      "image": "",
+      "state_name": "Madhya Pradesh",
+      "state_slug": "madhya-pradesh"
+    },
+    {
+      "id": 3053,
+      "name": "Ukhrul",
+      "slug": "ukhrul",
+      "image": "",
+      "state_name": "Manipur",
+      "state_slug": "manipur"
+    },
+    {
+      "id": 3204,
+      "name": "Ulhasnagar",
+      "slug": "ulhasnagar",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 244,
+      "name": "Una",
+      "slug": "una",
+      "image": "",
+      "state_name": "Himachal Pradesh",
+      "state_slug": "himachal-pradesh"
+    },
+    {
+      "id": 3112,
+      "name": "Unakoti",
+      "slug": "unakoti",
+      "image": "",
+      "state_name": "Tripura",
+      "state_slug": "tripura"
+    },
+    {
+      "id": 284,
+      "name": "Uttara Kannada",
+      "slug": "uttara-kannada",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 3126,
+      "name": "Uttarkashi",
+      "slug": "uttarkashi",
+      "image": "",
+      "state_name": "Uttarakhand",
+      "state_slug": "uttarakhand"
+    },
+    {
+      "id": 211,
+      "name": "Vadodara",
+      "slug": "vadodara",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 3019,
+      "name": "Vaishali",
+      "slug": "vaishali",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 213,
+      "name": "Valsad",
+      "slug": "valsad",
+      "image": "",
+      "state_name": "Gujarat",
+      "state_slug": "gujarat"
+    },
+    {
+      "id": 3117,
+      "name": "Varanasi",
+      "slug": "varanasi",
+      "image": "",
+      "state_name": "Uttar Pradesh",
+      "state_slug": "uttar-pradesh"
+    },
+    {
+      "id": 3197,
+      "name": "Vasai-Virar",
+      "slug": "vasai-virar",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3341,
+      "name": "Vasco Da Gama",
+      "slug": "vasco-da-gama-519",
+      "image": "https://assets.dreamweddinghub.com/image/city/vasco-da-gama-519.webp",
+      "state_name": "Goa  ",
+      "state_slug": "goa"
+    },
+    {
+      "id": 3096,
+      "name": "Vellore",
+      "slug": "vellore",
+      "image": "",
+      "state_name": "Tamil Nadu",
+      "state_slug": "tamil-nadu"
+    },
+    {
+      "id": 3349,
+      "name": "Vengurla",
+      "slug": "vengurla-149",
+      "image": "https://assets.dreamweddinghub.com/image/city/vengurla-149.webp",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3254,
+      "name": "Vijayanagaram",
+      "slug": "vijayanagaram",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3221,
+      "name": "Vijayapura",
+      "slug": "vijayapura",
+      "image": "",
+      "state_name": "Karnataka",
+      "state_slug": "karnataka"
+    },
+    {
+      "id": 131,
+      "name": "Vijayawada",
+      "slug": "vijayawada",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1753430092-Vijayawada.webp",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 130,
+      "name": "Visakhapatnam",
+      "slug": "visakhapatnam",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 141,
+      "name": "Vizianagaram",
+      "slug": "vizianagaram",
+      "image": "",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 3100,
+      "name": "Warangal-Urban",
+      "slug": "warangal-urban",
+      "image": "",
+      "state_name": "Telangana",
+      "state_slug": "telangana"
+    },
+    {
+      "id": 3212,
+      "name": "Wardha",
+      "slug": "wardha",
+      "image": "",
+      "state_name": "Maharashtra",
+      "state_slug": "maharashtra"
+    },
+    {
+      "id": 3039,
+      "name": "Wayanad",
+      "slug": "wayanad",
+      "image": "",
+      "state_name": "Kerala",
+      "state_slug": "kerala"
+    },
+    {
+      "id": 176,
+      "name": "West Champaran",
+      "slug": "west-champaran",
+      "image": "",
+      "state_name": "Bihar",
+      "state_slug": "bihar"
+    },
+    {
+      "id": 2072,
+      "name": "West Delhi",
+      "slug": "west-delhi",
+      "image": "",
+      "state_name": "Delhi-NCR",
+      "state_slug": "delhi-ncr"
+    },
+    {
+      "id": 3059,
+      "name": "West Garo Hills",
+      "slug": "west-garo-hills",
+      "image": "",
+      "state_name": "Meghalaya",
+      "state_slug": "meghalaya"
+    },
+    {
+      "id": 142,
+      "name": "West Godavari",
+      "slug": "west-godavari",
+      "image": "https://assets.dreamweddinghub.com/image/https://dreamweddinghub.com/public/uploads/location/1753429979-West Godavari.webp",
+      "state_name": "Andhra Pradesh",
+      "state_slug": "andhra-pradesh"
+    },
+    {
+      "id": 143,
+      "name": "West Kameng",
+      "slug": "west-kameng",
+      "image": "",
+      "state_name": "Arunachal Pradesh",
+      "state_slug": "arunachal-pradesh"
+    },
+    {
+      "id": 3056,
+      "name": "West Khasi Hills",
+      "slug": "west-khasi-hills",
+      "image": "",
+      "state_name": "Meghalaya",
+      "state_slug": "meghalaya"
+    },
+    {
+      "id": 3108,
+      "name": "West Tripura (Agartala)",
+      "slug": "west-tripura-agartala",
+      "image": "",
+      "state_name": "Tripura",
+      "state_slug": "tripura"
+    },
+    {
+      "id": 3074,
+      "name": "Wokha",
+      "slug": "wokha",
+      "image": "",
+      "state_name": "Nagaland",
+      "state_slug": "nagaland"
+    },
+    {
+      "id": 236,
+      "name": "Yamunanagar",
+      "slug": "yamunanagar",
+      "image": "",
+      "state_name": "Haryana",
+      "state_slug": "haryana"
+    },
+    {
+      "id": 3136,
+      "name": "Yanam",
+      "slug": "yanam",
+      "image": "",
+      "state_name": "Pondicherry",
+      "state_slug": "pondicherry"
+    },
+    {
+      "id": 3337,
+      "name": "Zirakpur",
+      "slug": "zirakpur-500",
+      "image": "https://assets.dreamweddinghub.com/image/city/zirakpur-500.webp",
+      "state_name": "Chandigarh",
+      "state_slug": "chandigarh"
+    },
+    {
+      "id": 3153,
+      "name": "Ziro",
+      "slug": "ziro",
+      "image": "",
+      "state_name": "Arunachal Pradesh",
+      "state_slug": "arunachal-pradesh"
+    },
+    {
+      "id": 3077,
+      "name": "Zunheboto",
+      "slug": "zunheboto",
+      "image": "",
+      "state_name": "Nagaland",
+      "state_slug": "nagaland"
+    }
+]
